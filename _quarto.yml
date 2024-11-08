@@ -23,7 +23,7 @@ book:
     - slides.qmd
     - about.qmd
     - references.qmd
-page-footer:
+  page-footer:
     left: "R Félix"
     center: "PG Mobilidade 360"
     right: "Novembro 2024"
