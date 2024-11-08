@@ -1,11 +1,13 @@
 project:
   type: book
-  lang: pt
 
+lang: pt
 book:
   title: "PG Mobilidade 360"
+  subtitle: "Literacia sobre dados abertos em transportes"
   author: "Rosa Félix"
   date: today
+  repo-url: https://github.com/temospena/PGmob360
   chapters:
     - index.qmd
     - intro.qmd
