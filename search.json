@@ -39,7 +39,7 @@
     "href": "software.html#rstudio",
     "title": "2  Software",
     "section": "2.2 RStudio",
-    "text": "2.2 RStudio\nO RStudio Desktop é um ambiente de desenvolvimento integrado (IDE) para o R. Inclui uma consola, um editor de código com realce para as funções de bases, bem como ferramentas para fazer gráficos, e análises estatísticas.\nO RStudio está disponível para descarregamento gratuito em Posit RStudio.\n\nWindows 10/11MacOS\n\n\nDownload RStudio 2024.04 e correr o ficheiro executável.\n\n\nDownload RStudio 2024.04 e instale-o como habitualmente."
+    "text": "2.2 RStudio\nO RStudio Desktop é um ambiente de desenvolvimento integrado (IDE) para o R. Inclui uma consola, um editor de código com realce para as funções de bases, bem como ferramentas para fazer gráficos, e análises estatísticas.\nO RStudio está disponível para descarregamento gratuito em Posit RStudio.\n\nWindows 10/11MacOS\n\n\nDownload RStudio 2024.09 e correr o ficheiro executável.\n\n\nDownload RStudio 2024.09 e instale-o como habitualmente."
   },
   {
     "objectID": "software.html#pacotes-de-r",
@@ -53,7 +53,7 @@
     "href": "software.html#java-development-kit",
     "title": "2  Software",
     "section": "2.4 Java Development Kit",
-    "text": "2.4 Java Development Kit\nPara utilizar o pacote {r5r} (versão v2.0 ou superior), é necessário ter o Java Development Kit (JDK) 21 instalado no computador. Existem inúmeras implementações de código aberto do JDK. A maneira mais fácil de instalar o JDK é usando o novo pacote {rJavaEnv} no R.\n\n# verificar a versão de Java atualmente instalada (se existir) \nrJavaEnv::java_check_version_rjava()\n\n## se esta for a primeira vez que utiliza {rJavaEnv}, poderá ter de executar\n## este código abaixo para consentir a instalação de Java\nrJavaEnv::rje_consent(provided = TRUE)\n\n# instalar Java 21\nrJavaEnv::java_quick_install(\n  version = 21,\n  distribution = 'Corretto')\n\n# verificar se o Java foi instalado com sucesso\nrJavaEnv::java_check_version_rjava()\n\nEm alternativa, pode transferir e instalar manualmente o JDK 21.\n\nWindows e MacOS\n\n\nAceda a Java Development Kit 21, transfira a última versão 21 correspondente ao seu sistema operativo e execute o ficheiro executável."
+    "text": "2.4 Java Development Kit\nPara utilizar o pacote {r5r} é necessário ter o Java Development Kit (JDK) 21 instalado no computador. Existem inúmeras implementações de código aberto do JDK. A maneira mais fácil de instalar o JDK é usando o novo pacote {rJavaEnv} no R.\n\n# verificar a versão de Java atualmente instalada (se existir) \nrJavaEnv::java_check_version_rjava()\n\n## se esta for a primeira vez que utiliza {rJavaEnv}, poderá ter de executar\n## este código abaixo para consentir a instalação de Java\nrJavaEnv::rje_consent(provided = TRUE)\n\n# instalar Java 21\nrJavaEnv::java_quick_install(\n  version = 21,\n  distribution = 'Corretto')\n\n# verificar se o Java foi instalado com sucesso\nrJavaEnv::java_check_version_rjava()\n\nEm alternativa, pode transferir e instalar manualmente o JDK 21.\n\nWindows e MacOS\n\n\nAceda a Java Development Kit 21, transfira a última versão 21 correspondente ao seu sistema operativo e execute o ficheiro executável."
   },
   {
     "objectID": "open-data.html#road-networks",
