@@ -7,5 +7,5 @@ Materiais e dados para as aulas de **Literacia sobre dados abertos em transporte
 ::: {.callout-note appearance="simple" icon="false"}
 ## Nota
 
-Este website é todo feito em R.
+Este website foi totalmente desenvolvido em R.
 :::
