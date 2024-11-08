@@ -20,7 +20,7 @@ A versão mais recente é a `4.4.2`, mas pode usar `>= 4.1.x` se já a tiver ins
 :::: {.panel-tabset .nav-pills}
 ### Windows
 
-[Download R-4.4.1 para Windows](https://cran.r-project.org/bin/windows/base/R-4.4.1-win.exe) e correr o ficheiro executável.
+[Download R-4.4.2 para Windows](https://cran.r-project.org/bin/windows/base/R-4.4.2-win.exe) e correr o ficheiro executável.
 
 ::: {.callout-important icon="false"}
 Deverá também instalar o [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html), que é uma coleção de ferramentas necessárias para construir pacotes R no Windows.\
@@ -29,8 +29,8 @@ Escolha o segundo link para processador ARM (mais recente), e o primeiro link ca
 
 ### Mac
 
-[Download R-4.4.1 para MacOX](https://cran.r-project.org/).
-Terá de escolher entre a versão arm64 ou a versão x86-64.
+[Download R-4.4.2 para MacOX](https://cran.r-project.org/bin/macosx/).
+Terá de escolher entre a versão *arm64* ou a versão *x86-64*.
 
 Transfira o ficheiro `.pkg` e instale-o como habitualmente.
 ::::
