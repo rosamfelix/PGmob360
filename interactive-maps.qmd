@@ -1,0 +1,105 @@
+---
+format:
+  pdf:
+    prefer-html: true
+---
+
+# Interactive maps
+
+You can plot a static map using `plof(sf)`, but you can also create interactive maps.
+
+```{r}
+#| eval: false
+#| include: false
+# data preparation
+library(sf)
+TRIPSgeo_mun = st_read("https://github.com/U-Shift/MQAT/raw/main/geo/TRIPSgeo_mun.gpkg")
+TRIPSgeo = TRIPSgeo_mun |> 
+  rename(Municipality = "Concelho") |> 
+  st_set_geometry("geometry")
+st_write(TRIPSgeo, "data/TRIPSgeo.gpkg", delete_dsn = TRUE)
+```
+
+```{r}
+#| message: false
+library(sf)
+TRIPSgeo = st_read("data/TRIPSgeo.gpkg")
+
+plot(TRIPSgeo)
+```
+
+Interactive maps are useful to explore the data, as you can zoom in and out, and click on the points to see the data associated with them.
+
+There are several R packages to create interactive maps.
+For instance, the `tmap` package, the `leaflet` package, and the `mapview` package.
+
+## Mapview
+
+Mapview allows to create quick interactive maps, only by declaring the function `mapview()`.
+
+```{r}
+#| fig-format: png
+library(mapview)
+mapview(TRIPSgeo)
+```
+
+To color the points by a variable, you can use the `zcol` argument.
+
+```{r}
+#| fig-format: png
+mapview(TRIPSgeo, zcol = "Total")
+```
+
+As you can see, a color palette is automatically assigned to the **continuous variable**.
+
+Try to use a **categorical variable**.
+
+```{r}
+#| eval: false
+#| code-fold: true
+mapview(TRIPSgeo,
+        zcol = "Municipality", # depending on the variable
+        alpha.regions = 0.4, # also add transparency
+        color = "white" # border color
+        ) 
+```
+
+::: {.callout-note appearance="simple"}
+Note that you can change the **basemap**, and click on the geometries to **see the data** associated with them.
+:::
+
+![](images/clipboard-3307189144.png){width="540"}
+
+You can go crazy with all the options that `mapview` offers.
+Please refer to the [documentation](https://r-spatial.github.io/mapview/articles/mapview_02-advanced.html) to see all the options.
+
+### Export
+
+You can directly export the map as an `html` file or image, using the Viewer panel.
+
+![](images/clipboard-3542861620.png){width="470"}
+
+::: {.callout-warning appearance="minimal" icon="false"}
+This is the most straightforward solution.
+:::
+
+You can also export a map as an html file or image using code.
+
+```{r}
+#| eval: false
+# install.packages("webshot2") # you will need this
+
+map = mapview(TRIPSgeo, zcol = "Total") # fisrt create a objet with the desired map
+
+mapshot2(map, "data/map.html") # as webpage
+mapshot2(map, file = "data/map.png") # as image
+```
+
+## Rmarkdown
+
+To include a map on a report, website, paper (any type), you can create an Rmarkdown file.
+
+![](images/clipboard-1842640045.png){width="388"}
+
+And include a R code chunk (`ctrl + alt + i`) with a map.
+If the output is html, you will get an interactive map on your document!

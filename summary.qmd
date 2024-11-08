@@ -1,7 +1,28 @@
-# Summary
+# Programa
 
-In summary, this book has no content whatsoever.
+## Literacia sobre dados abertos em transportes
 
-```{r}
-1 + 1
-```
+1.  Os dados abertos e as operadoras de mobilidade e transportes
+2.  Exemplos internacionais de análises com dados abertos
+3.  Introdução ao R
+4.  Importação e limpeza de dados de transportes em R
+5.  Análise espacial em R
+6.  Mapas interativos em R
+7.  Introdução ao GTFS
+8.  Fontes de dados GTFS e análise
+9.  Boas práticas de partilha e abertura de dados de mobilidade e transportes
+10. Exercício prático utilizando dados abertos
+
+## Horário
+
+As aulas decorrerão nos seguintes horários:
+
+-   Quinta-feira, 14 Novembro, 14h00-18h00
+
+-   Quarta-feira, 20 Novembro, 14h00-18h00
+
+-   Quinta-feira, 21 Novembro, 14h00-18h00
+
+## Zoom
+
+As aulas serão em modo remoto, via zoom, através do seguinte endereço: <https://videoconf-colibri.zoom.us/my/rosamfelix>

@@ -1,9 +1,11 @@
-# Preface {.unnumbered}
+# Introdução {.unnumbered}
 
-This is a Quarto book.
+Materiais e dados para as aulas de **Literacia sobre dados abertos em transportes**, módulo da Pós-Graduação Mobilidade 360º Gestão de Transportes do Iscte Executive Education.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+![](images/clipboard-209231891.png){fig-align="center"}
 
-```{r}
-1 + 1
-```
+::: {.callout-note appearance="simple" icon="false"}
+## Nota
+
+Este website é todo feito em R.
+:::

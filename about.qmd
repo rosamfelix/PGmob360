@@ -1,0 +1,21 @@
+# Sobre {.unnumbered}
+
+## Rosa Félix {.unnumbered}
+
+*Investigadora Senior e Professora convidada*\
+CERIS, Instituto Superior Técnico - Universidade de Lisboa\
+[Website](#0) \| [Google Scholar](#0) \| [Twitter](#0) \| [GitHub](#0) \| [Linkedin](#0)
+
+**Short bio**
+
+Rosa Félix é investigadora sénior de pós-doutoramento no Instituto Superior Técnico - Universidade de Lisboa e membro do [laboratório U-Shift](https://ushift.tecnico.ulisboa.pt), no Grupo de Investigação em Transportes do [CERIS](https://ceris.pt).
+Com formação em Engenharia de Planeamento Urbano, concluiu o doutoramento em Sistemas de Transportes em 2019 no Instituto Superior Técnico (programa MIT Portugal), e foi Visiting Scholar na Portland State University em 2017/18.
+
+Rosa é uma investigadora na área da mobilidade ativa, e distingue-se em R e GIS.
+É uma entusiasta da utilização de código aberto e investigação reproduzível.
+As suas publicações incluem artigos sobre utilização da bicicleta e mudança de comportamentos, e soluções de código aberto para problemas específicos de SIG e mobilidade.
+Todos os anos, Rosa lecciona um curso de planeamento e conceção de infra-estruturas cicláveis para profissionais, e também ensina SIG para Transportes e Introdução à programação no Mestrado em Sistemas de Transportes.
+
+Rosa tem trabalhado em múltiplos projetos de I&D e consultoria com municípios e indústria, como a Câmara Municipal de Lisboa (2019-2022) e a Transportes Metropolitanos de Lisboa (2023), no qual desenvolveu uma ferramenta digital para apoiar o planeamento da rede ciclável metropolitana, o [*biclaR*](https://biclar.tmlmobilidade.pt), em colaboração com o Institute for Transport Studies da Universidade de Leeds.
+
+![](images/rosa_greencap2000.jpg){fig-align="center" width="370"}

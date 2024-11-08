@@ -1,0 +1,168 @@
+# Introduction to spatial data
+
+Spatial data is **data that is associated with a geometry**.
+This geometry can be a point, a line, a polygon, or a grid.
+
+Spatial data can be represented in many ways, such as vector data and raster data.
+In this tutorial, we will learn how to work with spatial data in R.
+
+We will use the `sf` package to work with vector data, and the `dplyr` package to manipulate data.
+
+```{r}
+#| message: false
+library(sf)
+library(dplyr)
+```
+
+```{r}
+#| include: false
+#| eval: false
+# data preparation
+Municipalities_geo = st_read("data/TRIPSgeo.gpkg")
+Municipalities_geo = Municipalities_geo |> 
+  select(Municipality, geom)
+st_write(Municipalities_geo, "data/Municipalities_geo.gpkg")
+
+TRIPSgeo = st_read("data/TRIPSgeo.gpkg")
+TRIPSmun = TRIPSgeo |> 
+  st_drop_geometry()
+saveRDS(TRIPSmun, "data/TRIPSmun.Rds")
+```
+
+The `sf` package is a powerful package for working with spatial data in R.
+It includes hundreds of [functions](https://r-spatial.github.io/sf/reference/index.html) to deal with spatial data [@sf].
+
+## Import vector data
+
+Download and open `Municipalities_geo.gpkg` under [EITcourse/data](https://github.com/U-Shift/EITcourse/tree/main/data) repository.
+
+Within the `sf` package, we use the `st_read()` to read spatial features.
+
+```{r}
+#| message: false
+Municipalities_geo = st_read("data/Municipalities_geo.gpkg")
+```
+
+::: {.callout-tip appearance="simple"}
+You can also open directly from url from github.
+Example:
+
+`url = "https://github.com/U-Shift/EITcourse/raw/main/data/Municipalities_geo.gpkg"`
+`Municipalities_geo = st_read(url)`
+:::
+
+### Projected vs Geographic Coordinate Systems
+
+A **projected coordinate system** is a flat representation of the Earth's surface.
+A **geographic coordinate system** is a spherical representation of the Earth's surface.
+
+![Source: ESRI](images/clipboard-1233124217.png){fig-align="center"}
+
+The `st_crs()` function can be used to check the **coordinate reference system** of a spatial object.
+
+```{r}
+st_crs(Municipalities_geo)
+```
+
+WGS84 is the most common geographic coordinate system, used in GPS, and [EPSG:**4326**](https://epsg.io/4326) is code for it.
+
+If we want to project the data to a projected coordinate system, to use **metric units** instead of degrees, we can use the `st_transform()` function.
+
+In this case, the [EPGS:**3857**](https://epsg.io/3857) is the code for the Pseudo-Mercator coordinate system.
+
+```{r}
+#| eval: false
+Municipalities_projected = st_transform(Municipalities_geo, crs = 3857)
+```
+
+Now see the differences when calling `Municipalities_geo` and `Municipalities_projected.`
+
+## Join geometries to data frames
+
+Import `TRIPSmun.Rds` file and check data class-
+
+```{r}
+TRIPSmun = readRDS("data/TRIPSmun.Rds")
+class(TRIPSmun)
+class(Municipalities_geo)
+```
+
+To join the geometries from the `Municipalities_geo` to the data frame, we can use the `left_join()` function from the `dplyr` package.
+
+```{r}
+#| message: false
+TRIPSgeo =
+  TRIPSmun |> 
+  left_join(Municipalities_geo)
+
+class(TRIPSgeo)
+```
+
+As you can see, this **does not make the object a spatial feature**.
+To do this, we need to use the `st_as_sf()` function.
+
+```{r}
+TRIPSgeo = TRIPSgeo |> st_as_sf()
+class(TRIPSgeo)
+```
+
+Now we have a spatial feature with the data frame.
+
+## Create spatial data from coordinates
+
+The `st_as_sf()` function can also be used to create a spatial feature from a data frame with coordinates.
+In that case, we need to specify the columns with the coordinates.
+
+We will use survey data (in `.txt`) with the participants' home latitude/longitude coordinates to create a spatial feature.
+
+```{r}
+SURVEY = read.csv("data/SURVEY.txt", sep = "\t") # tab delimiter
+class(SURVEY)
+
+SURVEYgeo = st_as_sf(SURVEY, coords = c("lon", "lat"), crs = 4326) # create spatial feature
+class(SURVEYgeo)
+```
+
+We can also set the **crs** of the spatial feature on the fly.
+
+Check the differences between both data variables.
+
+## Visuzlize spatial data
+
+Represent Transport Zones with Total and Car, using `plot()`.
+
+```{r}
+plot(TRIPSgeo) # all variables
+
+plot(TRIPSgeo["Municipality"])
+
+plot(TRIPSgeo["Total"])
+
+plot(TRIPSgeo["Car"])
+
+
+# plot pointy data
+plot(SURVEYgeo)
+```
+
+::: {.callout-note appearance="simple"}
+In the next chapter we will learn how to create interactive maps.
+:::
+
+## Export spatial data
+
+You can save your spatial data in different formats using the function `st_write()`, such as shapefiles (ESRI), GeoJSON, and GeoPackage.
+
+This is also useful to convert spatial data between formats.
+
+```{r}
+#| eval: false
+st_write(TRIPSgeo, "data/TRIPSgeo.gpkg") # as geopackage
+st_write(TRIPSgeo, "data/TRIPSgeo.shp") # as shapefile
+st_write(TRIPSgeo, "data/TRIPSgeo.geojson") # as geojson
+st_write(TRIPSgeo, "data/TRIPSgeo.csv", layer_options = "GEOMETRY=AS_WKT") # as csv, with WKT geometry
+```
+
+::: {.callout-warning appearance="simple"}
+If you already have a file with the same name, you can use the `delete_dns = TRUE` argument to overwrite it.
+:::

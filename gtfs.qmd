@@ -1,0 +1,35 @@
+---
+# title: "GTFS"
+---
+
+### GTFS
+
+General Transit Feed Specification (GTFS) is [standard format](https://developers.google.com/transit/gtfs/reference) for documenting public transportation information, including: routes, schedules, stop locations, calendar patterns, trips, and possible transfers.
+Transit agencies are responsible for maintaining the data up-to-date.
+
+This information is used in several applications, such as Google Maps, to provide public transportation directions.
+It can be offered for a city, a region, or even a whole country, depending on the PT agency.
+
+The recent version 2 of the GTFS standard includes more information, such as **real-time data**.
+
+The data is usually in a `.zip` file that includes several `.txt` files (one for each type of information) with tabular relations.
+
+![Source: [trilliumtransit.com](https://trilliumtransit.com/2016/07/05/gtfs-examples/)](images/clipboard-2676687965.png){alt="Source: trilliumtransit.com" fig-align="center" width="493"}
+
+## Online sources
+
+You can find most GTFS data in the following websites:
+
+-   [TransitLand](https://www.transit.land)
+-   [TransitFeeds](https://transitfeeds.com/)
+
+Some PT agencies also provide their open-data in their websites.
+
+## R packages
+
+There are some nice R packages to read and manipulate GTFS data, such as:
+
+-   [`tidytransit`](https://r-transit.github.io/tidytransit/)
+-   [`gtfstools`](https://ipeagit.github.io/gtfstools/)
+
+Be aware that they may share the same function names, so it is important to use of of them at the time.
