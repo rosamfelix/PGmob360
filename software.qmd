@@ -48,11 +48,11 @@ O RStudio está disponível para descarregamento gratuito em [Posit RStudio](htt
 ::: {.panel-tabset .nav-pills}
 ### Windows 10/11
 
-[Download RStudio 2024.04](https://download1.rstudio.org/electron/windows/RStudio-2024.04.2-764.exe) e correr o ficheiro executável.
+[Download RStudio 2024.09](https://download1.rstudio.org/electron/windows/RStudio-2024.09.1-394.exe) e correr o ficheiro executável.
 
 ### MacOS
 
-[Download RStudio 2024.04](https://download1.rstudio.org/electron/macos/RStudio-2024.04.2-764.dmg) e instale-o como habitualmente.
+[Download RStudio 2024.09](https://download1.rstudio.org/electron/macos/RStudio-2024.09.1-394.dmg) e instale-o como habitualmente.
 :::
 
 ## Pacotes de R
@@ -84,7 +84,7 @@ install.packages("stplanr") # opcional
 
 ## Java Development Kit
 
-Para utilizar o pacote `{r5r}` (versão v2.0 ou superior), é necessário ter o *Java Development Kit (JDK) 21* instalado no computador.
+Para utilizar o pacote `{r5r}` é necessário ter o *Java Development Kit (JDK) 21* instalado no computador.
 Existem inúmeras implementações de código aberto do JDK.
 A maneira mais fácil de instalar o JDK é usando o novo pacote [{rJavaEnv}](https://www.ekotov.pro/rJavaEnv/) no R.
 
