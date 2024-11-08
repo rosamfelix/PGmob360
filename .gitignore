@@ -50,3 +50,7 @@ rsconnect/
 
 # User data
 slides/
+
+# quarto
+/.quarto/
+_book/
