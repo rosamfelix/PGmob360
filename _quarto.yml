@@ -1,8 +1,9 @@
 project:
   type: book
+  lang: pt
 
 book:
-  title: "PGmob360"
+  title: "PG Mobilidade 360"
   author: "Rosa Félix"
   date: today
   chapters:
