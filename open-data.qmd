@@ -57,7 +57,7 @@ Esta ferramenta interactiva ajuda-o a selecionar a **área** dos dados que prete
 
 Aceder em [export.hotosm.org](https://export.hotosm.org/)[^open-data-1].
 
-[^open-data-1]: You need an OSM account to use it.
+[^open-data-1]: É necessário ter uma conta OSM para usar.
 
 ![](images/clipboard-4146913937.png)
 
