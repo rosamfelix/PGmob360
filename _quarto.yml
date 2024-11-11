@@ -11,7 +11,7 @@ book:
      url: http://www.rosafelix.bike
      orcid: 0000-0002-5642-6006
      affiliation: "Instituto Superior Técnico - Universidade de Lisboa"
-  date: today
+  # date: today
   repo-url: https://github.com/temospena/PGmob360
   chapters:
     - index.qmd

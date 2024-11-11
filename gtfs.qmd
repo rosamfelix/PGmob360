@@ -14,7 +14,7 @@ The recent version 2 of the GTFS standard includes more information, such as **r
 
 The data is usually in a `.zip` file that includes several `.txt` files (one for each type of information) with tabular relations.
 
-![Source: [trilliumtransit.com](https://trilliumtransit.com/2016/07/05/gtfs-examples/)](images/clipboard-2676687965.png){alt="Source: trilliumtransit.com" fig-align="center" width="493"}
+![Source: trilliumtransit.com](images/clipboard-2676687965.png){fig-align="center" width="493"}
 
 ## Online sources
 

@@ -6,41 +6,63 @@ format:
 
 # Dados Abertos em transportes
 
-In this chapter we will guide you through sources of open data for transportation analysis: road networks and public transportation information.
+Neste capítulo, vamos guiá-lo através das fontes de dados abertos para a análise dos transportes: redes rodoviárias e informações sobre os transportes públicos.
 
-## Road Networks
+## Redes Viárias
 
 ### OpenStreetMap
 
-The OpenStreetMap is a collaborative online mapping project that creates a free editable map of the world.
+O OpenStreetMap é um projeto colaborativo de cartografia online com um mapa do mundo editável e gratuito.
 
-This is the most used source of road network data for transportation analysis in academia, since it is available almost **everywhere in the world**, is open and free to use.
+Esta é a fonte de dados da rede rodoviária mais utilizada para a análise dos transportes, no mundo académico, uma vez que a informação está disponível em quase **todo o mundo**, é aberta e de utilização gratuita.
 
 ::: {.callout-caution appearance="simple"}
-Although it can be not 100% accurate, OSM is a good source of data for most of the cases.
+Embora possa não ser 100% correrto, o OSM é uma boa fonte de dados para a maioria dos casos.
 :::
 
-You can access it's visualization tool at [www.openstreetmap.org](https://www.openstreetmap.org/).
-To edit the map, you can use the [Editor](https://www.openstreetmap.org/edit), once you register.
+Pode aceder à sua visualização em [www.openstreetmap.org](https://www.openstreetmap.org/).
+Para editar o mapa, pode utilizar o [Editor](https://www.openstreetmap.org/edit), depois de se registar (gratuitamente).
 
-If you want to **download** the data, you can use the following tools.
+![](images/clipboard-981329712.png)
+
+A introdução ou alteração de informações e elementos cartográficos tem sido feita colaborativamente por pessoas voluntárias, normalmente conhecedoras daqueles espaços.
+No entanto, uma entidade oficial (ex. Câmara Municipal) pode solicitar apoio da **comunidade OSM local** para introdução ou atualização de informação, como já tem sido feito.
+Estas comunidades normalmente estão também disponíveis para realizar formações de edição em OpenStreetMap, de modo a conferir autonomia às organizações.
+
+O OpenStreetMap oferece um tutorial (sandbox) para adicionar pontos, editar polígonos e linhas, e alterar atributos dos elementos do mapa.
+
+[![Fonte: https://wiki.openstreetmap.org/wiki/ID_editor_walkthrough](images/clipboard-3702075306.png)](https://wiki.openstreetmap.org/wiki/ID_editor_walkthrough)
+
+::: callout-tip
+#### TPC
+
+1.  Registar uma conta no OpenStreetMap
+2.  Fazer o *Walkthrough* (guia inicial) para edição de:
+    -   Pontos
+    -   Linhas
+    -   Edifícios
+:::
+
+Se pretender fazer **download** dos dados, pode utilizar as seguintes ferramentas:
 
 -   [Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API)
 -   [Geofabrik](https://download.geofabrik.de/)
 
-These websites include all the OSM data, with **much more information than you need**.
+Estes websites incluem todos os dados do OSM, mas com **muito mais informações do que as necessárias**.
 
 ### HOT Export Tool
 
-This interactive tool helps you to select the **region** you want to extract, the type of **information** to include, and the output data **format**.
+Esta ferramenta interactiva ajuda-o a selecionar a **área** dos dados que pretende extrair, o tipo de **informação** a incluir e o **formato** dos dados de saída.
+É muito útil!
 
-Access via [export.hotosm.org](https://export.hotosm.org/)[^open-data-1].
+Aceder em [export.hotosm.org](https://export.hotosm.org/)[^open-data-1].
 
 [^open-data-1]: You need an OSM account to use it.
 
 ![](images/clipboard-4146913937.png)
 
-After the export, you can read in R using the `sf` package:
+Após a exportação, pode ler os dados em R utilizando o pacote `sf`.
+Por exemplo:
 
 ```{r}
 #| fig-format: png
@@ -49,14 +71,16 @@ Lisboa = sf::st_read("data/Lisboa_sample.geojson", quiet = TRUE)
 mapview::mapview(Lisboa, zcol = "highway")
 ```
 
-### OSM in R
+Ou abrir em qualquer Sistema de Informação Geográfica (QGis, ArcGIS, etc).
 
-There are also some R packages that can help you to download and work with OpenStreetMap data, such as:
+### OSM em R
+
+Existem também alguns pacotes R que podem ajudar a descarregar e trabalhar com os dados do OpenStreetMap, tais como:
 
 -   [`osmdata`](https://cran.r-project.org/web/packages/osmdata/index.html)
 -   [`osmextract`](https://docs.ropensci.org/osmextract)
 
-This is an example of how to download OpenStreetMap road network data using the `osmextract` package:
+Exemplo de como descarregar dados da rede rodoviária do OpenStreetMap utilizando o pacote `osmextract`:
 
 ```{r}
 #| eval: false
@@ -71,15 +95,27 @@ plot(Malta_main_roads["highway"])
 
 ![](images/malta_roads.png){fig-align="center"}
 
-## Transportation Services' Data
+## Dados de Serviços de Transporte
 
-### National Access Points
+### Pontos de Acesso Nacionais (NAP)
 
-The European Union has a directive that requires the member states to provide access to transportation data.
-Data includes not only **Public Transportation** data, but also **road network**s, car **parking**, and other transportation-related information.
+A diretiva ITS da Comissão Europeia (2010/40/EU) recomenda aos Estados-Membros que forneçam acesso a dados sobre transportes, de acordo com os stardards definidos pela CE.
+Os dados incluem não só dados sobre **transportes públicos**, mas também **redes rodoviárias**, parques de **estacionamento** e outras informações relacionadas com transportes.
 
 [List of the European Union members states with National Access Points for Transportation data](https://transport.ec.europa.eu/transport-themes/smart-mobility/road/its-directive-and-action-plan/national-access-points_en)
 
-Example of Bus services data in Belgium:
+Exemplo dos dados de serviços de autocarro na Bélgica:
 
-[![Source: Transport Data Belgium](images/clipboard-3645209787.png)](https://www.transportdata.be/en/dataset?tags=Bus)
+[![Fonte: Transport Data Belgium](images/clipboard-3645209787.png)](https://www.transportdata.be/en/dataset?tags=Bus)
+
+Em Portugal, o NAP encontra-se em [https://nap-portugal.imt-ip.pt](https://nap-portugal.imt-ip.pt/nap/home)
+
+[![](images/clipboard-1939004073.png)](https://nap-portugal.imt-ip.pt/nap/home)
+
+::: callout-tip
+#### TPC
+
+1.  Encontrar os dados dos parques de estacionamento municipais do Porto.
+
+2.  Encontrar e descarregar os dados GTFS da Carris Metropolitana
+:::
