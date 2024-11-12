@@ -27,15 +27,23 @@ TRIPS = TRIPSmode |>
   rename(origin = Origin,
          dest = Destination,
          count = Total) |> 
-  select(origin, dest, count)
+  select(origin, dest, count) |> 
+  mutate(count = as.integer(count))
 
 TRIPS$origin[TRIPS$origin == "Vila Franca de Xira"] = "VFX"
+TRIPS$dest[TRIPS$dest == "Vila Franca de Xira"] = "VFX"
+TRIPS$origin[TRIPS$origin == "Setúbal"] = "Setubal"
 TRIPS$dest[TRIPS$dest == "Setúbal"] = "Setubal"
+
+TRIPS_complete = TRIPS |> 
+  fastDummies::dummy_rows()
+
+TRIPS_complete[is.na(TRIPS_complete)] = 0
 
 # plot the flow map
 flowmap <- flowmapblue(
   locations = CENTROIDS,
-  flows = TRIPS,
+  flows = TRIPS_complete,
   mapboxAccessToken = Sys.getenv('MAPBOX_PUBLIC_TOKEN'),
   clustering = TRUE,
   darkMode = TRUE,
@@ -45,7 +53,8 @@ flowmap
 # Oops… Sorry, but something went wrong.
 
 
-
+write.csv(TRIPS_complete, "original/flows.csv", row.names = F, quote = F)
+write.csv(CENTROIDS, "original/locations.csv", row.names = F, quote = F)
 
 
 
