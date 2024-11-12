@@ -1,4 +1,4 @@
-# Programa
+# Planeamento
 
 ## Literacia sobre dados abertos em transportes
 
@@ -25,4 +25,5 @@ As aulas decorrerão nos seguintes horários:
 
 ## Zoom
 
-As aulas serão em modo remoto, via zoom, através do seguinte endereço: <https://videoconf-colibri.zoom.us/my/rosamfelix>
+As aulas serão em modo remoto, via zoom, através do seguinte endereço:\
+<https://videoconf-colibri.zoom.us/my/rosamfelix>

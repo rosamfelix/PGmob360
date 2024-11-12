@@ -1,4 +1,4 @@
-# Introdução {.unnumbered}
+# Início {.unnumbered}
 
 Materiais e dados para as aulas de **Literacia sobre dados abertos em transportes**, módulo da Pós-Graduação Mobilidade 360º Gestão de Transportes do Iscte Executive Education.
 
