@@ -50,6 +50,7 @@ rsconnect/
 
 # User data
 slides/
+original/
 
 # quarto
 /.quarto/
