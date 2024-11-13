@@ -1,4 +1,5 @@
 ---
+code-fold: false
 format:
   pdf:
     prefer-html: true
@@ -25,7 +26,18 @@ st_write(TRIPSgeo, "data/TRIPSgeo.gpkg", delete_dsn = TRUE)
 library(sf)
 TRIPSgeo = st_read("data/TRIPSgeo.gpkg")
 
-plot(TRIPSgeo)
+plot(TRIPSgeo) # todas as variáveis
+```
+
+```{r}
+#| eval: false
+
+# uma de cada vez
+plot(TRIPSgeo["Municipality"])
+
+plot(TRIPSgeo["Total"])
+
+plot(TRIPSgeo["Car"])
 ```
 
 Os mapas interactivos são úteis para explorar os dados, uma vez que é possível aumentar e diminuir o zoom e clicar nos pontos para ver os dados a eles associados.

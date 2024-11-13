@@ -1,4 +1,5 @@
 ---
+code-fold: false
 format:
   pdf:
     prefer-html: true
