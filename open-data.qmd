@@ -6,98 +6,30 @@ format:
 
 # Dados Abertos em transportes
 
+A União Europeia [define Dados Abertos](https://data.europa.eu/pt/dataeuropa-academy/what-open-data) como:
+
+> Os dados abertos (da administração) são as informações que os **organismos públicos** recolhem, produzem ou compram (também chamadas informações do setor público) e disponibilizam a **título gratuito** tendo em vista a sua reutilização para qualquer fim.
+> A licença estabelece as condições de utilização.
+> Os princípios que regem os dados abertos são descritos pormenorizadamente na [Definição de Conhecimento Aberto](http://opendefinition.org/).
+>
+> As **vantagens** dos dados abertos são múltiplas e podem ir dos ganhos de eficiência das administrações públicas ao crescimento económico do setor privado passando pelo bem-estar-social em sentido lato.
+
+Outras vantagens e benefícios da partilha de dados são:
+
+-   Transparência e responsabilização, escrutínio democrático;
+-   Instituições mais eficientes e eficazes, procura e acesso a dados mais facilitadas, interoperabilidade de sistemas;
+-   Maior credibilidade das decisões
+-   Políticas públicas mais informadas, esclarecidas e sustentadas;
+-   Respostas mais rápidas e adequadas a contextos de crise;
+-   Desenvolvimento económico.
+
+A União Europeia estima que o valor económico da partilha e utilização de dados abertos chegue a 194 mil milhões € em 2030.
+
 Neste capítulo, vamos guiá-lo através das fontes de dados abertos para a análise dos transportes: redes rodoviárias e informações sobre os transportes públicos.
 
-## Redes Viárias
+## Pontos de Acesso Nacionais (NAP)
 
-### OpenStreetMap
-
-O OpenStreetMap é um projeto colaborativo de cartografia online com um mapa do mundo editável e gratuito.
-
-Esta é a fonte de dados da rede rodoviária mais utilizada para a análise dos transportes, no mundo académico, uma vez que a informação está disponível em quase **todo o mundo**, é aberta e de utilização gratuita.
-
-::: {.callout-caution appearance="simple"}
-Embora possa não ser 100% correrto, o OSM é uma boa fonte de dados para a maioria dos casos.
-:::
-
-Pode aceder à sua visualização em [www.openstreetmap.org](https://www.openstreetmap.org/).
-Para editar o mapa, pode utilizar o [Editor](https://www.openstreetmap.org/edit), depois de se registar (gratuitamente).
-
-![](images/clipboard-981329712.png)
-
-A introdução ou alteração de informações e elementos cartográficos tem sido feita colaborativamente por pessoas voluntárias, normalmente conhecedoras daqueles espaços.
-No entanto, uma entidade oficial (ex. Câmara Municipal) pode solicitar apoio da **comunidade OSM local** para introdução ou atualização de informação, como já tem sido feito.
-Estas comunidades normalmente estão também disponíveis para realizar formações de edição em OpenStreetMap, de modo a conferir autonomia às organizações.
-
-O OpenStreetMap oferece um tutorial (sandbox) para adicionar pontos, editar polígonos e linhas, e alterar atributos dos elementos do mapa.
-
-[![Fonte: https://wiki.openstreetmap.org/wiki/ID_editor_walkthrough](images/clipboard-3702075306.png)](https://wiki.openstreetmap.org/wiki/ID_editor_walkthrough)
-
-::: callout-tip
-#### TPC
-
-1.  Registar uma conta no OpenStreetMap
-2.  Fazer o *Walkthrough* (guia inicial) para edição de:
-    -   Pontos
-    -   Linhas
-    -   Edifícios
-:::
-
-Se pretender fazer **download** dos dados, pode utilizar as seguintes ferramentas:
-
--   [Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API)
--   [Geofabrik](https://download.geofabrik.de/)
-
-Estes websites incluem todos os dados do OSM, mas com **muito mais informações do que as necessárias**.
-
-### HOT Export Tool
-
-Esta ferramenta interactiva ajuda-o a selecionar a **área** dos dados que pretende extrair, o tipo de **informação** a incluir e o **formato** dos dados de saída.
-É muito útil!
-
-Aceder em [export.hotosm.org](https://export.hotosm.org/)[^open-data-1].
-
-[^open-data-1]: É necessário ter uma conta OSM para usar.
-
-![](images/clipboard-4146913937.png)
-
-Após a exportação, pode ler os dados em R utilizando o pacote `sf`.
-Por exemplo:
-
-```{r}
-#| fig-format: png
-Lisboa = sf::st_read("data/Lisboa_sample.geojson", quiet = TRUE)
-
-mapview::mapview(Lisboa, zcol = "highway")
-```
-
-Ou abrir em qualquer Sistema de Informação Geográfica (QGis, ArcGIS, etc).
-
-### OSM em R
-
-Existem também alguns pacotes R que podem ajudar a descarregar e trabalhar com os dados do OpenStreetMap, tais como:
-
--   [`osmdata`](https://cran.r-project.org/web/packages/osmdata/index.html)
--   [`osmextract`](https://docs.ropensci.org/osmextract)
-
-Exemplo de como descarregar dados da rede rodoviária do OpenStreetMap utilizando o pacote `osmextract`:
-
-```{r}
-#| eval: false
-library(osmextract)
-OSM_Malta = oe_get_network(place = "Malta") # it will geocode the place
-
-Malta_main_roads = OSM_Malta |> 
-  filter(highway %in% c("primary", "secondary", "tertiary", "trunk"))
-
-plot(Malta_main_roads["highway"])
-```
-
-![](images/malta_roads.png){fig-align="center"}
-
-## Dados de Serviços de Transporte
-
-### Pontos de Acesso Nacionais (NAP)
+### União Europeia
 
 A diretiva ITS da Comissão Europeia (2010/40/EU) recomenda aos Estados-Membros que forneçam acesso a dados sobre transportes, de acordo com os stardards definidos pela CE.
 Os dados incluem não só dados sobre **transportes públicos**, mas também **redes rodoviárias**, parques de **estacionamento** e outras informações relacionadas com transportes.
@@ -107,6 +39,10 @@ Os dados incluem não só dados sobre **transportes públicos**, mas também **r
 Exemplo dos dados de serviços de autocarro na Bélgica:
 
 [![Fonte: Transport Data Belgium](images/clipboard-3645209787.png)](https://www.transportdata.be/en/dataset?tags=Bus)
+
+### Portugal
+
+#### NAP
 
 Em Portugal, o NAP encontra-se em [https://nap-portugal.imt-ip.pt](https://nap-portugal.imt-ip.pt/nap/home)
 
@@ -118,4 +54,155 @@ Em Portugal, o NAP encontra-se em [https://nap-portugal.imt-ip.pt](https://nap-p
 1.  Encontrar os dados dos parques de estacionamento municipais do Porto.
 
 2.  Encontrar e descarregar os dados GTFS da Carris Metropolitana
+:::
+
+#### Portal de dados abertos
+
+O portal [**dados.gov.pt**](https://dados.gov.pt/pt/) é a plataforma oficial nacional de partilha de dados institucionais.
+
+Alguns websites de dados abertos de municípios também incluem dados de mobilidade e transportes, como é o caso de:
+
+-   [Dados Abertos da Câmara Municipal de Lisboa](https://dadosabertos.cm-lisboa.pt/)
+
+-   [Dados Abertos da Câmara Municipal de Cascais](https://data.cascais.pt/geral/data-hub/dados-abertos)
+
+-   [Dados Abertos da Câmara Municipal de Oeiras](https://oeirasinterativa.oeiras.pt/dadosabertos/dataset/)
+
+-   [Dados Abertos da Câmara Municipal do Porto](https://opendata.porto.digital/)
+
+[![Fonte: data.cascais.pt](images/clipboard-3490448273.png)](https://data.cascais.pt/geral/data-hub/dados-abertos)
+
+Cada vez mais, os dados de transporte disponibilizados estão **georreferenciados** - i.e., é possível serem visualizados num mapa.
+
+Algumas instituições permitem o **download** dos dados, e outros apenas a **visualização** dos mesmos em mapas ou dashboards **interativas**.
+
+As boas práticas recomendam que os dados venham acompanhados de metadados, que incluem toda a informação relevante sobre os dados (ex: explicação dos acrónimos de variáveis usadas).
+
+Outras informações que acompanham os dados abertos são:
+
+-   Descrição
+-   Formato
+-   Período temporal
+-   Versão
+-   Data da última atualização
+-   Responsável pela manutenção dos dados e contacto
+
+![Exemplo de informação complementar de dados de Praças de Táxis (Cascais)](images/clipboard-279399363.png){width="470"}
+
+**Dados de operação** (passageiros, bilhética, volumes de tráfego, entre outros) normalmente não são disponibilizados ao público.
+
+Por vezes, alguma dessa informação é incluída, de forma agregada, nos relatórios anuais de sustentabilidade das operadoras.
+
+::: {.callout-caution appearance="simple"}
+#### Questão
+
+Enumere motivos para este tipo de dados não ser, normalmente, de acesso aberto.
+:::
+
+## Boas práticas de dados abertos
+
+O [Open Data Institute](https://theodi.org/insights/guides/) publica vários **guias de boas práticas** de partilha e uso de dados abertos, tais como validação de veracidade dos dados, anonimização de dados, avaliação dos riscos de partilha de dados, ética e responsabilidade, estimativa do valor dos dados partilhados, entre outros.
+
+Os dados abertos são publicados sob [licenças específicas](https://opendatacommons.org/licenses/), não incluem **dados pessoais**, informação sensível e/ou confidencial.
+
+Algumas questões devem ser consideradas ao **usar** um conjunto de dados abertos [@checklist]:
+
+**Formato**
+
+-   Como foram processados os dados?
+-   Estão em estado bruto (*raw*) ou foram processados?
+-   De que modo o seu formato (e granularidade) irá afetar a sua análise/produto/aplicação?
+-   Que transformações sintáticas (linguagem) e semânticas (significado) serão necessárias?
+-   Estes dados são compatíveis com outros conjuntos de dados de que dispõe?
+
+**Qualidade**
+
+-   Até que ponto os dados são atuais?
+-   Com que frequência são atualizados?
+-   Compreende todos os campos e o seu contexto?
+-   Durante quanto tempo serão publicados? Qual é o compromisso com o publicador?
+-   O que sabe sobre a exatidão dos dados?
+-   Como são tratados os dados omissos?
+
+Alguns dados abertos fornecem um [**API**](https://dados.gov.pt/pt/docapi/) (Application Programming Interface) para que se possa automativamente chamar os dados mais autualizados disponíveis.
+
+### Tutoriais
+
+O ISCTE, no âmbito do [Plano Nacional de Administração Aberta](https://ogp.eportugal.gov.pt/), criou um [conjunto de vídeos tutoriais](https://online-learning.iscte-iul.pt/bo/courses/plano-nacional-de-acao-de-administracao-aberta-pt) sobre algumas possibilidades da reutilização de dados, utilizando o R.
+
+[![Curso gratuito sobre a utilização de plataformas de dados abertos (Português), do ISCTE](images/clipboard-935508586.png)](https://online-learning.iscte-iul.pt/bo/courses/plano-nacional-de-acao-de-administracao-aberta-pt)
+
+A AMA - Agência para a Modernização Administrativa disponibiliza também alguns vídeos sobre como usar o portal de dados abertos.
+Chamo a atenção para o "**Como publicar dados abertos**", acessível a qualquer entidade.
+
+{{< video https://youtu.be/G7-qftX_org >}}
+
+### Reutilização de dados abertos
+
+Qualquer pessoa ou entidade pode aceder a dados abertos (por definição).
+É recomendado, como boa prática, a **partilha dos resultados** que se obtiveram com a utilização de um conjunto de dados abertos.
+Tal permite inspirar outros utilizadores dos dados, bem como dar conhecimento à entidade que os partilhou trabalhos que podem ser realizados com esses dados - levando muitas vezes à descoberta de novas prespetivas sobre os dados.
+
+As reutilizações documentadas muitas vezes também partilham o **código utilizado** para tratamento e análise do conjunto de dados, permitindo a sua **replicabilidade** e adaptação / aplicação a **outros contextos**.
+
+Exemplos de trabalhos realizados por reutilização de dados abertos:
+
+#### [Dados.gov.pt](https://dados.gov.pt/pt/reuses/)
+
+[![](images/clipboard-295963906.png)](https://dados.gov.pt/pt/reuses/)
+
+#### [LxDataLab](https://lisboaaberta.cm-lisboa.pt/index.php/pt/lx-data-lab/resultados)
+
+[![Resultados de um desafio LxDataLab](images/clipboard-4030091193.png)](https://lisboaaberta.cm-lisboa.pt/index.php/pt/lx-data-lab/resultados)
+
+## Exemplos internacionais
+
+### STATS19
+
+O Departamento de Transportes do Reino Unido (DfT) mantém uma importante base de dados com acidentes e colisões rodoviárias para todo o território - o [STATS19](https://www.data.gov.uk/dataset/25170a92-0736-4090-baea-bf6add82d118/gm-road-casualty-accidents-full-stats19-data), contendo dados uniformizados desde 1926 (centenas de milhares), que têm vindo a ser registados pela Polícia.
+
+Esta base de dados abertos é amplamente usada para definição de políticas públicas de segurança rodviária, e na academia, com a elaboração de vários dashbors e estudos que utilizam os dados.
+Exemplo:
+
+-   [Interactive dashboard](https://maps.dft.gov.uk/road-casualties/index.html)
+
+-   [Collision map](https://www.collisionmap.uk/)
+
+-   [Vision Zero public map](https://vzsw.traffweb.app/traffweb/1/PublicMap)
+
+-   [Bikedata](https://bikedata.cyclestreets.net/) - Compilação de vários dados de mobilidade urbana, incluindo colisões por tipo, contagens de tráfego.
+    Os dados podem ser filtrados e exportados.
+
+-   [stats19](https://itsleeds.github.io/stats19/) - Pacote R com todos os dados pré-tratados.
+
+[![Collision Map em Leeds (UK)](images/clipboard-2645254310.png)](https://www.collisionmap.uk/gb_las/E08000035/Leeds)
+
+[![Bikedata: compilação de vários dados relativos à circulação em bicicicleta](images/clipboard-2443435340.png)](https://bikedata.cyclestreets.net/)
+
+[![Painel interativo do DfT para os dados de acidentes rodoviários](images/clipboard-3456343079.png)](https://maps.dft.gov.uk/road-casualties/index.html)
+
+### Táxis em Nova Iorque
+
+A comissão de Táxis de Nova York (Taxi & Limousine Commission) partilha todos os [dados de viagens](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) realizadas desde 2009.
+
+Os dados incluem localização de origem e destino, data e hora, distância de viagem, tarifa, tipo de pagamento, e número de passegeiros transportados.
+
+Todos os anos, são realizadas várias análises a este conjunto de dados por alunos, investigadores, programadores, etc, que permitem uma análise detalhada e visualização espacial de padrões de mobilidade de táxis.
+
+[Exemplo 1](https://www.stat.cmu.edu/capstoneresearch/spring2022/315files_s22/team23.html) \| [Exemplo 2](https://github.com/richhuwtaylor/ny-taxi-analytics-pipeline/tree/main) \| [Exemplo 3](https://kepler.gl/demo/nyctrips) \| [Examplo 4](https://public.tableau.com/app/profile/sekyung.na6348/viz/NYCTaxi20183/Summary) \| [Exemplo 5](https://toddwschneider.com/dashboards/nyc-taxi-ridehailing-uber-lyft-data/)
+
+[![Dashboard interativo de análise de dados de táxis em NY. Fonte: Github.](images/clipboard-1334823515.png)](https://github.com/richhuwtaylor/ny-taxi-analytics-pipeline)
+
+[![Dashboard interativo com viagens de táxi em 2018](images/clipboard-3077193967.png)](https://github.com/sekyungna/NYC_Taxi/)
+
+[![Mapa interativo de localização de origens e destinos de viagens](images/clipboard-3532115784.png)](https://kepler.gl/demo/nyctrips)
+
+::: callout-tip
+## Questões
+
+-   Que vantagens vê na utilização de dados abertos?
+
+-   Que dados a sua instituição poderia partilhar em acesso aberto?
+
+-   Que vantagens vê na abertura de dados para a sua instituição?
 :::
