@@ -17,10 +17,11 @@ book:
     - index.qmd
     - summary.qmd
     - software.qmd
+    - data-manipulation.qmd
     - open-data.qmd
-    # - data-manipulation.qmd
+    - road-networks.qmd
     - gtfs.qmd
-    - slides.qmd
+    # - slides.qmd
     - about.qmd
     - references.qmd
   page-footer:
