@@ -4,11 +4,11 @@ code-fold: false
 engine: knitr
 ---
 
-# Data manipulation
+# Tratamento de dados
 
-In this chapter we will use some very useful `dplyr` functions to handle and manipulate data.
+Neste capítulo, utilizaremos algumas funções muito úteis do `dplyr` para tratar e manipular dados.
 
-You can load the `dplyr` package directly, or load the entire tidy universe (`tidyverse`).
+Pode carregar o pacote `dplyr` diretamente ou carregar todo o universo tidy (`tidyverse`) que contém outros pacotes como o `ggplot2` para fazer gráficos.
 
 ```{r}
 #| message: false
@@ -16,11 +16,9 @@ You can load the `dplyr` package directly, or load the entire tidy universe (`ti
 library(dplyr)
 ```
 
-Using the same dataset as in [R basics](https://u-shift.github.io/EITcourse/r-basics.html) but with slightly differences[^data-manipulation-1].
+Iremos usar uma base de dados do IMOB [@IMOB] com as viagens entre freguesias da área metropolitana de Lisboa, por modo de transporte.
 
-[^data-manipulation-1]: This dataset includes the number of trips with origin in each neighborhood, divided by mode of transport, and inter or intra municipal trips.
-
-We will do the same operations but in a simplified way.
+Faremos um tratamento de dados de forma simplificada, usando as mais recentes boas-práticas de utilização de linguagem R.
 
 ```{r}
 #| include: false
@@ -45,48 +43,48 @@ write.table(Municipalities, "data/Municipalities_names.txt", row.names = FALSE, 
 ```
 
 ```{r}
+# ler os dados diretamente em formato R dataset
 TRIPS = readRDS("data/TRIPSorigin.Rds")
 ```
 
 ::: callout-important
-Note that it is very important to understand the R basics, that's why we started from there, even if the following functions will provide the same results.
+Note que é muito importante compreender o R base, mesmo que as funções seguintes forneçam os mesmos resultados.
 :::
 
-You don't need to know everything!
-And you don't need to know by heart.
-The following functions are the ones you will probably use most of the time to handle data.
+Não é necessário saber tudo!
+E **não precisa de saber de cor**.
+As funções seguintes são as que provavelmente utilizará na maior parte das vezes para tratar dados.
 
 ::: {.callout-tip appearance="simple"}
-There are several ways to reach the same solution.
-Here we present only one of them.
+Existem várias formas de chegar à mesma solução.
+Aqui apresento apenas uma delas.
 :::
 
-## Select variables
+## Selecionar variáveis
 
-Have a look at your dataset.
-You can open using `View()`, look at the information at the "Environment" panel, or even print the same information using `glimpse()`
+Dê uma vista de olhos ao seu conjunto de dados.
+Pode abrir a tabela utilizando `View()`, ver a informação no painel “Environment”, ou mesmo *imprimir* o conteúdo estruturado com `glimpse()`
 
 ```{r}
-#| eval: false
 glimpse(TRIPS)
 ```
 
-We will create a new dataset with *Origin*, *Walk,* *Bike* and *Total*.
-This time we will use the `select()` function.
+Vamos criar um novo conjunto de dados com *Origin*, *Walk,* *Bike* e *Total*.
+Usamos a função `select()`.
 
 ```{r}
-TRIPS_new = select(TRIPS, Origin, Walk, Bike, Total) # the first argument is the dataset
+TRIPS_new = select(TRIPS, Origin, Walk, Bike, Total) # o primeiro argumento é a base de dados
 ```
 
-The first argument, as usually in R, is the dataset, and the remaining ones are the columns to select.
+Em R, o primeiro argumento é normalmente referente ao conjunto de dados, e os restantes são as colunas a selecionar.
 
-With most of the `dplyr` functions you don't need to refer to `data$...` you can simply type the variable names (and even without the `"..."`!).
-This makes coding in R simpler :)
+Com o `dplyr` não é necessário referir a `data$...` , podemos simplesmente escrever os nomes das variáveis (e mesmo sem o `“...”`!).
+Isto torna o código em R mais simples 🙂
 
-You can also remove columns that you don't need.
+Com o `select()` podemos também remover colunas que não precisamos.
 
 ```{r}
-TRIPS_new = select(TRIPS_new, -Total) # dropping the Total column
+TRIPS_new = select(TRIPS_new, -Total) # deixar cair a variável Total
 ```
 
 ### Using pipes!
@@ -105,11 +103,11 @@ TRIPS_new = TRIPS |> select(Origin, Walk, Bike, Total)
 Two things to **note**:
 
 1.  The pipe symbol can be written as `|>` or `%>%`.
-    [^data-manipulation-2] To write it you may also use the `ctrl+shift+m` shortcut.
+    [^data-manipulation-1] To write it you may also use the `ctrl+shift+m` shortcut.
 
 2.  After typing `select(` you can press `tab` and the list of available variables of that dataset will show up! `Enter` to select. With this you prevent typo errors.
 
-[^data-manipulation-2]: You can change this in RStudio \> Tools \> Global Options \> Code.
+[^data-manipulation-1]: You can change this in RStudio \> Tools \> Global Options \> Code.
 
 ## Filter observations
 
