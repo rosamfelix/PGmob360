@@ -2,6 +2,7 @@
 
 # load libraries
 library(dplyr)
+library(readr)
 
 # load original data
 DADOSabril = read_delim("original/Dados de Abril 2024 (1 079 268 registos).csv", 
