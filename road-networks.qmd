@@ -1,0 +1,94 @@
+---
+format:
+  pdf:
+    prefer-html: true
+---
+
+# Redes Viárias
+
+## OpenStreetMap
+
+O OpenStreetMap é um projeto colaborativo de cartografia online com um mapa do mundo editável e gratuito.
+
+Esta é a fonte de dados da rede rodoviária mais utilizada para a análise dos transportes, no mundo académico, uma vez que a informação está disponível em quase **todo o mundo**, é aberta e de utilização gratuita.
+
+::: {.callout-caution appearance="simple"}
+Embora possa não ser 100% correrto, o OSM é uma boa fonte de dados para a maioria dos casos.
+:::
+
+Pode aceder à sua visualização em [www.openstreetmap.org](https://www.openstreetmap.org/).
+Para editar o mapa, pode utilizar o [Editor](https://www.openstreetmap.org/edit), depois de se registar (gratuitamente).
+
+![](images/clipboard-981329712.png)
+
+A introdução ou alteração de informações e elementos cartográficos tem sido feita colaborativamente por pessoas voluntárias, normalmente conhecedoras daqueles espaços.
+No entanto, uma entidade oficial (ex. Câmara Municipal) pode solicitar apoio da **comunidade OSM local** para introdução ou atualização de informação, como já tem sido feito.
+Estas comunidades normalmente estão também disponíveis para realizar formações de edição em OpenStreetMap, de modo a conferir autonomia às organizações.
+
+O OpenStreetMap oferece um tutorial (sandbox) para adicionar pontos, editar polígonos e linhas, e alterar atributos dos elementos do mapa.
+
+[![Fonte: https://wiki.openstreetmap.org/wiki/ID_editor_walkthrough](images/clipboard-3702075306.png)](https://wiki.openstreetmap.org/wiki/ID_editor_walkthrough)
+
+::: callout-tip
+#### TPC
+
+1.  Registar uma conta no OpenStreetMap
+2.  Fazer o *Walkthrough* (guia inicial) para edição de:
+    -   Pontos
+    -   Linhas
+    -   Edifícios
+:::
+
+Se pretender fazer **download** dos dados, pode utilizar as seguintes ferramentas:
+
+-   [Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API)
+-   [Geofabrik](https://download.geofabrik.de/)
+
+Estes websites incluem todos os dados do OSM, mas com **muito mais informações do que as necessárias**.
+
+## HOT Export Tool
+
+Esta ferramenta interactiva ajuda-o a selecionar a **área** dos dados que pretende extrair, o tipo de **informação** a incluir e o **formato** dos dados de saída.
+É muito útil!
+
+Aceder em [export.hotosm.org](https://export.hotosm.org/)[^road-networks-1].
+
+[^road-networks-1]: É necessário ter uma conta OSM para usar.
+
+![](images/clipboard-4146913937.png)
+
+Após a exportação, pode ler os dados em R utilizando o pacote `sf`.
+Por exemplo:
+
+```{r}
+#| fig-format: png
+Lisboa = sf::st_read("data/Lisboa_sample.geojson", quiet = TRUE)
+
+mapview::mapview(Lisboa, zcol = "highway")
+```
+
+Ou abrir em qualquer Sistema de Informação Geográfica (QGis, ArcGIS, etc).
+
+## OSM em R
+
+Existem também alguns pacotes R que podem ajudar a descarregar e trabalhar com os dados do OpenStreetMap, tais como:
+
+-   [`osmdata`](https://cran.r-project.org/web/packages/osmdata/index.html)
+-   [`osmextract`](https://docs.ropensci.org/osmextract)
+
+Exemplo de como descarregar dados da rede rodoviária do OpenStreetMap utilizando o pacote `osmextract`:
+
+```{r}
+#| eval: false
+library(osmextract)
+OSM_Malta = oe_get_network(place = "Malta") # it will geocode the place
+
+Malta_main_roads = OSM_Malta |> 
+  filter(highway %in% c("primary", "secondary", "tertiary", "trunk"))
+
+plot(Malta_main_roads["highway"])
+```
+
+![](images/malta_roads.png){fig-align="center"}
+
+No capítulo seguinte iremos explorar o que são dados GTFS e como podem ser usados.
