@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.313">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>PG Mobilidade 360 - 3&nbsp; Tratamento de dados</title>
+<title>3&nbsp; Tratamento de dados – PG Mobilidade 360</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -58,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -102,7 +103,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Nenhum resultado",
     "search-matching-documents-text": "documentos correspondentes",
@@ -111,27 +118,29 @@ div.csl-indent {
     "search-more-match-text": "mais correspondência neste documento",
     "search-more-matches-text": "mais correspondências neste documento",
     "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar"
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
   }
 }</script>
 
 
 <meta name="citation_title" content="[3]{.chapter-number}&nbsp; [Tratamento de dados]{.chapter-title}">
 <meta name="citation_language" content="pt">
-<meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_publication_date=1984-05;,citation_cover_date=1984-05;,citation_year=1984;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_issue=2;,citation_doi=10.1093/comjnl/27.2.97;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;,citation_publisher=Oxford University Press, Inc.;">
+<meta name="citation_reference" content="citation_title=Literate Programming;,citation_author=Donald E. Knuth;,citation_publication_date=1984;,citation_cover_date=1984;,citation_year=1984;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_issue=2;,citation_doi=10.1093/comjnl/27.2.97;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;,citation_publisher=Oxford University Press, Inc.;">
 <meta name="citation_reference" content="citation_title=Mobilidade e funcionalidade do território nas Áreas Metropolitanas do Porto e de Lisboa: 2017;,citation_author=undefined INE;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_fulltext_html_url=https://www.ine.pt/xportal/xmain?xpid=INE&amp;amp;amp;xpgid=ine_publicacoes&amp;PUBLICACOESpub_boui=349495406&amp;PUBLICACOESmodo=2&amp;xlang=pt;,citation_isbn=978-989-25-0478-0;,citation_technical_report_institution=Instituto National de Estatística;">
 <meta name="citation_reference" content="citation_title=Censos 2021- XVI Recenseamento Geral da População. VI Recenseamento Geral da Habitação;,citation_author=undefined INE;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_fulltext_html_url=https://censos.ine.pt/xurl/pub/65586079;,citation_isbn=978-989-25-0619-7;,citation_technical_report_institution=Instituto National de Estatística;">
-<meta name="citation_reference" content="citation_title=Spatial data science: With applications in R;,citation_author=Edzer Pebesma;,citation_author=Roger Bivand;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=https://doi.org/10.1201/9780429459016;,citation_doi=10.1201/9780429459016;">
-<meta name="citation_reference" content="citation_title=Jittering: A computationally efficient method for generating realistic route networks from origin-destination data;,citation_author=Robin Lovelace;,citation_author=Rosa Félix;,citation_author=Dustin Carlino;,citation_publication_date=2022-04-08;,citation_cover_date=2022-04-08;,citation_year=2022;,citation_doi=10.32866/001c.33873;,citation_journal_title=Findings;,citation_publisher=Findings Press;">
-<meta name="citation_reference" content="citation_title=r5r: Rapid realistic routing on multimodal transport networks with r&amp;amp;amp;lt;sup&amp;gt;5&amp;lt;/sup&amp;gt; in r;,citation_author=Rafael H. M. Pereira;,citation_author=Marcus Saraiva;,citation_author=Daniel Herszenhut;,citation_author=Carlos Kaue Vieira Braga;,citation_author=Matthew Wigginton Conway;,citation_publication_date=2021-03-04;,citation_cover_date=2021-03-04;,citation_year=2021;,citation_doi=10.32866/001c.21262;,citation_journal_title=Findings;,citation_publisher=Findings Press;">
-<meta name="citation_reference" content="citation_title=Centr: Weighted and unweighted spatial centers;,citation_author=Ryan Zomorrodi;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://ryanzomorrodi.github.io/centr/;">
-<meta name="citation_reference" content="citation_title=Stplanr: A package for transport planning;,citation_author=Robin Lovelace;,citation_author=Richard Ellison;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_issue=2;,citation_doi=10.32614/RJ-2018-053;,citation_volume=10;,citation_journal_title=The R Journal;">
-<meta name="citation_reference" content="citation_title=Od: Manipulate and map origin-destination data;,citation_author=Robin Lovelace;,citation_author=Malcolm Morgan;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://github.com/itsleeds/od;">
-<meta name="citation_reference" content="citation_title=Introduction to r;,citation_author=Claudia A Engel;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=cengel.github.io/R-intro/;">
-<meta name="citation_reference" content="citation_title=Geocomputation with r;,citation_author=Robin Lovelace;,citation_author=Jakub Nowosad;,citation_author=Jannes Muenchow;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://r.geocompx.org/;">
-<meta name="citation_reference" content="citation_title=Introduction to urban accessibility: A practical guide with r;,citation_author=Rafael HM Pereira;,citation_author=Daniel Herszenhut;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=https://ipeagit.github.io/intro_access_book/;">
-<meta name="citation_reference" content="citation_title=Guide: The open data consumer checklist;,citation_author=The Open Data Institute;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_fulltext_html_url=https://theodi.org/insights/guides/the-open-data-consumer-checklist/;">
+<meta name="citation_reference" content="citation_title=Spatial Data Science: With Applications in R;,citation_author=Edzer Pebesma;,citation_author=Roger Bivand;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=https://doi.org/10.1201/9780429459016;,citation_doi=10.1201/9780429459016;">
+<meta name="citation_reference" content="citation_title=Jittering: A Computationally Efficient Method for Generating Realistic Route Networks from Origin-Destination Data;,citation_author=Robin Lovelace;,citation_author=Rosa Félix;,citation_author=Dustin Carlino;,citation_publication_date=2022-04-08;,citation_cover_date=2022-04-08;,citation_year=2022;,citation_doi=10.32866/001c.33873;,citation_journal_title=Findings;,citation_publisher=Findings Press;">
+<meta name="citation_reference" content="citation_title=r5r: Rapid Realistic Routing on Multimodal Transport Networks with R&amp;amp;amp;lt;sup&amp;gt;5&amp;lt;/sup&amp;gt; in R;,citation_author=Rafael H. M. Pereira;,citation_author=Marcus Saraiva;,citation_author=Daniel Herszenhut;,citation_author=Carlos Kaue Vieira Braga;,citation_author=Matthew Wigginton Conway;,citation_publication_date=2021-03-04;,citation_cover_date=2021-03-04;,citation_year=2021;,citation_doi=10.32866/001c.21262;,citation_journal_title=Findings;,citation_publisher=Findings Press;">
+<meta name="citation_reference" content="citation_title=centr: Weighted and Unweighted Spatial Centers;,citation_author=Ryan Zomorrodi;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://ryanzomorrodi.github.io/centr/;">
+<meta name="citation_reference" content="citation_title=stplanr: A Package for Transport Planning;,citation_author=Robin Lovelace;,citation_author=Richard Ellison;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_issue=2;,citation_doi=10.32614/RJ-2018-053;,citation_volume=10;,citation_journal_title=The R Journal;">
+<meta name="citation_reference" content="citation_title=od: Manipulate and Map Origin-Destination Data;,citation_author=Robin Lovelace;,citation_author=Malcolm Morgan;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://github.com/itsleeds/od;">
+<meta name="citation_reference" content="citation_title=Introduction to R;,citation_author=Claudia A Engel;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=cengel.github.io/R-intro/;">
+<meta name="citation_reference" content="citation_title=Geocomputation with R;,citation_author=Robin Lovelace;,citation_author=Jakub Nowosad;,citation_author=Jannes Muenchow;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://r.geocompx.org/;">
+<meta name="citation_reference" content="citation_title=Introduction to urban accessibility: a practical guide with R;,citation_author=Rafael HM Pereira;,citation_author=Daniel Herszenhut;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=https://ipeagit.github.io/intro_access_book/;">
+<meta name="citation_reference" content="citation_title=Guide: The Open Data Consumer Checklist;,citation_author=The Open Data Institute;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_fulltext_html_url=https://theodi.org/insights/guides/the-open-data-consumer-checklist/;">
 </head>
 
 <body class="nav-sidebar floating">
@@ -140,12 +149,12 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-manipulation.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tratamento de dados</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-manipulation.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tratamento de dados</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -155,12 +164,12 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">PG Mobilidade 360</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/temospena/PGmob360" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/rosamfelix/PGmob360" title="Código fonte" class="quarto-navigation-tool px-1" aria-label="Código fonte"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo escuro"><i class="bi"></i></a>
 </div>
     </div>
@@ -241,7 +250,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
@@ -250,19 +259,19 @@ div.csl-indent {
   <ul>
   <li><a href="#selecionar-variáveis" id="toc-selecionar-variáveis" class="nav-link active" data-scroll-target="#selecionar-variáveis"><span class="header-section-number">3.1</span> Selecionar variáveis</a>
   <ul class="collapse">
-  <li><a href="#using-pipes" id="toc-using-pipes" class="nav-link" data-scroll-target="#using-pipes"><span class="header-section-number">3.1.1</span> Using pipes!</a></li>
+  <li><a href="#usando-pipes" id="toc-usando-pipes" class="nav-link" data-scroll-target="#usando-pipes"><span class="header-section-number">3.1.1</span> Usando pipes!</a></li>
   </ul></li>
-  <li><a href="#filter-observations" id="toc-filter-observations" class="nav-link" data-scroll-target="#filter-observations"><span class="header-section-number">3.2</span> Filter observations</a></li>
-  <li><a href="#create-new-variables" id="toc-create-new-variables" class="nav-link" data-scroll-target="#create-new-variables"><span class="header-section-number">3.3</span> Create new variables</a></li>
-  <li><a href="#change-data-type" id="toc-change-data-type" class="nav-link" data-scroll-target="#change-data-type"><span class="header-section-number">3.4</span> Change data type</a>
+  <li><a href="#filtrar-observações" id="toc-filtrar-observações" class="nav-link" data-scroll-target="#filtrar-observações"><span class="header-section-number">3.2</span> Filtrar observações</a></li>
+  <li><a href="#criar-novas-variáveis" id="toc-criar-novas-variáveis" class="nav-link" data-scroll-target="#criar-novas-variáveis"><span class="header-section-number">3.3</span> Criar novas variáveis</a></li>
+  <li><a href="#alterar-o-tipo-de-dados" id="toc-alterar-o-tipo-de-dados" class="nav-link" data-scroll-target="#alterar-o-tipo-de-dados"><span class="header-section-number">3.4</span> Alterar o tipo de dados</a>
   <ul class="collapse">
-  <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors"><span class="header-section-number">3.4.1</span> Factors</a></li>
+  <li><a href="#factores" id="toc-factores" class="nav-link" data-scroll-target="#factores"><span class="header-section-number">3.4.1</span> Factores</a></li>
   </ul></li>
-  <li><a href="#join-data-tables" id="toc-join-data-tables" class="nav-link" data-scroll-target="#join-data-tables"><span class="header-section-number">3.5</span> Join data tables</a></li>
-  <li><a href="#group_by-and-summarize" id="toc-group_by-and-summarize" class="nav-link" data-scroll-target="#group_by-and-summarize"><span class="header-section-number">3.6</span> group_by and summarize</a></li>
-  <li><a href="#arrange-data" id="toc-arrange-data" class="nav-link" data-scroll-target="#arrange-data"><span class="header-section-number">3.7</span> Arrange data</a></li>
+  <li><a href="#juntar-tabelas-de-dados" id="toc-juntar-tabelas-de-dados" class="nav-link" data-scroll-target="#juntar-tabelas-de-dados"><span class="header-section-number">3.5</span> Juntar tabelas de dados</a></li>
+  <li><a href="#group_by-e-summarize" id="toc-group_by-e-summarize" class="nav-link" data-scroll-target="#group_by-e-summarize"><span class="header-section-number">3.6</span> group_by e summarize</a></li>
+  <li><a href="#organizar-os-dados" id="toc-organizar-os-dados" class="nav-link" data-scroll-target="#organizar-os-dados"><span class="header-section-number">3.7</span> Organizar os dados</a></li>
   <li><a href="#all-together-now" id="toc-all-together-now" class="nav-link" data-scroll-target="#all-together-now"><span class="header-section-number">3.8</span> All together now!</a></li>
-  <li><a href="#other-dplyr-functions" id="toc-other-dplyr-functions" class="nav-link" data-scroll-target="#other-dplyr-functions"><span class="header-section-number">3.9</span> Other dplyr functions</a></li>
+  <li><a href="#outras-funções-do-dplyr" id="toc-outras-funções-do-dplyr" class="nav-link" data-scroll-target="#outras-funções-do-dplyr"><span class="header-section-number">3.9</span> Outras funções do dplyr</a></li>
   </ul>
 </nav>
     </div>
@@ -284,7 +293,9 @@ div.csl-indent {
   </div>
   
 
+
 </header>
+
 
 <p>Neste capítulo, utilizaremos algumas funções muito úteis do <code>dplyr</code> para tratar e manipular dados.</p>
 <p>Pode carregar o pacote <code>dplyr</code> diretamente ou carregar todo o universo tidy (<code>tidyverse</code>) que contém outros pacotes como o <code>ggplot2</code> para fazer gráficos.</p>
@@ -296,7 +307,7 @@ div.csl-indent {
 <p>Faremos um tratamento de dados de forma simplificada, usando as mais recentes boas-práticas de utilização de linguagem R.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ler os dados diretamente em formato R dataset</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>TRIPS <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="st">"data/TRIPSorigin.Rds"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>TRIPS <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="st">"data/TRIPSorigem.Rds"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -330,20 +341,20 @@ Importante
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 236
 Columns: 9
-$ Origin   &lt;chr&gt; "110501", "110501", "110506", "110506", "110507", "110507", "…
+$ Origem   &lt;chr&gt; "110501", "110501", "110506", "110506", "110507", "110507", "…
 $ Total    &lt;dbl&gt; 35539, 47602, 37183, 42313, 30725, 54586, 57747, 67884, 940, …
 $ Walk     &lt;dbl&gt; 11325, 3502, 12645, 1418, 9389, 2630, 20423, 3573, 623, 1738,…
 $ Bike     &lt;dbl&gt; 1309, 416, 40, 163, 1481, 168, 1406, 809, 13, 37, 3, 139, 0, …
 $ Car      &lt;dbl&gt; 21446, 37727, 22379, 37337, 19654, 44611, 33044, 52251, 192, …
 $ PTransit &lt;dbl&gt; 1460, 5519, 2057, 3285, 201, 6963, 2477, 10534, 110, 4836, 93…
 $ Other    &lt;dbl&gt; 0, 437, 63, 106, 0, 215, 396, 717, 2, 169, 3, 824, 0, 324, 0,…
-$ Internal &lt;dbl&gt; 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0…
-$ Lisbon   &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…</code></pre>
+$ Interna  &lt;dbl&gt; 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0…
+$ Lisboa   &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…</code></pre>
 </div>
 </div>
-<p>Vamos criar um novo conjunto de dados com <em>Origin</em>, <em>Walk,</em> <em>Bike</em> e <em>Total</em>. Usamos a função <code>select()</code>.</p>
+<p>Vamos criar um novo conjunto de dados com <em>Origem</em>, <em>Walk,</em> <em>Bike</em> e <em>Total</em>. Usamos a função <code>select()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>TRIPS_new <span class="ot">=</span> <span class="fu">select</span>(TRIPS, Origin, Walk, Bike, Total) <span class="co"># o primeiro argumento é a base de dados</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>TRIPS_new <span class="ot">=</span> <span class="fu">select</span>(TRIPS, Origem, Walk, Bike, Total) <span class="co"># o primeiro argumento é a base de dados</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Em R, o primeiro argumento é normalmente referente ao conjunto de dados, e os restantes são as colunas a selecionar.</p>
 <p>Com o <code>dplyr</code> não é necessário referir a <code>data$...</code> , podemos simplesmente escrever os nomes das variáveis (e mesmo sem o <code>“...”</code>!). Isto torna o código em R mais simples 🙂</p>
@@ -351,29 +362,29 @@ $ Lisbon   &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>TRIPS_new <span class="ot">=</span> <span class="fu">select</span>(TRIPS_new, <span class="sc">-</span>Total) <span class="co"># deixar cair a variável Total</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="using-pipes" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="using-pipes"><span class="header-section-number">3.1.1</span> Using pipes!</h3>
-<p>Now, let’s introduce pipes. Pipes are a rule as: “<strong>With this, do this.</strong>”</p>
-<p>This is useful to skip the first argument of the functions (usually the dataset to apply the function).</p>
-<p>Applying a pipe to the <code>select()</code> function, we can write as:</p>
+<section id="usando-pipes" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="usando-pipes"><span class="header-section-number">3.1.1</span> Usando pipes!</h3>
+<p>Agora vamos passar a usar os <em>pipes</em>. Os <em>pipes</em> funcionam como uma regra: “<strong>Com isto, faz isto.</strong>”</p>
+<p>Isto é útil para omitir o primeiro argumento das funções (normalmente o conjunto de dados para aplicar a função).</p>
+<p>Com o mesmo exemplo do <code>select()</code>, podemos escrever como:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>TRIPS_new <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">select</span>(Origin, Walk, Bike, Total)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>TRIPS_new <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">select</span>(Origem, Walk, Bike, Total)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Two things to <strong>note</strong>:</p>
+<p>Duas coisas a <strong>ter em conta</strong>:</p>
 <ol type="1">
-<li><p>The pipe symbol can be written as <code>|&gt;</code> or <code>%&gt;%</code>. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> To write it you may also use the <code>ctrl+shift+m</code> shortcut.</p></li>
-<li><p>After typing <code>select(</code> you can press <code>tab</code> and the list of available variables of that dataset will show up! <code>Enter</code> to select. With this you prevent typo errors.</p></li>
+<li><p>O símbolo do <em>pipe</em> pode ser escrito como <code>|&gt;</code> ou <code>%&gt;%</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Para o escrever, pode também utilizar o atalho <code>ctrl+shift+m</code>.</p></li>
+<li><p>Depois de escrever <code>select(</code> pode premir <code>tab</code> e aparecerá a lista de variáveis disponíveis desse conjunto de dados! Prima <code>Enter</code> para selecionar. Desta forma, evita erros de digitação.</p></li>
 </ol>
 </section>
 </section>
-<section id="filter-observations" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="filter-observations"><span class="header-section-number">3.2</span> Filter observations</h2>
-<p>You can filter observations based on a condition using the <code>filter()</code> function.</p>
+<section id="filtrar-observações" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="filtrar-observações"><span class="header-section-number">3.2</span> Filtrar observações</h2>
+<p>Podemos filtrar observações, com base numa condição, utilizando a função <code>filter()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPS[TRIPS<span class="sc">$</span>Total <span class="sc">&gt;</span> <span class="dv">25000</span>,] <span class="co"># using r-base, you cant forget the comma</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPS2 <span class="sc">|&gt;</span> <span class="fu">filter</span>(Total <span class="sc">&gt;</span> <span class="dv">25000</span>) <span class="co"># using dplyr, it's easier</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPS[TRIPS<span class="sc">$</span>Total <span class="sc">&gt;</span> <span class="dv">25000</span>,] <span class="co"># usando o r-base, não se pode esquecer a vírgula</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPS2 <span class="sc">|&gt;</span> <span class="fu">filter</span>(Total <span class="sc">&gt;</span> <span class="dv">25000</span>) <span class="co"># usando o dplyr, é mais fácil</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>You can have other conditions inside the condition.</p>
+<p>É possível ter outras condições dentro da condição.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(TRIPS<span class="sc">$</span>Total)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -382,129 +393,141 @@ $ Lisbon   &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>TRIPS3 <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">filter</span>(Total <span class="sc">&gt;</span> <span class="fu">median</span>(Total)) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Other filter conditions:</p>
+<p>Outras condições de filtragem:</p>
 <ul>
-<li><code>==</code> equal, <code>!=</code> different</li>
-<li><code>&lt;</code> smaller, <code>&gt;</code> greater, <code>&lt;=</code> smaller or equal, <code>&gt;=</code> greater or equal</li>
-<li><code>&amp;</code> and, <code>|</code> or</li>
-<li><code>is.na</code>, <code>!is.na</code> is not NA</li>
-<li><code>%in%</code>, <code>!%in%</code> not in</li>
+<li><code>==</code> igual, <code>!=</code> diferente</li>
+<li><code>&lt;</code> menor, <code>&gt;</code> maior, <code>&lt;=</code> menor ou igual, <code>&gt;=</code> maior ou igual</li>
+<li><code>&amp;</code> e, <code>|</code> ou</li>
+<li><code>is.na</code>, <code>!is.na</code> não é NA</li>
+<li><code>%in%</code>, <code>!%in%</code> não está em</li>
 </ul>
 </section>
-<section id="create-new-variables" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="create-new-variables"><span class="header-section-number">3.3</span> Create new variables</h2>
-<p>You can also try again to create a variable of Car percentage using pipes! To create a new variable or change an existing one (overwriting), you can use the <code>mutate()</code> function.</p>
+<section id="criar-novas-variáveis" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="criar-novas-variáveis"><span class="header-section-number">3.3</span> Criar novas variáveis</h2>
+<p>Também podemos tentar criar uma variável de percentagem de viagens em automóvel (<em>Car</em>) usando pipes! Para criar uma nova variável ou alterar uma existente (overwrite), podemos usar a função <code>mutate()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>TRIPS<span class="sc">$</span>Car_perc <span class="ot">=</span> TRIPS<span class="sc">$</span>Car<span class="sc">/</span>TRIPS<span class="sc">$</span>Total <span class="sc">*</span> <span class="dv">100</span> <span class="co"># using r-base</span></span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>TRIPS<span class="sc">$</span>Car_perc <span class="ot">=</span> TRIPS<span class="sc">$</span>Car<span class="sc">/</span>TRIPS<span class="sc">$</span>Total <span class="sc">*</span> <span class="dv">100</span> <span class="co"># com o r-base</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>TRIPS <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">Car_perc =</span> Car<span class="sc">/</span>Total <span class="sc">*</span> <span class="dv">100</span>) <span class="co"># using dplyr</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>TRIPS <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">Car_perc =</span> Car<span class="sc">/</span>Total <span class="sc">*</span> <span class="dv">100</span>) <span class="co"># com o dplyr</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="change-data-type" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="change-data-type"><span class="header-section-number">3.4</span> Change data type</h2>
-<p>Data can be in different formats. For example, the variable <em>Origin</em> is a character, but we can convert it to a numeric variable.</p>
+<section id="alterar-o-tipo-de-dados" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="alterar-o-tipo-de-dados"><span class="header-section-number">3.4</span> Alterar o tipo de dados</h2>
+<p>Os dados podem estar em diferentes formatos. Por exemplo, a variável <em>Origem</em> tem os códigos das freguesias como texto (<em>character</em>), mas podemos convertê-la numa variável numérica.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(TRIPS<span class="sc">$</span>Origin)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(TRIPS<span class="sc">$</span>Origem)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>TRIPS <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Origin_num =</span> <span class="fu">as.integer</span>(Origin)) <span class="co"># you can use as.numeric() as well</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(TRIPS<span class="sc">$</span>Origin_num)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Origem_num =</span> <span class="fu">as.integer</span>(Origem)) <span class="co"># também podemos usar as.numeric()</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(TRIPS<span class="sc">$</span>Origem_num)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "integer"</code></pre>
 </div>
 </div>
-<p>Most used data types are:</p>
+<p>Os tipos de dados mais utilizados são:</p>
 <ul>
-<li>integer (<code>int</code>)</li>
-<li>numeric (<code>num</code>)</li>
-<li>character (<code>chr</code>)</li>
-<li>logical (<code>logical</code>)</li>
-<li>date (<code>Date</code>)</li>
+<li>inteiro / integer (<code>int</code>)</li>
+<li>numérico / numeric (<code>num</code>)</li>
+<li>texto/ character (<code>chr</code>)</li>
+<li>lógico / logical (<code>logical</code>)</li>
+<li>data / date (<code>Date</code>)</li>
 <li>factor (<code>factor</code>)</li>
 </ul>
-<section id="factors" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="factors"><span class="header-section-number">3.4.1</span> Factors</h3>
-<p>Factors are useful to deal with categorical data. You can convert a character to a factor using <code>as.factor()</code>, and also use labels and levels for categorical ordinal data.</p>
-<p>We can change the <code>Lisbon</code> variable to a factor, and <code>Internal</code> too.</p>
+<section id="factores" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="factores"><span class="header-section-number">3.4.1</span> Factores</h3>
+<p>Os factores são úteis para lidar com dados categóricos. Podemos converter um texto num fator usando <code>as.factor()</code>, e também atribuir etiquetas e níveis para dados categóricos ordinais.</p>
+<p>Podemos alterar a variável <code>Lisbon</code> para um factor, e a variável <code>Internal</code> também.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>TRIPS <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Lisbon_factor =</span> <span class="fu">factor</span>(Lisbon, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"No"</span>, <span class="st">"Yes"</span>)),</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">Internal_factor =</span> <span class="fu">factor</span>(Internal, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Inter"</span>, <span class="st">"Intra"</span>)))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Lisboa_factor =</span> <span class="fu">factor</span>(Lisboa, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Não"</span>, <span class="st">"Sim"</span>)),</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">Interna_factor =</span> <span class="fu">factor</span>(Interna, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Externa"</span>, <span class="st">"Interna"</span>)))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>But how do we know which levels come first? A simple way is to use <code>table()</code> or <code>unique()</code> functions.</p>
+<p>Mas como saber qual o nível que vem primeiro? Uma forma simples é utilizar as funções <code>table()</code> ou <code>unique()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(TRIPS<span class="sc">$</span>Lisbon) <span class="co"># this will show all the different values</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(TRIPS<span class="sc">$</span>Lisboa) <span class="co"># isto mostra todos os valores únicos (diferentes)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(TRIPS<span class="sc">$</span>Lisbon) <span class="co"># this will show the frequency of each value</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(TRIPS<span class="sc">$</span>Lisboa) <span class="co"># isto mostra a frequência de cada valor</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
   0   1 
 188  48 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(TRIPS<span class="sc">$</span>Lisbon_factor)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(TRIPS<span class="sc">$</span>Lisboa_factor)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
- No Yes 
+Não Sim 
 188  48 </code></pre>
 </div>
 </div>
-<p>The first number to appear is the first level, and so on.</p>
-<p>You can see the difference between using a continuous variable (in this case <code>Lisbon</code>` has 0 and 1) and a categorical variable (<code>Lisbon_factor</code>).</p>
+<p>O primeiro número a aparecer corresponde ao primeiro nível, e assim sucessivamente.</p>
+<p>Podemos ver a diferença entre usar uma variável contínua (neste caso, <code>Lisboa</code> tem 0 e 1) e uma variável categórica (<code>Lisboa_factor</code>).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(TRIPS<span class="sc">$</span>Lisbon) <span class="co"># the values range between 0 and 1</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(TRIPS<span class="sc">$</span>Lisboa) <span class="co"># os valores variam entre 0 e 1</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="data-manipulation_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(TRIPS<span class="sc">$</span>Lisbon_factor) <span class="co"># the values are categorical and labeled with Yes/No</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="data-manipulation_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</section>
-</section>
-<section id="join-data-tables" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="join-data-tables"><span class="header-section-number">3.5</span> Join data tables</h2>
-<p>When having relational tables - <em>i.e.</em> with a common identifier - it is useful to be able to join them in a very efficient way.</p>
-<p><code>left_join</code> is a function that joins two tables <strong>by a common column</strong>. The <strong>first table is the one that will be kept</strong>, and the <strong>second one will be joined to</strong> it. How <code>left_join</code> works:</p>
-<div class="quarto-figure quarto-figure-center">
+<div>
 <figure class="figure">
-<p><a href="https://r4ds.hadley.nz/joins#fig-join-left"><img src="images/clipboard-1594422253.png" class="img-fluid figure-img" width="424"></a></p>
-<p></p><figcaption class="figure-caption">A visual representation of the left join where every row in x appears in the output.Source: R for Data Science.</figcaption><p></p>
+<p><img src="data-manipulation_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
-<p>Let’s <strong>join the municipalities</strong> to this table with a supporting table that includes all the <strong>relation</strong> between neighbourhoods and municipalities, and the respective names and codes.</p>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(TRIPS<span class="sc">$</span>Lisboa_factor) <span class="co"># os valores são categóricos e com etiquetas Sim/Não</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data-manipulation_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="juntar-tabelas-de-dados" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="juntar-tabelas-de-dados"><span class="header-section-number">3.5</span> Juntar tabelas de dados</h2>
+<p>Quando temos tabelas relacionais - ou seja, com um identificador comum - é útil poder juntá-las de uma forma eficiente.</p>
+<p>O <code>left_join</code> é uma função que junta duas tabelas através de <strong>uma variável comum</strong>. A <strong>primeira tabela é a que será mantida</strong>, e a <strong>segunda será acrescentada a ela</strong>. Como funciona o <code>left_join</code>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://r4ds.hadley.nz/joins#fig-join-left"><img src="images/clipboard-1594422253.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="424" alt="Uma representação visual do left_join em que todas as linhas de x aparecem no resultado final, com mais informação junta de y. Fonte: Engel (2023)."></a></p>
+</figure>
+</div>
+<figcaption>Uma representação visual do <code>left_join</code> em que todas as linhas de x aparecem no resultado final, com mais informação junta de y. Fonte: <span class="citation" data-cites="intror">Engel (<a href="references.html#ref-intror" role="doc-biblioref">2023</a>)</span>.</figcaption>
+</figure>
+</div>
+<p>Vamos então <strong>juntar a lista de municípios à nossa tabela</strong>, através de uma outra base de dados que inclui a <strong>relação</strong> entre o código de freguesias (dicofre), o nome das freguesias e os respetivos municípios.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>Municipalities <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="st">"data/Municipalities_names.Rds"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>Municipios <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="st">"data/Municipios_nomes.Rds"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(TRIPS)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 13
-  Origin Total  Walk  Bike   Car PTransit Other Internal Lisbon Car_perc
-  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
-1 110501 35539 11325  1309 21446     1460     0        0      0     60.3
-2 110501 47602  3502   416 37727     5519   437        1      0     79.3
-3 110506 37183 12645    40 22379     2057    63        0      0     60.2
-4 110506 42313  1418   163 37337     3285   106        1      0     88.2
-5 110507 30725  9389  1481 19654      201     0        0      0     64.0
-6 110507 54586  2630   168 44611     6963   215        1      0     81.7
-# ℹ 3 more variables: Origin_num &lt;int&gt;, Lisbon_factor &lt;fct&gt;,
-#   Internal_factor &lt;fct&gt;</code></pre>
+  Origem Total  Walk  Bike   Car PTransit Other Interna Lisboa Car_perc
+  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
+1 110501 35539 11325  1309 21446     1460     0       0      0     60.3
+2 110501 47602  3502   416 37727     5519   437       1      0     79.3
+3 110506 37183 12645    40 22379     2057    63       0      0     60.2
+4 110506 42313  1418   163 37337     3285   106       1      0     88.2
+5 110507 30725  9389  1481 19654      201     0       0      0     64.0
+6 110507 54586  2630   168 44611     6963   215       1      0     81.7
+# ℹ 3 more variables: Origem_num &lt;int&gt;, Lisboa_factor &lt;fct&gt;,
+#   Interna_factor &lt;fct&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(Municipalities)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(Municipios)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    Mun_code Neighborhood_code        Municipality
-113     1109            110913               Mafra
-114     1114            111409 Vila Franca de Xira
-115     1109            110918               Mafra
-116     1109            110904               Mafra
-117     1502            150202           Alcochete
-118     1109            110911               Mafra
-                                             Neighborhood
+<pre><code>    DTCC Dicofre            Concelho
+113 1109  110913               Mafra
+114 1114  111409 Vila Franca de Xira
+115 1109  110918               Mafra
+116 1109  110904               Mafra
+117 1502  150202           Alcochete
+118 1109  110911               Mafra
+                                                Freguesia
 113                                         Santo Isidoro
 114                                   Vila Franca de Xira
 115 União das freguesias de Azueira e Sobral da Abelheira
@@ -513,117 +536,119 @@ $ Lisbon   &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
 118                                             Milharado</code></pre>
 </div>
 </div>
-<p>We can see that we have a common variable: <code>Origin</code> in <code>TRIPS</code> and <code>Neighborhood_code</code> in <code>Municipalities</code>.</p>
-<p>To join these two tables we need to specify the common variable in each table, using the <code>by</code> argument.</p>
+<p>Podemos observar que as tabelas têm variáveis comuns: a <code>Origem</code> em <code>TRIPS</code> e o <code>Dicofre</code> em <code>Municipios</code>.</p>
+<p>Uma vez que o nome da variável não é o mesmo, para juntar estas duas tabelas precisamos de especificar a variável comum em cada tabela, utilizando o argumento <code>by</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>TRIPSjoin <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">left_join</span>(Municipalities, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Origin"</span> <span class="ot">=</span> <span class="st">"Neighborhood_code"</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>TRIPSjoin <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">left_join</span>(Municipios, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Origem"</span> <span class="ot">=</span> <span class="st">"Dicofre"</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>If you prefer, you can mutate or rename a variable so both tables have the same name. When <strong>both tables have the same name</strong>, you don’t need to specify the <code>by</code> argument.</p>
+<p>Se preferir, pode alterar ou renomear uma variável para que ambas as tabelas tenham o mesmo nome. <strong>Quando ambas as tabelas têm o mesmo nome de variável</strong>, não é preciso especificar o argumento <code>by</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>Municipalities <span class="ot">=</span> Municipalities <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="at">Origin =</span> <span class="st">"Neighborhood_code"</span>) <span class="co"># change name</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>TRIPSjoin <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">left_join</span>(Municipalities) <span class="co"># automatic detects common variable</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>Municipios <span class="ot">=</span> Municipios <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="at">Origem =</span> <span class="st">"Dicofre"</span>) <span class="co"># alterar o nome da variável</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>TRIPSjoin <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">left_join</span>(Municipios) <span class="co"># detecta automativamente a variável comum</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>As you can see, both tables don’t need to be the same length. The <code>left_join</code> function will keep all the observations from the first table, and join the second table to it. If there is no match, the variables from the second table will be filled with <code>NA</code>.</p>
+<blockquote class="blockquote">
+<p>Como é possível observar, as duas tabelas não precisam de ter o mesmo número de linhas (<code>nrow()</code>). A função <code>left_join</code> mantém todas as observações da primeira tabela e junta a segunda tabela a esta. Se não houver correspondência, as variáveis da segunda tabela serão preenchidas com <code>NA</code>.</p>
+</blockquote>
 </section>
-<section id="group_by-and-summarize" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="group_by-and-summarize"><span class="header-section-number">3.6</span> group_by and summarize</h2>
-<p>We have a very large table with all the neighbourhoods and their respective municipalities. We want to know the total number of trips with origin in each municipality.</p>
-<p>To make it easier to understand, let’s keep only the variables we need.</p>
+<section id="group_by-e-summarize" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="group_by-e-summarize"><span class="header-section-number">3.6</span> group_by e summarize</h2>
+<p>Temos uma tabela grande com todas as freguesias da AML e os seus respectivos municípios. Queremos agora saber o número total de viagens com origem em cada município.</p>
+<p>Para facilitar, vamos manter apenas as variáveis de que precisamos para chegar ao resultado.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>TRIPSredux <span class="ot">=</span> TRIPSjoin <span class="sc">|&gt;</span> <span class="fu">select</span>(Origin, Municipality, Internal, Car, Total)</span>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>TRIPSredux <span class="ot">=</span> TRIPSjoin <span class="sc">|&gt;</span> <span class="fu">select</span>(Origem, Concelho, Interna, Car, Total)</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(TRIPSredux)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 5
-  Origin Municipality Internal   Car Total
-  &lt;chr&gt;  &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 110501 Cascais             0 21446 35539
-2 110501 Cascais             1 37727 47602
-3 110506 Cascais             0 22379 37183
-4 110506 Cascais             1 37337 42313
-5 110507 Cascais             0 19654 30725
-6 110507 Cascais             1 44611 54586</code></pre>
+  Origem Concelho Interna   Car Total
+  &lt;chr&gt;  &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 110501 Cascais        0 21446 35539
+2 110501 Cascais        1 37727 47602
+3 110506 Cascais        0 22379 37183
+4 110506 Cascais        1 37337 42313
+5 110507 Cascais        0 19654 30725
+6 110507 Cascais        1 44611 54586</code></pre>
 </div>
 </div>
-<p>We can group this table by the <code>Municipality</code> variable and summarize the number of trips with origin in each municipality.</p>
+<p>Podemos agrupar esta tabela pela variável <code>Concelho</code> e sumarizar (<em>summarize</em>) o número de viagens com origem em cada município.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>TRIPSsum <span class="ot">=</span> TRIPSredux <span class="sc">|&gt;</span> </span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Municipality) <span class="sc">|&gt;</span> <span class="co"># you won't notice any chagne with only this</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Concelho) <span class="sc">|&gt;</span> <span class="co"># não irá notar nenhuma alteração na tabela</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Total =</span> <span class="fu">sum</span>(Total))</span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(TRIPSsum)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
-  Municipality   Total
-  &lt;chr&gt;          &lt;dbl&gt;
-1 Alcochete      36789
-2 Almada        289834
-3 Amadora       344552
-4 Barreiro      133658
-5 Cascais       373579
-6 Lisboa       1365111</code></pre>
+  Concelho    Total
+  &lt;chr&gt;       &lt;dbl&gt;
+1 Alcochete   36789
+2 Almada     289834
+3 Amadora    344552
+4 Barreiro   133658
+5 Cascais    373579
+6 Lisboa    1365111</code></pre>
 </div>
 </div>
-<p>We summed the total number of trips in each municipality.</p>
-<p>If we want to group by more than one variable, we can add more <code>group_by()</code> functions.</p>
+<p>Somámos o número total de viagens em cada município.</p>
+<p>Se quisermos agrupar por mais do que uma variável, podemos adicionar mais variáveis ao <code>group_by()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>TRIPSsum2 <span class="ot">=</span> TRIPSredux <span class="sc">|&gt;</span> </span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Municipality, Internal) <span class="sc">|&gt;</span> </span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Concelho, Interna) <span class="sc">|&gt;</span> </span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Total =</span> <span class="fu">sum</span>(Total),</span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Car =</span> <span class="fu">sum</span>(Car))</span>
 <span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(TRIPSsum2)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
-# Groups:   Municipality [3]
-  Municipality Internal  Total    Car
-  &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
-1 Alcochete           0  16954   9839
-2 Alcochete           1  19835  15632
-3 Almada              0 105841  49012
-4 Almada              1 183993 125091
-5 Amadora             0 117727  33818
-6 Amadora             1 226825 142386</code></pre>
+# Groups:   Concelho [3]
+  Concelho  Interna  Total    Car
+  &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+1 Alcochete       0  16954   9839
+2 Alcochete       1  19835  15632
+3 Almada          0 105841  49012
+4 Almada          1 183993 125091
+5 Amadora         0 117727  33818
+6 Amadora         1 226825 142386</code></pre>
 </div>
 </div>
-<p>We summed the total number of trips and car trips in each municipality, <strong>separated by</strong> inter and intra municipal trips.</p>
+<p>Somámos o número total de viagens e viagens em automóvel para cada município, discriminadas por deslocações internas e externas.</p>
 <div class="callout callout-style-simple callout-caution">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>It is a good practice to use the <code>ungroup()</code> function after the <code>group_by()</code> function. This will remove the grouping. If you don’t do this, the grouping will be kept and you may have unexpected results in the next time you use that dataset.</p>
+<p>É uma boa prática utilizar a função <code>ungroup()</code> após a função <code>group_by()</code>. Isso removerá o agrupamento. Se não o fizer, o agrupamento será mantido e poderá obter resultados inesperados na próxima vez que utilizar esse conjunto de dados.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="arrange-data" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="arrange-data"><span class="header-section-number">3.7</span> Arrange data</h2>
-<p>You can <strong>sort</strong> a dataset by one or more variables.</p>
-<p>For instance, <code>arrange()</code> by Total trips, ascending or descending order.</p>
+<section id="organizar-os-dados" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="organizar-os-dados"><span class="header-section-number">3.7</span> Organizar os dados</h2>
+<p>Podemos <strong>ordenar</strong> (<em>sort</em>) um conjunto de dados por uma ou mais variáveis.</p>
+<p>Por exemplo, <code>arrange()</code> por Total de viagens, na ordem ascendente ou descendente.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPSsum2 <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Total)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPSsum2 <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="sc">-</span>Total) <span class="co"># descending</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPSsum2 <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="sc">-</span>Total) <span class="co"># descendente</span></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPSsum2 <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Municipality) <span class="co"># alphabetic</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPSsum2 <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Concelho) <span class="co"># alfabética</span></span>
 <span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>TRIPS4 <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Lisbon_factor, Total) <span class="co"># more than one variable</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>TRIPS4 <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Lisboa_factor, Total) <span class="co"># mais de uma variável</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This is not the same as opening the view table and click on the arrows. When you do that, the order is not saved in the dataset. If you want to save the order, you need to use the <code>arrange()</code> function.</p>
+<p>Isto não é o mesmo que abrir a tabela de visualização e clicar nas setas das variáveis. Quando se faz isso, a ordem não é guardada no conjunto de dados. Se quiser guardar a ordem, deverá usar a função <code>arrange()</code>.</p>
 </section>
 <section id="all-together-now" class="level2" data-number="3.8">
 <h2 data-number="3.8" class="anchored" data-anchor-id="all-together-now"><span class="header-section-number">3.8</span> All together now!</h2>
-<p>This is the pipes magic. It takes the last result and applies the next function to it. “With this, do this.”. You can chain as many functions as you want.</p>
+<p>Esta é a magia dos <em>pipes</em>. O pipe pega no último resultado e aplica-lhe a função seguinte. “Com isto, faz isto.”. Podemos encadear as funções que quisermos.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>TRIPS_pipes <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> </span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Origin, Internal, Car, Total) <span class="sc">|&gt;</span> </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Origem, Interna, Car, Total) <span class="sc">|&gt;</span> </span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Origin_num =</span> <span class="fu">as.integer</span>(Origin)) <span class="sc">|&gt;</span> </span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Internal_factor =</span> <span class="fu">factor</span>(Internal, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Inter"</span>, <span class="st">"Intra"</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Dicofre =</span> Origem) <span class="sc">|&gt;</span> </span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Interna_factor =</span> <span class="fu">factor</span>(Interna, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Externa"</span>, <span class="st">"Interna"</span>))) <span class="sc">|&gt;</span> </span>
 <span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Internal_factor <span class="sc">==</span> <span class="st">"Inter"</span>)<span class="sc">|&gt;</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Interna_factor <span class="sc">==</span> <span class="st">"Interna"</span>)<span class="sc">|&gt;</span></span>
 <span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(Municipalities) <span class="sc">|&gt;</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(Municipios) <span class="sc">|&gt;</span></span>
 <span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Municipality) <span class="sc">|&gt;</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Concelho) <span class="sc">|&gt;</span></span>
 <span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Total =</span> <span class="fu">sum</span>(Total),</span>
 <span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">Car =</span> <span class="fu">sum</span>(Car),</span>
 <span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">Car_perc =</span> Car<span class="sc">/</span>Total <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">|&gt;</span> </span>
@@ -631,52 +656,49 @@ $ Lisbon   &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
 <span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Car_perc))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>With this code we will have a table with the total number of intercity trips, by municipality, with their names instead of codes, arranged by the percentage of car trips.</p>
+<p>Com este código, teremos uma tabela com o número total de viagens intramunicipais, por município, com os seus nomes em vez de códigos, ordenados pela percentagem de viagens em automóvel.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>TRIPS_pipes</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 18 × 4
-   Municipality         Total    Car Car_perc
-   &lt;chr&gt;                &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
- 1 Mafra                65811  46329     70.4
- 2 Sesimbra             49370  31975     64.8
- 3 Cascais             161194  96523     59.9
- 4 Palmela              66428  39688     59.7
- 5 Alcochete            16954   9839     58.0
- 6 Setúbal             129059  70318     54.5
- 7 Montijo              57164  30900     54.1
- 8 Seixal              120747  63070     52.2
- 9 Sintra              237445 123408     52.0
-10 Oeiras              134862  66972     49.7
-11 Almada              105841  49012     46.3
-12 Loures              132310  60478     45.7
-13 Barreiro             52962  24160     45.6
-14 Odivelas             93709  39151     41.8
-15 Vila Franca de Xira 115152  47201     41.0
-16 Moita                51040  17394     34.1
-17 Amadora             117727  33818     28.7
-18 Lisboa              280079  69038     24.6</code></pre>
+   Concelho              Total    Car Car_perc
+   &lt;chr&gt;                 &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
+ 1 Montijo               42042  36089     85.8
+ 2 Mafra                 60221  51233     85.1
+ 3 Setúbal              110348  90837     82.3
+ 4 Cascais              212385 171926     81.0
+ 5 Sesimbra              39541  31238     79.0
+ 6 Oeiras               203313 160554     79.0
+ 7 Alcochete             19835  15632     78.8
+ 8 Palmela               65825  49403     75.1
+ 9 Sintra               322539 237954     73.8
+10 Vila Franca de Xira   97596  71482     73.2
+11 Loures               213336 155238     72.8
+12 Moita                 47472  33754     71.1
+13 Barreiro              80696  56003     69.4
+14 Seixal               145532  99532     68.4
+15 Almada               183993 125091     68.0
+16 Odivelas             155468 102812     66.1
+17 Amadora              226825 142386     62.8
+18 Lisboa              1085032 585823     54.0</code></pre>
 </div>
 </div>
 </section>
-<section id="other-dplyr-functions" class="level2" data-number="3.9">
-<h2 data-number="3.9" class="anchored" data-anchor-id="other-dplyr-functions"><span class="header-section-number">3.9</span> Other dplyr functions</h2>
-<p>You can explore other <code>dplyr</code> functions and variations to manipulate data in the <strong>dplyr cheat sheet</strong>:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://rstudio.github.io/cheatsheets/data-transformation.pdf"><img src="images/clipboard-2101323289.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<section id="outras-funções-do-dplyr" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="outras-funções-do-dplyr"><span class="header-section-number">3.9</span> Outras funções do dplyr</h2>
+<p>Pode explorar outras funções e variações do <code>dplyr</code> para manipulação de dados na <strong>dplyr cheatsheet</strong>:</p>
+<p><a href="https://rstudio.github.io/cheatsheets/data-transformation.pdf"><img src="images/clipboard-2101323289.png" class="img-fluid"></a></p>
 <p>Take a particular attention to <code>pivot_wider</code> and <code>pivot_longer</code> (<a href="https://tidyr.tidyverse.org/articles/pivot.html"><code>tidyr</code></a> package) to transform <strong>OD matrices</strong> in <strong>wide</strong> and <strong>long</strong> formats.</p>
+<p>Tome especial atenção a <code>pivot_wider</code> e <code>pivot_longer</code> (pacote <a href="https://tidyr.tidyverse.org/articles/pivot.html"><code>tidyr</code></a> ) para transformar <strong>matrizes OD</strong> em formatos largos (<em>wide</em>) ou longos (<em>long</em>).</p>
 <div class="cell">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<caption>OD matrix in long format</caption>
+<table class="caption-top table table-sm table-striped small">
+<caption>Matriz OD em formato longo</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Origins</th>
-<th style="text-align: left;">Destinations</th>
-<th style="text-align: right;">Trips</th>
+<th style="text-align: left;">Origens</th>
+<th style="text-align: left;">Destinos</th>
+<th style="text-align: right;">Viagens</th>
 </tr>
 </thead>
 <tbody>
@@ -711,11 +733,11 @@ $ Lisbon   &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<caption>OD matrix in wide format</caption>
+<table class="caption-top table table-sm table-striped small">
+<caption>matriz OD em formato wide</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Trips</th>
+<th style="text-align: left;">Viagens</th>
 <th style="text-align: right;">A</th>
 <th style="text-align: right;">B</th>
 <th style="text-align: right;">C</th>
@@ -748,7 +770,10 @@ $ Lisbon   &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
 
 <!-- -->
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-intror" class="csl-entry" role="listitem">
+Engel, Claudia A. 2023. <em>Introduction to R</em>. <a href="https://cengel.github.io/R-intro/">cengel.github.io/R-intro/</a>.
+</div>
 <div id="ref-IMOB" class="csl-entry" role="listitem">
 INE. 2018. <span>«Mobilidade e funcionalidade do território nas <span>Áreas Metropolitanas do Porto e de Lisboa</span>: 2017»</span>. Lisboa: <span>Instituto National de Estatística</span>. <a href="https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_publicacoes&amp;PUBLICACOESpub_boui=349495406&amp;PUBLICACOESmodo=2&amp;xlang=pt">https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_publicacoes&amp;PUBLICACOESpub_boui=349495406&amp;PUBLICACOESmodo=2&amp;xlang=pt</a>.
 </div>
@@ -757,7 +782,7 @@ INE. 2018. <span>«Mobilidade e funcionalidade do território nas <span>Áreas M
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>You can change this in RStudio &gt; Tools &gt; Global Options &gt; Code.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Pode alterar isto em RStudio &gt; Tools &gt; Global Options &gt; Code.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -803,6 +828,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -871,13 +923,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -912,18 +966,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -955,7 +998,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
   const viewSource = window.document.getElementById('quarto-view-source') ||
                      window.document.getElementById('quarto-code-tools-source');
   if (viewSource) {
@@ -1007,10 +1072,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1020,8 +1102,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1033,7 +1124,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1077,6 +1291,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1102,6 +1317,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1163,12 +1404,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./software.html" class="pagination-link">
+      <a href="./software.html" class="pagination-link" aria-label="Software">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Software</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./interactive-maps.html" class="pagination-link">
+      <a href="./interactive-maps.html" class="pagination-link" aria-label="Mapas interativos">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Mapas interativos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1201,359 +1442,363 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb43-30"><a href="#cb43-30" aria-hidden="true" tabindex="-1"></a><span class="co"># data preparation</span></span>
 <span id="cb43-31"><a href="#cb43-31" aria-hidden="true" tabindex="-1"></a>TABLE <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="fu">url</span>(<span class="st">"https://github.com/U-Shift/MQAT/raw/main/data/IMOBmodel0.Rds"</span>))</span>
 <span id="cb43-32"><a href="#cb43-32" aria-hidden="true" tabindex="-1"></a>TABLE <span class="ot">=</span> TABLE <span class="sc">|&gt;</span> </span>
-<span id="cb43-33"><a href="#cb43-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Origin =</span> <span class="st">"Origin_dicofre16"</span>,</span>
-<span id="cb43-34"><a href="#cb43-34" aria-hidden="true" tabindex="-1"></a>         <span class="at">Lisbon =</span> <span class="st">"Lisboa"</span>,</span>
-<span id="cb43-35"><a href="#cb43-35" aria-hidden="true" tabindex="-1"></a>         <span class="at">Internal =</span> <span class="st">"internal"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb43-36"><a href="#cb43-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span>,<span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">9</span>)</span>
-<span id="cb43-37"><a href="#cb43-37" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(TABLE, <span class="st">"data/TRIPSorigin.Rds"</span>)</span>
-<span id="cb43-38"><a href="#cb43-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-39"><a href="#cb43-39" aria-hidden="true" tabindex="-1"></a>Municipalities <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="fu">url</span>(<span class="st">"https://github.com/U-Shift/MQAT/raw/main/data/Dicofre_names.Rds"</span>))</span>
-<span id="cb43-40"><a href="#cb43-40" aria-hidden="true" tabindex="-1"></a>Municipalities <span class="ot">=</span> Municipalities <span class="sc">|&gt;</span> </span>
-<span id="cb43-41"><a href="#cb43-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Mun_code =</span> <span class="st">"DTCC"</span>,</span>
-<span id="cb43-42"><a href="#cb43-42" aria-hidden="true" tabindex="-1"></a>         <span class="at">Neighborhood_code =</span> <span class="st">"Dicofre"</span>,</span>
-<span id="cb43-43"><a href="#cb43-43" aria-hidden="true" tabindex="-1"></a>         <span class="at">Municipality =</span> <span class="st">"Concelho"</span>,</span>
-<span id="cb43-44"><a href="#cb43-44" aria-hidden="true" tabindex="-1"></a>         <span class="at">Neighborhood =</span> <span class="st">"Freguesia"</span>)</span>
-<span id="cb43-45"><a href="#cb43-45" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(Municipalities, <span class="st">"data/Municipalities_names.Rds"</span>)</span>
-<span id="cb43-46"><a href="#cb43-46" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(Municipalities, <span class="st">"data/Municipalities_names.txt"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
-<span id="cb43-47"><a href="#cb43-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-48"><a href="#cb43-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-51"><a href="#cb43-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-52"><a href="#cb43-52" aria-hidden="true" tabindex="-1"></a><span class="co"># ler os dados diretamente em formato R dataset</span></span>
-<span id="cb43-53"><a href="#cb43-53" aria-hidden="true" tabindex="-1"></a>TRIPS <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="st">"data/TRIPSorigin.Rds"</span>)</span>
-<span id="cb43-54"><a href="#cb43-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-55"><a href="#cb43-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-56"><a href="#cb43-56" aria-hidden="true" tabindex="-1"></a>::: callout-important</span>
-<span id="cb43-57"><a href="#cb43-57" aria-hidden="true" tabindex="-1"></a>Note que é muito importante compreender o R base, mesmo que as funções seguintes forneçam os mesmos resultados.</span>
-<span id="cb43-58"><a href="#cb43-58" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb43-59"><a href="#cb43-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-60"><a href="#cb43-60" aria-hidden="true" tabindex="-1"></a>Não é necessário saber tudo!</span>
-<span id="cb43-61"><a href="#cb43-61" aria-hidden="true" tabindex="-1"></a>E **não precisa de saber de cor**.</span>
-<span id="cb43-62"><a href="#cb43-62" aria-hidden="true" tabindex="-1"></a>As funções seguintes são as que provavelmente utilizará na maior parte das vezes para tratar dados.</span>
+<span id="cb43-33"><a href="#cb43-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Origem =</span> <span class="st">"Origem_dicofre16"</span>,</span>
+<span id="cb43-34"><a href="#cb43-34" aria-hidden="true" tabindex="-1"></a>         <span class="at">Interna =</span> <span class="st">"internal"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb43-35"><a href="#cb43-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span>,<span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">9</span>)</span>
+<span id="cb43-36"><a href="#cb43-36" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(TABLE, <span class="st">"data/TRIPSorigem.Rds"</span>)</span>
+<span id="cb43-37"><a href="#cb43-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-38"><a href="#cb43-38" aria-hidden="true" tabindex="-1"></a>Municipios <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="fu">url</span>(<span class="st">"https://github.com/U-Shift/MQAT/raw/main/data/Dicofre_names.Rds"</span>))</span>
+<span id="cb43-39"><a href="#cb43-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-40"><a href="#cb43-40" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(Municipios, <span class="st">"data/Municipios_nomes.Rds"</span>)</span>
+<span id="cb43-41"><a href="#cb43-41" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(Municipios, <span class="st">"data/Municipios_nomes.txt"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
+<span id="cb43-42"><a href="#cb43-42" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-43"><a href="#cb43-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-46"><a href="#cb43-46" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-47"><a href="#cb43-47" aria-hidden="true" tabindex="-1"></a><span class="co"># ler os dados diretamente em formato R dataset</span></span>
+<span id="cb43-48"><a href="#cb43-48" aria-hidden="true" tabindex="-1"></a>TRIPS <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="st">"data/TRIPSorigem.Rds"</span>)</span>
+<span id="cb43-49"><a href="#cb43-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-50"><a href="#cb43-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-51"><a href="#cb43-51" aria-hidden="true" tabindex="-1"></a>::: callout-important</span>
+<span id="cb43-52"><a href="#cb43-52" aria-hidden="true" tabindex="-1"></a>Note que é muito importante compreender o R base, mesmo que as funções seguintes forneçam os mesmos resultados.</span>
+<span id="cb43-53"><a href="#cb43-53" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb43-54"><a href="#cb43-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-55"><a href="#cb43-55" aria-hidden="true" tabindex="-1"></a>Não é necessário saber tudo!</span>
+<span id="cb43-56"><a href="#cb43-56" aria-hidden="true" tabindex="-1"></a>E **não precisa de saber de cor**.</span>
+<span id="cb43-57"><a href="#cb43-57" aria-hidden="true" tabindex="-1"></a>As funções seguintes são as que provavelmente utilizará na maior parte das vezes para tratar dados.</span>
+<span id="cb43-58"><a href="#cb43-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-59"><a href="#cb43-59" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip appearance="simple"}</span>
+<span id="cb43-60"><a href="#cb43-60" aria-hidden="true" tabindex="-1"></a>Existem várias formas de chegar à mesma solução.</span>
+<span id="cb43-61"><a href="#cb43-61" aria-hidden="true" tabindex="-1"></a>Aqui apresento apenas uma delas.</span>
+<span id="cb43-62"><a href="#cb43-62" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb43-63"><a href="#cb43-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-64"><a href="#cb43-64" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip appearance="simple"}</span>
-<span id="cb43-65"><a href="#cb43-65" aria-hidden="true" tabindex="-1"></a>Existem várias formas de chegar à mesma solução.</span>
-<span id="cb43-66"><a href="#cb43-66" aria-hidden="true" tabindex="-1"></a>Aqui apresento apenas uma delas.</span>
-<span id="cb43-67"><a href="#cb43-67" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb43-64"><a href="#cb43-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## Selecionar variáveis</span></span>
+<span id="cb43-65"><a href="#cb43-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-66"><a href="#cb43-66" aria-hidden="true" tabindex="-1"></a>Dê uma vista de olhos ao seu conjunto de dados.</span>
+<span id="cb43-67"><a href="#cb43-67" aria-hidden="true" tabindex="-1"></a>Pode abrir a tabela utilizando <span class="in">`View()`</span>, ver a informação no painel “Environment”, ou mesmo *imprimir* o conteúdo estruturado com <span class="in">`glimpse()`</span></span>
 <span id="cb43-68"><a href="#cb43-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-69"><a href="#cb43-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## Selecionar variáveis</span></span>
-<span id="cb43-70"><a href="#cb43-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-71"><a href="#cb43-71" aria-hidden="true" tabindex="-1"></a>Dê uma vista de olhos ao seu conjunto de dados.</span>
-<span id="cb43-72"><a href="#cb43-72" aria-hidden="true" tabindex="-1"></a>Pode abrir a tabela utilizando <span class="in">`View()`</span>, ver a informação no painel “Environment”, ou mesmo *imprimir* o conteúdo estruturado com <span class="in">`glimpse()`</span></span>
-<span id="cb43-73"><a href="#cb43-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-76"><a href="#cb43-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-77"><a href="#cb43-77" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(TRIPS)</span>
-<span id="cb43-78"><a href="#cb43-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-79"><a href="#cb43-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-80"><a href="#cb43-80" aria-hidden="true" tabindex="-1"></a>Vamos criar um novo conjunto de dados com *Origin*, *Walk,* *Bike* e *Total*.</span>
-<span id="cb43-81"><a href="#cb43-81" aria-hidden="true" tabindex="-1"></a>Usamos a função <span class="in">`select()`</span>.</span>
-<span id="cb43-82"><a href="#cb43-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-85"><a href="#cb43-85" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-86"><a href="#cb43-86" aria-hidden="true" tabindex="-1"></a>TRIPS_new <span class="ot">=</span> <span class="fu">select</span>(TRIPS, Origin, Walk, Bike, Total) <span class="co"># o primeiro argumento é a base de dados</span></span>
-<span id="cb43-87"><a href="#cb43-87" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-71"><a href="#cb43-71" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-72"><a href="#cb43-72" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(TRIPS)</span>
+<span id="cb43-73"><a href="#cb43-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-74"><a href="#cb43-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-75"><a href="#cb43-75" aria-hidden="true" tabindex="-1"></a>Vamos criar um novo conjunto de dados com *Origem*, *Walk,* *Bike* e *Total*.</span>
+<span id="cb43-76"><a href="#cb43-76" aria-hidden="true" tabindex="-1"></a>Usamos a função <span class="in">`select()`</span>.</span>
+<span id="cb43-77"><a href="#cb43-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-80"><a href="#cb43-80" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-81"><a href="#cb43-81" aria-hidden="true" tabindex="-1"></a>TRIPS_new <span class="ot">=</span> <span class="fu">select</span>(TRIPS, Origem, Walk, Bike, Total) <span class="co"># o primeiro argumento é a base de dados</span></span>
+<span id="cb43-82"><a href="#cb43-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-83"><a href="#cb43-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-84"><a href="#cb43-84" aria-hidden="true" tabindex="-1"></a>Em R, o primeiro argumento é normalmente referente ao conjunto de dados, e os restantes são as colunas a selecionar.</span>
+<span id="cb43-85"><a href="#cb43-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-86"><a href="#cb43-86" aria-hidden="true" tabindex="-1"></a>Com o <span class="in">`dplyr`</span> não é necessário referir a <span class="in">`data$...`</span> , podemos simplesmente escrever os nomes das variáveis (e mesmo sem o <span class="in">`“...”`</span>!).</span>
+<span id="cb43-87"><a href="#cb43-87" aria-hidden="true" tabindex="-1"></a>Isto torna o código em R mais simples 🙂</span>
 <span id="cb43-88"><a href="#cb43-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-89"><a href="#cb43-89" aria-hidden="true" tabindex="-1"></a>Em R, o primeiro argumento é normalmente referente ao conjunto de dados, e os restantes são as colunas a selecionar.</span>
+<span id="cb43-89"><a href="#cb43-89" aria-hidden="true" tabindex="-1"></a>Com o <span class="in">`select()`</span> podemos também remover colunas que não precisamos.</span>
 <span id="cb43-90"><a href="#cb43-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-91"><a href="#cb43-91" aria-hidden="true" tabindex="-1"></a>Com o <span class="in">`dplyr`</span> não é necessário referir a <span class="in">`data$...`</span> , podemos simplesmente escrever os nomes das variáveis (e mesmo sem o <span class="in">`“...”`</span>!).</span>
-<span id="cb43-92"><a href="#cb43-92" aria-hidden="true" tabindex="-1"></a>Isto torna o código em R mais simples 🙂</span>
-<span id="cb43-93"><a href="#cb43-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-94"><a href="#cb43-94" aria-hidden="true" tabindex="-1"></a>Com o <span class="in">`select()`</span> podemos também remover colunas que não precisamos.</span>
-<span id="cb43-95"><a href="#cb43-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-98"><a href="#cb43-98" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-99"><a href="#cb43-99" aria-hidden="true" tabindex="-1"></a>TRIPS_new <span class="ot">=</span> <span class="fu">select</span>(TRIPS_new, <span class="sc">-</span>Total) <span class="co"># deixar cair a variável Total</span></span>
-<span id="cb43-100"><a href="#cb43-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-93"><a href="#cb43-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-94"><a href="#cb43-94" aria-hidden="true" tabindex="-1"></a>TRIPS_new <span class="ot">=</span> <span class="fu">select</span>(TRIPS_new, <span class="sc">-</span>Total) <span class="co"># deixar cair a variável Total</span></span>
+<span id="cb43-95"><a href="#cb43-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-96"><a href="#cb43-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-97"><a href="#cb43-97" aria-hidden="true" tabindex="-1"></a><span class="fu">### Usando pipes!</span></span>
+<span id="cb43-98"><a href="#cb43-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-99"><a href="#cb43-99" aria-hidden="true" tabindex="-1"></a>Agora vamos passar a usar os *pipes*.</span>
+<span id="cb43-100"><a href="#cb43-100" aria-hidden="true" tabindex="-1"></a>Os *pipes* funcionam como uma regra: "**Com isto, faz isto.**"</span>
 <span id="cb43-101"><a href="#cb43-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-102"><a href="#cb43-102" aria-hidden="true" tabindex="-1"></a><span class="fu">### Using pipes!</span></span>
+<span id="cb43-102"><a href="#cb43-102" aria-hidden="true" tabindex="-1"></a>Isto é útil para omitir o primeiro argumento das funções (normalmente o conjunto de dados para aplicar a função).</span>
 <span id="cb43-103"><a href="#cb43-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-104"><a href="#cb43-104" aria-hidden="true" tabindex="-1"></a>Now, let's introduce pipes.</span>
-<span id="cb43-105"><a href="#cb43-105" aria-hidden="true" tabindex="-1"></a>Pipes are a rule as: "**With this, do this.**"</span>
-<span id="cb43-106"><a href="#cb43-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-107"><a href="#cb43-107" aria-hidden="true" tabindex="-1"></a>This is useful to skip the first argument of the functions (usually the dataset to apply the function).</span>
-<span id="cb43-108"><a href="#cb43-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-109"><a href="#cb43-109" aria-hidden="true" tabindex="-1"></a>Applying a pipe to the <span class="in">`select()`</span> function, we can write as:</span>
-<span id="cb43-110"><a href="#cb43-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-113"><a href="#cb43-113" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-114"><a href="#cb43-114" aria-hidden="true" tabindex="-1"></a>TRIPS_new <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">select</span>(Origin, Walk, Bike, Total)</span>
-<span id="cb43-115"><a href="#cb43-115" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-104"><a href="#cb43-104" aria-hidden="true" tabindex="-1"></a>Com o mesmo exemplo do <span class="in">`select()`</span>, podemos escrever como:</span>
+<span id="cb43-105"><a href="#cb43-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-108"><a href="#cb43-108" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-109"><a href="#cb43-109" aria-hidden="true" tabindex="-1"></a>TRIPS_new <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">select</span>(Origem, Walk, Bike, Total)</span>
+<span id="cb43-110"><a href="#cb43-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-111"><a href="#cb43-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-112"><a href="#cb43-112" aria-hidden="true" tabindex="-1"></a>Duas coisas a **ter em conta**:</span>
+<span id="cb43-113"><a href="#cb43-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-114"><a href="#cb43-114" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>O símbolo do *pipe* pode ser escrito como <span class="in">`|&gt;`</span> ou <span class="in">`%&gt;%`</span>.<span class="ot">[^data-manipulation-1]</span></span>
+<span id="cb43-115"><a href="#cb43-115" aria-hidden="true" tabindex="-1"></a>    Para o escrever, pode também utilizar o atalho <span class="in">`ctrl+shift+m`</span>.</span>
 <span id="cb43-116"><a href="#cb43-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-117"><a href="#cb43-117" aria-hidden="true" tabindex="-1"></a>Two things to **note**:</span>
+<span id="cb43-117"><a href="#cb43-117" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Depois de escrever <span class="in">`select(`</span> pode premir <span class="in">`tab`</span> e aparecerá a lista de variáveis disponíveis desse conjunto de dados! Prima <span class="in">`Enter`</span> para selecionar. Desta forma, evita erros de digitação.</span>
 <span id="cb43-118"><a href="#cb43-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-119"><a href="#cb43-119" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>The pipe symbol can be written as <span class="in">`|&gt;`</span> or <span class="in">`%&gt;%`</span>.</span>
-<span id="cb43-120"><a href="#cb43-120" aria-hidden="true" tabindex="-1"></a>    <span class="ot">[^data-manipulation-1]</span> To write it you may also use the <span class="in">`ctrl+shift+m`</span> shortcut.</span>
-<span id="cb43-121"><a href="#cb43-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-122"><a href="#cb43-122" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>After typing <span class="in">`select(`</span> you can press <span class="in">`tab`</span> and the list of available variables of that dataset will show up! <span class="in">`Enter`</span> to select. With this you prevent typo errors.</span>
-<span id="cb43-123"><a href="#cb43-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-124"><a href="#cb43-124" aria-hidden="true" tabindex="-1"></a><span class="ot">[^data-manipulation-1]: </span>You can change this in RStudio <span class="sc">\&gt;</span> Tools <span class="sc">\&gt;</span> Global Options <span class="sc">\&gt;</span> Code.</span>
-<span id="cb43-125"><a href="#cb43-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-126"><a href="#cb43-126" aria-hidden="true" tabindex="-1"></a><span class="fu">## Filter observations</span></span>
-<span id="cb43-127"><a href="#cb43-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-128"><a href="#cb43-128" aria-hidden="true" tabindex="-1"></a>You can filter observations based on a condition using the <span class="in">`filter()`</span> function.</span>
-<span id="cb43-129"><a href="#cb43-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-132"><a href="#cb43-132" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-133"><a href="#cb43-133" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPS[TRIPS<span class="sc">$</span>Total <span class="sc">&gt;</span> <span class="dv">25000</span>,] <span class="co"># using r-base, you cant forget the comma</span></span>
-<span id="cb43-134"><a href="#cb43-134" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPS2 <span class="sc">|&gt;</span> <span class="fu">filter</span>(Total <span class="sc">&gt;</span> <span class="dv">25000</span>) <span class="co"># using dplyr, it's easier</span></span>
-<span id="cb43-135"><a href="#cb43-135" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-136"><a href="#cb43-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-137"><a href="#cb43-137" aria-hidden="true" tabindex="-1"></a>You can have other conditions inside the condition.</span>
-<span id="cb43-138"><a href="#cb43-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-141"><a href="#cb43-141" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-142"><a href="#cb43-142" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(TRIPS<span class="sc">$</span>Total)</span>
-<span id="cb43-143"><a href="#cb43-143" aria-hidden="true" tabindex="-1"></a>TRIPS3 <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">filter</span>(Total <span class="sc">&gt;</span> <span class="fu">median</span>(Total)) </span>
-<span id="cb43-144"><a href="#cb43-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-145"><a href="#cb43-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-146"><a href="#cb43-146" aria-hidden="true" tabindex="-1"></a>Other filter conditions:</span>
-<span id="cb43-147"><a href="#cb43-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-148"><a href="#cb43-148" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`==`</span> equal, <span class="in">`!=`</span> different</span>
-<span id="cb43-149"><a href="#cb43-149" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`&lt;`</span> smaller, <span class="in">`&gt;`</span> greater, <span class="in">`&lt;=`</span> smaller or equal, <span class="in">`&gt;=`</span> greater or equal</span>
-<span id="cb43-150"><a href="#cb43-150" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`&amp;`</span> and, <span class="in">`|`</span> or</span>
-<span id="cb43-151"><a href="#cb43-151" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`is.na`</span>, <span class="in">`!is.na`</span> is not NA</span>
-<span id="cb43-152"><a href="#cb43-152" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`%in%`</span>, <span class="in">`!%in%`</span> not in</span>
+<span id="cb43-119"><a href="#cb43-119" aria-hidden="true" tabindex="-1"></a><span class="ot">[^data-manipulation-1]: </span>Pode alterar isto em RStudio <span class="sc">\&gt;</span> Tools <span class="sc">\&gt;</span> Global Options <span class="sc">\&gt;</span> Code.</span>
+<span id="cb43-120"><a href="#cb43-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-121"><a href="#cb43-121" aria-hidden="true" tabindex="-1"></a><span class="fu">## Filtrar observações</span></span>
+<span id="cb43-122"><a href="#cb43-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-123"><a href="#cb43-123" aria-hidden="true" tabindex="-1"></a>Podemos filtrar observações, com base numa condição, utilizando a função <span class="in">`filter()`</span>.</span>
+<span id="cb43-124"><a href="#cb43-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-127"><a href="#cb43-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-128"><a href="#cb43-128" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPS[TRIPS<span class="sc">$</span>Total <span class="sc">&gt;</span> <span class="dv">25000</span>,] <span class="co"># usando o r-base, não se pode esquecer a vírgula</span></span>
+<span id="cb43-129"><a href="#cb43-129" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPS2 <span class="sc">|&gt;</span> <span class="fu">filter</span>(Total <span class="sc">&gt;</span> <span class="dv">25000</span>) <span class="co"># usando o dplyr, é mais fácil</span></span>
+<span id="cb43-130"><a href="#cb43-130" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-131"><a href="#cb43-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-132"><a href="#cb43-132" aria-hidden="true" tabindex="-1"></a>É possível ter outras condições dentro da condição.</span>
+<span id="cb43-133"><a href="#cb43-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-136"><a href="#cb43-136" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-137"><a href="#cb43-137" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(TRIPS<span class="sc">$</span>Total)</span>
+<span id="cb43-138"><a href="#cb43-138" aria-hidden="true" tabindex="-1"></a>TRIPS3 <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">filter</span>(Total <span class="sc">&gt;</span> <span class="fu">median</span>(Total)) </span>
+<span id="cb43-139"><a href="#cb43-139" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-140"><a href="#cb43-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-141"><a href="#cb43-141" aria-hidden="true" tabindex="-1"></a>Outras condições de filtragem:</span>
+<span id="cb43-142"><a href="#cb43-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-143"><a href="#cb43-143" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`==`</span> igual, <span class="in">`!=`</span> diferente</span>
+<span id="cb43-144"><a href="#cb43-144" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`&lt;`</span> menor, <span class="in">`&gt;`</span> maior, <span class="in">`&lt;=`</span> menor ou igual, <span class="in">`&gt;=`</span> maior ou igual</span>
+<span id="cb43-145"><a href="#cb43-145" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`&amp;`</span> e, <span class="in">`|`</span> ou</span>
+<span id="cb43-146"><a href="#cb43-146" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`is.na`</span>, <span class="in">`!is.na`</span> não é NA</span>
+<span id="cb43-147"><a href="#cb43-147" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`%in%`</span>, <span class="in">`!%in%`</span> não está em</span>
+<span id="cb43-148"><a href="#cb43-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-149"><a href="#cb43-149" aria-hidden="true" tabindex="-1"></a><span class="fu">## Criar novas variáveis</span></span>
+<span id="cb43-150"><a href="#cb43-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-151"><a href="#cb43-151" aria-hidden="true" tabindex="-1"></a>Também podemos tentar criar uma variável de percentagem de viagens em automóvel (*Car*) usando pipes!</span>
+<span id="cb43-152"><a href="#cb43-152" aria-hidden="true" tabindex="-1"></a>Para criar uma nova variável ou alterar uma existente (overwrite), podemos usar a função <span class="in">`mutate()`</span>.</span>
 <span id="cb43-153"><a href="#cb43-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-154"><a href="#cb43-154" aria-hidden="true" tabindex="-1"></a><span class="fu">## Create new variables</span></span>
-<span id="cb43-155"><a href="#cb43-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-156"><a href="#cb43-156" aria-hidden="true" tabindex="-1"></a>You can also try again to create a variable of Car percentage using pipes!</span>
-<span id="cb43-157"><a href="#cb43-157" aria-hidden="true" tabindex="-1"></a>To create a new variable or change an existing one (overwriting), you can use the <span class="in">`mutate()`</span> function.</span>
+<span id="cb43-156"><a href="#cb43-156" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-157"><a href="#cb43-157" aria-hidden="true" tabindex="-1"></a>TRIPS<span class="sc">$</span>Car_perc <span class="ot">=</span> TRIPS<span class="sc">$</span>Car<span class="sc">/</span>TRIPS<span class="sc">$</span>Total <span class="sc">*</span> <span class="dv">100</span> <span class="co"># com o r-base</span></span>
 <span id="cb43-158"><a href="#cb43-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-161"><a href="#cb43-161" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-162"><a href="#cb43-162" aria-hidden="true" tabindex="-1"></a>TRIPS<span class="sc">$</span>Car_perc <span class="ot">=</span> TRIPS<span class="sc">$</span>Car<span class="sc">/</span>TRIPS<span class="sc">$</span>Total <span class="sc">*</span> <span class="dv">100</span> <span class="co"># using r-base</span></span>
+<span id="cb43-159"><a href="#cb43-159" aria-hidden="true" tabindex="-1"></a>TRIPS <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">Car_perc =</span> Car<span class="sc">/</span>Total <span class="sc">*</span> <span class="dv">100</span>) <span class="co"># com o dplyr</span></span>
+<span id="cb43-160"><a href="#cb43-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-161"><a href="#cb43-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-162"><a href="#cb43-162" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alterar o tipo de dados</span></span>
 <span id="cb43-163"><a href="#cb43-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-164"><a href="#cb43-164" aria-hidden="true" tabindex="-1"></a>TRIPS <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">Car_perc =</span> Car<span class="sc">/</span>Total <span class="sc">*</span> <span class="dv">100</span>) <span class="co"># using dplyr</span></span>
-<span id="cb43-165"><a href="#cb43-165" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-164"><a href="#cb43-164" aria-hidden="true" tabindex="-1"></a>Os dados podem estar em diferentes formatos.</span>
+<span id="cb43-165"><a href="#cb43-165" aria-hidden="true" tabindex="-1"></a>Por exemplo, a variável *Origem* tem os códigos das freguesias como texto (*character*), mas podemos convertê-la numa variável numérica.</span>
 <span id="cb43-166"><a href="#cb43-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-167"><a href="#cb43-167" aria-hidden="true" tabindex="-1"></a><span class="fu">## Change data type</span></span>
-<span id="cb43-168"><a href="#cb43-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-169"><a href="#cb43-169" aria-hidden="true" tabindex="-1"></a>Data can be in different formats.</span>
-<span id="cb43-170"><a href="#cb43-170" aria-hidden="true" tabindex="-1"></a>For example, the variable *Origin* is a character, but we can convert it to a numeric variable.</span>
-<span id="cb43-171"><a href="#cb43-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-174"><a href="#cb43-174" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-175"><a href="#cb43-175" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(TRIPS<span class="sc">$</span>Origin)</span>
-<span id="cb43-176"><a href="#cb43-176" aria-hidden="true" tabindex="-1"></a>TRIPS <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> </span>
-<span id="cb43-177"><a href="#cb43-177" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Origin_num =</span> <span class="fu">as.integer</span>(Origin)) <span class="co"># you can use as.numeric() as well</span></span>
-<span id="cb43-178"><a href="#cb43-178" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(TRIPS<span class="sc">$</span>Origin_num)</span>
-<span id="cb43-179"><a href="#cb43-179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-180"><a href="#cb43-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-181"><a href="#cb43-181" aria-hidden="true" tabindex="-1"></a>Most used data types are:</span>
-<span id="cb43-182"><a href="#cb43-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-183"><a href="#cb43-183" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>integer (<span class="in">`int`</span>)</span>
-<span id="cb43-184"><a href="#cb43-184" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>numeric (<span class="in">`num`</span>)</span>
-<span id="cb43-185"><a href="#cb43-185" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>character (<span class="in">`chr`</span>)</span>
-<span id="cb43-186"><a href="#cb43-186" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>logical (<span class="in">`logical`</span>)</span>
-<span id="cb43-187"><a href="#cb43-187" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>date (<span class="in">`Date`</span>)</span>
-<span id="cb43-188"><a href="#cb43-188" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>factor (<span class="in">`factor`</span>)</span>
+<span id="cb43-169"><a href="#cb43-169" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-170"><a href="#cb43-170" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(TRIPS<span class="sc">$</span>Origem)</span>
+<span id="cb43-171"><a href="#cb43-171" aria-hidden="true" tabindex="-1"></a>TRIPS <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> </span>
+<span id="cb43-172"><a href="#cb43-172" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Origem_num =</span> <span class="fu">as.integer</span>(Origem)) <span class="co"># também podemos usar as.numeric()</span></span>
+<span id="cb43-173"><a href="#cb43-173" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(TRIPS<span class="sc">$</span>Origem_num)</span>
+<span id="cb43-174"><a href="#cb43-174" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-175"><a href="#cb43-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-176"><a href="#cb43-176" aria-hidden="true" tabindex="-1"></a>Os tipos de dados mais utilizados são:</span>
+<span id="cb43-177"><a href="#cb43-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-178"><a href="#cb43-178" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>inteiro / integer (<span class="in">`int`</span>)</span>
+<span id="cb43-179"><a href="#cb43-179" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>numérico / numeric (<span class="in">`num`</span>)</span>
+<span id="cb43-180"><a href="#cb43-180" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>texto/ character (<span class="in">`chr`</span>)</span>
+<span id="cb43-181"><a href="#cb43-181" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>lógico / logical (<span class="in">`logical`</span>)</span>
+<span id="cb43-182"><a href="#cb43-182" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>data / date (<span class="in">`Date`</span>)</span>
+<span id="cb43-183"><a href="#cb43-183" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>factor (<span class="in">`factor`</span>)</span>
+<span id="cb43-184"><a href="#cb43-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-185"><a href="#cb43-185" aria-hidden="true" tabindex="-1"></a><span class="fu">### Factores</span></span>
+<span id="cb43-186"><a href="#cb43-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-187"><a href="#cb43-187" aria-hidden="true" tabindex="-1"></a>Os factores são úteis para lidar com dados categóricos.</span>
+<span id="cb43-188"><a href="#cb43-188" aria-hidden="true" tabindex="-1"></a>Podemos converter um texto num fator usando <span class="in">`as.factor()`</span>, e também atribuir etiquetas e níveis para dados categóricos ordinais.</span>
 <span id="cb43-189"><a href="#cb43-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-190"><a href="#cb43-190" aria-hidden="true" tabindex="-1"></a><span class="fu">### Factors</span></span>
+<span id="cb43-190"><a href="#cb43-190" aria-hidden="true" tabindex="-1"></a>Podemos alterar a variável <span class="in">`Lisbon`</span> para um factor, e a variável <span class="in">`Internal`</span> também.</span>
 <span id="cb43-191"><a href="#cb43-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-192"><a href="#cb43-192" aria-hidden="true" tabindex="-1"></a>Factors are useful to deal with categorical data.</span>
-<span id="cb43-193"><a href="#cb43-193" aria-hidden="true" tabindex="-1"></a>You can convert a character to a factor using <span class="in">`as.factor()`</span>, and also use labels and levels for categorical ordinal data.</span>
-<span id="cb43-194"><a href="#cb43-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-195"><a href="#cb43-195" aria-hidden="true" tabindex="-1"></a>We can change the <span class="in">`Lisbon`</span> variable to a factor, and <span class="in">`Internal`</span> too.</span>
-<span id="cb43-196"><a href="#cb43-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-199"><a href="#cb43-199" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-200"><a href="#cb43-200" aria-hidden="true" tabindex="-1"></a>TRIPS <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> </span>
-<span id="cb43-201"><a href="#cb43-201" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Lisbon_factor =</span> <span class="fu">factor</span>(Lisbon, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"No"</span>, <span class="st">"Yes"</span>)),</span>
-<span id="cb43-202"><a href="#cb43-202" aria-hidden="true" tabindex="-1"></a>         <span class="at">Internal_factor =</span> <span class="fu">factor</span>(Internal, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Inter"</span>, <span class="st">"Intra"</span>)))</span>
-<span id="cb43-203"><a href="#cb43-203" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-204"><a href="#cb43-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-205"><a href="#cb43-205" aria-hidden="true" tabindex="-1"></a>But how do we know which levels come first?</span>
-<span id="cb43-206"><a href="#cb43-206" aria-hidden="true" tabindex="-1"></a>A simple way is to use <span class="in">`table()`</span> or <span class="in">`unique()`</span> functions.</span>
-<span id="cb43-207"><a href="#cb43-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-210"><a href="#cb43-210" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-211"><a href="#cb43-211" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(TRIPS<span class="sc">$</span>Lisbon) <span class="co"># this will show all the different values</span></span>
-<span id="cb43-212"><a href="#cb43-212" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(TRIPS<span class="sc">$</span>Lisbon) <span class="co"># this will show the frequency of each value</span></span>
-<span id="cb43-213"><a href="#cb43-213" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(TRIPS<span class="sc">$</span>Lisbon_factor)</span>
-<span id="cb43-214"><a href="#cb43-214" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-215"><a href="#cb43-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-216"><a href="#cb43-216" aria-hidden="true" tabindex="-1"></a>The first number to appear is the first level, and so on.</span>
-<span id="cb43-217"><a href="#cb43-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-218"><a href="#cb43-218" aria-hidden="true" tabindex="-1"></a>You can see the difference between using a continuous variable (in this case <span class="in">`Lisbon`</span><span class="sc">\`</span> has 0 and 1) and a categorical variable (<span class="in">`Lisbon_factor`</span>).</span>
-<span id="cb43-219"><a href="#cb43-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-222"><a href="#cb43-222" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-223"><a href="#cb43-223" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(TRIPS<span class="sc">$</span>Lisbon) <span class="co"># the values range between 0 and 1</span></span>
-<span id="cb43-224"><a href="#cb43-224" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(TRIPS<span class="sc">$</span>Lisbon_factor) <span class="co"># the values are categorical and labeled with Yes/No</span></span>
-<span id="cb43-225"><a href="#cb43-225" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-226"><a href="#cb43-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-227"><a href="#cb43-227" aria-hidden="true" tabindex="-1"></a><span class="fu">## Join data tables</span></span>
-<span id="cb43-228"><a href="#cb43-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-229"><a href="#cb43-229" aria-hidden="true" tabindex="-1"></a>When having relational tables - *i.e.* with a common identifier - it is useful to be able to join them in a very efficient way.</span>
-<span id="cb43-230"><a href="#cb43-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-231"><a href="#cb43-231" aria-hidden="true" tabindex="-1"></a><span class="in">`left_join`</span> is a function that joins two tables **by a common column**.</span>
-<span id="cb43-232"><a href="#cb43-232" aria-hidden="true" tabindex="-1"></a>The **first table is the one that will be kept**, and the **second one will be joined to** it.</span>
-<span id="cb43-233"><a href="#cb43-233" aria-hidden="true" tabindex="-1"></a>How <span class="in">`left_join`</span> works:</span>
-<span id="cb43-234"><a href="#cb43-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-235"><a href="#cb43-235" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![A visual representation of the left join where every row in x appears in the output.Source: R for Data Science.](images/clipboard-1594422253.png)</span><span class="ot">{fig-align="center" width="424"}</span><span class="co">](https://r4ds.hadley.nz/joins#fig-join-left)</span></span>
-<span id="cb43-236"><a href="#cb43-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-237"><a href="#cb43-237" aria-hidden="true" tabindex="-1"></a>Let's **join the municipalities** to this table with a supporting table that includes all the **relation** between neighbourhoods and municipalities, and the respective names and codes.</span>
-<span id="cb43-238"><a href="#cb43-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-241"><a href="#cb43-241" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-242"><a href="#cb43-242" aria-hidden="true" tabindex="-1"></a>Municipalities <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="st">"data/Municipalities_names.Rds"</span>)</span>
-<span id="cb43-243"><a href="#cb43-243" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-244"><a href="#cb43-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-247"><a href="#cb43-247" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-248"><a href="#cb43-248" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(TRIPS)</span>
-<span id="cb43-249"><a href="#cb43-249" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(Municipalities)</span>
-<span id="cb43-250"><a href="#cb43-250" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-251"><a href="#cb43-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-252"><a href="#cb43-252" aria-hidden="true" tabindex="-1"></a>We can see that we have a common variable: <span class="in">`Origin`</span> in <span class="in">`TRIPS`</span> and <span class="in">`Neighborhood_code`</span> in <span class="in">`Municipalities`</span>.</span>
-<span id="cb43-253"><a href="#cb43-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-254"><a href="#cb43-254" aria-hidden="true" tabindex="-1"></a>To join these two tables we need to specify the common variable in each table, using the <span class="in">`by`</span> argument.</span>
-<span id="cb43-255"><a href="#cb43-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-258"><a href="#cb43-258" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-259"><a href="#cb43-259" aria-hidden="true" tabindex="-1"></a>TRIPSjoin <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">left_join</span>(Municipalities, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Origin"</span> <span class="ot">=</span> <span class="st">"Neighborhood_code"</span>))</span>
-<span id="cb43-260"><a href="#cb43-260" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-261"><a href="#cb43-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-262"><a href="#cb43-262" aria-hidden="true" tabindex="-1"></a>If you prefer, you can mutate or rename a variable so both tables have the same name.</span>
-<span id="cb43-263"><a href="#cb43-263" aria-hidden="true" tabindex="-1"></a>When **both tables have the same name**, you don't need to specify the <span class="in">`by`</span> argument.</span>
-<span id="cb43-264"><a href="#cb43-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-267"><a href="#cb43-267" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-268"><a href="#cb43-268" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb43-269"><a href="#cb43-269" aria-hidden="true" tabindex="-1"></a>Municipalities <span class="ot">=</span> Municipalities <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="at">Origin =</span> <span class="st">"Neighborhood_code"</span>) <span class="co"># change name</span></span>
-<span id="cb43-270"><a href="#cb43-270" aria-hidden="true" tabindex="-1"></a>TRIPSjoin <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">left_join</span>(Municipalities) <span class="co"># automatic detects common variable</span></span>
-<span id="cb43-271"><a href="#cb43-271" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-272"><a href="#cb43-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-273"><a href="#cb43-273" aria-hidden="true" tabindex="-1"></a>As you can see, both tables don't need to be the same length.</span>
-<span id="cb43-274"><a href="#cb43-274" aria-hidden="true" tabindex="-1"></a>The <span class="in">`left_join`</span> function will keep all the observations from the first table, and join the second table to it.</span>
-<span id="cb43-275"><a href="#cb43-275" aria-hidden="true" tabindex="-1"></a>If there is no match, the variables from the second table will be filled with <span class="in">`NA`</span>.</span>
+<span id="cb43-194"><a href="#cb43-194" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-195"><a href="#cb43-195" aria-hidden="true" tabindex="-1"></a>TRIPS <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> </span>
+<span id="cb43-196"><a href="#cb43-196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Lisboa_factor =</span> <span class="fu">factor</span>(Lisboa, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Não"</span>, <span class="st">"Sim"</span>)),</span>
+<span id="cb43-197"><a href="#cb43-197" aria-hidden="true" tabindex="-1"></a>         <span class="at">Interna_factor =</span> <span class="fu">factor</span>(Interna, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Externa"</span>, <span class="st">"Interna"</span>)))</span>
+<span id="cb43-198"><a href="#cb43-198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-199"><a href="#cb43-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-200"><a href="#cb43-200" aria-hidden="true" tabindex="-1"></a>Mas como saber qual o nível que vem primeiro?</span>
+<span id="cb43-201"><a href="#cb43-201" aria-hidden="true" tabindex="-1"></a>Uma forma simples é utilizar as funções <span class="in">`table()`</span> ou <span class="in">`unique()`</span>.</span>
+<span id="cb43-202"><a href="#cb43-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-205"><a href="#cb43-205" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-206"><a href="#cb43-206" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(TRIPS<span class="sc">$</span>Lisboa) <span class="co"># isto mostra todos os valores únicos (diferentes)</span></span>
+<span id="cb43-207"><a href="#cb43-207" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(TRIPS<span class="sc">$</span>Lisboa) <span class="co"># isto mostra a frequência de cada valor</span></span>
+<span id="cb43-208"><a href="#cb43-208" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(TRIPS<span class="sc">$</span>Lisboa_factor)</span>
+<span id="cb43-209"><a href="#cb43-209" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-210"><a href="#cb43-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-211"><a href="#cb43-211" aria-hidden="true" tabindex="-1"></a>O primeiro número a aparecer corresponde ao primeiro nível, e assim sucessivamente.</span>
+<span id="cb43-212"><a href="#cb43-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-213"><a href="#cb43-213" aria-hidden="true" tabindex="-1"></a>Podemos ver a diferença entre usar uma variável contínua (neste caso, <span class="in">`Lisboa`</span> tem 0 e 1) e uma variável categórica (<span class="in">`Lisboa_factor`</span>).</span>
+<span id="cb43-214"><a href="#cb43-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-217"><a href="#cb43-217" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-218"><a href="#cb43-218" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(TRIPS<span class="sc">$</span>Lisboa) <span class="co"># os valores variam entre 0 e 1</span></span>
+<span id="cb43-219"><a href="#cb43-219" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(TRIPS<span class="sc">$</span>Lisboa_factor) <span class="co"># os valores são categóricos e com etiquetas Sim/Não</span></span>
+<span id="cb43-220"><a href="#cb43-220" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-221"><a href="#cb43-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-222"><a href="#cb43-222" aria-hidden="true" tabindex="-1"></a><span class="fu">## Juntar tabelas de dados</span></span>
+<span id="cb43-223"><a href="#cb43-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-224"><a href="#cb43-224" aria-hidden="true" tabindex="-1"></a>Quando temos tabelas relacionais - ou seja, com um identificador comum - é útil poder juntá-las de uma forma eficiente.</span>
+<span id="cb43-225"><a href="#cb43-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-226"><a href="#cb43-226" aria-hidden="true" tabindex="-1"></a>O <span class="in">`left_join`</span> é uma função que junta duas tabelas através de **uma variável comum**.</span>
+<span id="cb43-227"><a href="#cb43-227" aria-hidden="true" tabindex="-1"></a>A **primeira tabela é a que será mantida**, e a **segunda será acrescentada a ela**.</span>
+<span id="cb43-228"><a href="#cb43-228" aria-hidden="true" tabindex="-1"></a>Como funciona o <span class="in">`left_join`</span>:</span>
+<span id="cb43-229"><a href="#cb43-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-230"><a href="#cb43-230" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Uma representação visual do `left_join` em que todas as linhas de x aparecem no resultado final, com mais informação junta de y. Fonte: @intror.](images/clipboard-1594422253.png)</span><span class="ot">{fig-align="center" width="424"}</span><span class="co">](https://r4ds.hadley.nz/joins#fig-join-left)</span></span>
+<span id="cb43-231"><a href="#cb43-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-232"><a href="#cb43-232" aria-hidden="true" tabindex="-1"></a>Vamos então **juntar a lista de municípios à nossa tabela**, através de uma outra base de dados que inclui a **relação** entre o código de freguesias (dicofre), o nome das freguesias e os respetivos municípios.</span>
+<span id="cb43-233"><a href="#cb43-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-236"><a href="#cb43-236" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-237"><a href="#cb43-237" aria-hidden="true" tabindex="-1"></a>Municipios <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="st">"data/Municipios_nomes.Rds"</span>)</span>
+<span id="cb43-238"><a href="#cb43-238" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-239"><a href="#cb43-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-242"><a href="#cb43-242" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-243"><a href="#cb43-243" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(TRIPS)</span>
+<span id="cb43-244"><a href="#cb43-244" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(Municipios)</span>
+<span id="cb43-245"><a href="#cb43-245" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-246"><a href="#cb43-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-247"><a href="#cb43-247" aria-hidden="true" tabindex="-1"></a>Podemos observar que as tabelas têm variáveis comuns: a <span class="in">`Origem`</span> em <span class="in">`TRIPS`</span> e o <span class="in">`Dicofre`</span> em <span class="in">`Municipios`</span>.</span>
+<span id="cb43-248"><a href="#cb43-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-249"><a href="#cb43-249" aria-hidden="true" tabindex="-1"></a>Uma vez que o nome da variável não é o mesmo, para juntar estas duas tabelas precisamos de especificar a variável comum em cada tabela, utilizando o argumento <span class="in">`by`</span>.</span>
+<span id="cb43-250"><a href="#cb43-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-253"><a href="#cb43-253" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-254"><a href="#cb43-254" aria-hidden="true" tabindex="-1"></a>TRIPSjoin <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">left_join</span>(Municipios, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Origem"</span> <span class="ot">=</span> <span class="st">"Dicofre"</span>))</span>
+<span id="cb43-255"><a href="#cb43-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-256"><a href="#cb43-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-257"><a href="#cb43-257" aria-hidden="true" tabindex="-1"></a>Se preferir, pode alterar ou renomear uma variável para que ambas as tabelas tenham o mesmo nome.</span>
+<span id="cb43-258"><a href="#cb43-258" aria-hidden="true" tabindex="-1"></a>**Quando ambas as tabelas têm o mesmo nome de variável**, não é preciso especificar o argumento <span class="in">`by`</span>.</span>
+<span id="cb43-259"><a href="#cb43-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-262"><a href="#cb43-262" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-263"><a href="#cb43-263" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb43-264"><a href="#cb43-264" aria-hidden="true" tabindex="-1"></a>Municipios <span class="ot">=</span> Municipios <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="at">Origem =</span> <span class="st">"Dicofre"</span>) <span class="co"># alterar o nome da variável</span></span>
+<span id="cb43-265"><a href="#cb43-265" aria-hidden="true" tabindex="-1"></a>TRIPSjoin <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">left_join</span>(Municipios) <span class="co"># detecta automativamente a variável comum</span></span>
+<span id="cb43-266"><a href="#cb43-266" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-267"><a href="#cb43-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-268"><a href="#cb43-268" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Como é possível observar, as duas tabelas não precisam de ter o mesmo número de linhas (</span><span class="in">`nrow()`</span><span class="at">).</span></span>
+<span id="cb43-269"><a href="#cb43-269" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; A função </span><span class="in">`left_join`</span><span class="at"> mantém todas as observações da primeira tabela e junta a segunda tabela a esta.</span></span>
+<span id="cb43-270"><a href="#cb43-270" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Se não houver correspondência, as variáveis da segunda tabela serão preenchidas com </span><span class="in">`NA`</span><span class="at">.</span></span>
+<span id="cb43-271"><a href="#cb43-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-272"><a href="#cb43-272" aria-hidden="true" tabindex="-1"></a><span class="fu">## group_by e summarize</span></span>
+<span id="cb43-273"><a href="#cb43-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-274"><a href="#cb43-274" aria-hidden="true" tabindex="-1"></a>Temos uma tabela grande com todas as freguesias da AML e os seus respectivos municípios.</span>
+<span id="cb43-275"><a href="#cb43-275" aria-hidden="true" tabindex="-1"></a>Queremos agora saber o número total de viagens com origem em cada município.</span>
 <span id="cb43-276"><a href="#cb43-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-277"><a href="#cb43-277" aria-hidden="true" tabindex="-1"></a><span class="fu">## group_by and summarize</span></span>
+<span id="cb43-277"><a href="#cb43-277" aria-hidden="true" tabindex="-1"></a>Para facilitar, vamos manter apenas as variáveis de que precisamos para chegar ao resultado.</span>
 <span id="cb43-278"><a href="#cb43-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-279"><a href="#cb43-279" aria-hidden="true" tabindex="-1"></a>We have a very large table with all the neighbourhoods and their respective municipalities.</span>
-<span id="cb43-280"><a href="#cb43-280" aria-hidden="true" tabindex="-1"></a>We want to know the total number of trips with origin in each municipality.</span>
-<span id="cb43-281"><a href="#cb43-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-282"><a href="#cb43-282" aria-hidden="true" tabindex="-1"></a>To make it easier to understand, let's keep only the variables we need.</span>
-<span id="cb43-283"><a href="#cb43-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-286"><a href="#cb43-286" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-287"><a href="#cb43-287" aria-hidden="true" tabindex="-1"></a>TRIPSredux <span class="ot">=</span> TRIPSjoin <span class="sc">|&gt;</span> <span class="fu">select</span>(Origin, Municipality, Internal, Car, Total)</span>
-<span id="cb43-288"><a href="#cb43-288" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(TRIPSredux)</span>
-<span id="cb43-289"><a href="#cb43-289" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-290"><a href="#cb43-290" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-291"><a href="#cb43-291" aria-hidden="true" tabindex="-1"></a>We can group this table by the <span class="in">`Municipality`</span> variable and summarize the number of trips with origin in each municipality.</span>
-<span id="cb43-292"><a href="#cb43-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-295"><a href="#cb43-295" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-296"><a href="#cb43-296" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb43-297"><a href="#cb43-297" aria-hidden="true" tabindex="-1"></a>TRIPSsum <span class="ot">=</span> TRIPSredux <span class="sc">|&gt;</span> </span>
-<span id="cb43-298"><a href="#cb43-298" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Municipality) <span class="sc">|&gt;</span> <span class="co"># you won't notice any chagne with only this</span></span>
-<span id="cb43-299"><a href="#cb43-299" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Total =</span> <span class="fu">sum</span>(Total))</span>
-<span id="cb43-300"><a href="#cb43-300" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(TRIPSsum)</span>
-<span id="cb43-301"><a href="#cb43-301" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-302"><a href="#cb43-302" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-303"><a href="#cb43-303" aria-hidden="true" tabindex="-1"></a>We summed the total number of trips in each municipality.</span>
-<span id="cb43-304"><a href="#cb43-304" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-305"><a href="#cb43-305" aria-hidden="true" tabindex="-1"></a>If we want to group by more than one variable, we can add more <span class="in">`group_by()`</span> functions.</span>
-<span id="cb43-306"><a href="#cb43-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-309"><a href="#cb43-309" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-310"><a href="#cb43-310" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb43-311"><a href="#cb43-311" aria-hidden="true" tabindex="-1"></a>TRIPSsum2 <span class="ot">=</span> TRIPSredux <span class="sc">|&gt;</span> </span>
-<span id="cb43-312"><a href="#cb43-312" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Municipality, Internal) <span class="sc">|&gt;</span> </span>
-<span id="cb43-313"><a href="#cb43-313" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Total =</span> <span class="fu">sum</span>(Total),</span>
-<span id="cb43-314"><a href="#cb43-314" aria-hidden="true" tabindex="-1"></a>            <span class="at">Car =</span> <span class="fu">sum</span>(Car))</span>
-<span id="cb43-315"><a href="#cb43-315" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(TRIPSsum2)</span>
-<span id="cb43-316"><a href="#cb43-316" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-317"><a href="#cb43-317" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-318"><a href="#cb43-318" aria-hidden="true" tabindex="-1"></a>We summed the total number of trips and car trips in each municipality, **separated by** inter and intra municipal trips.</span>
-<span id="cb43-319"><a href="#cb43-319" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-320"><a href="#cb43-320" aria-hidden="true" tabindex="-1"></a>::: {.callout-caution appearance="simple"}</span>
-<span id="cb43-321"><a href="#cb43-321" aria-hidden="true" tabindex="-1"></a>It is a good practice to use the <span class="in">`ungroup()`</span> function after the <span class="in">`group_by()`</span> function.</span>
-<span id="cb43-322"><a href="#cb43-322" aria-hidden="true" tabindex="-1"></a>This will remove the grouping.</span>
-<span id="cb43-323"><a href="#cb43-323" aria-hidden="true" tabindex="-1"></a>If you don't do this, the grouping will be kept and you may have unexpected results in the next time you use that dataset.</span>
-<span id="cb43-324"><a href="#cb43-324" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb43-325"><a href="#cb43-325" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-326"><a href="#cb43-326" aria-hidden="true" tabindex="-1"></a><span class="fu">## Arrange data</span></span>
-<span id="cb43-327"><a href="#cb43-327" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-328"><a href="#cb43-328" aria-hidden="true" tabindex="-1"></a>You can **sort** a dataset by one or more variables.</span>
-<span id="cb43-329"><a href="#cb43-329" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-330"><a href="#cb43-330" aria-hidden="true" tabindex="-1"></a>For instance, <span class="in">`arrange()`</span> by Total trips, ascending or descending order.</span>
-<span id="cb43-331"><a href="#cb43-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-334"><a href="#cb43-334" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-335"><a href="#cb43-335" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPSsum2 <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Total)</span>
-<span id="cb43-336"><a href="#cb43-336" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPSsum2 <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="sc">-</span>Total) <span class="co"># descending</span></span>
+<span id="cb43-281"><a href="#cb43-281" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-282"><a href="#cb43-282" aria-hidden="true" tabindex="-1"></a>TRIPSredux <span class="ot">=</span> TRIPSjoin <span class="sc">|&gt;</span> <span class="fu">select</span>(Origem, Concelho, Interna, Car, Total)</span>
+<span id="cb43-283"><a href="#cb43-283" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(TRIPSredux)</span>
+<span id="cb43-284"><a href="#cb43-284" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-285"><a href="#cb43-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-286"><a href="#cb43-286" aria-hidden="true" tabindex="-1"></a>Podemos agrupar esta tabela pela variável <span class="in">`Concelho`</span> e sumarizar (*summarize*) o número de viagens com origem em cada município.</span>
+<span id="cb43-287"><a href="#cb43-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-290"><a href="#cb43-290" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-291"><a href="#cb43-291" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb43-292"><a href="#cb43-292" aria-hidden="true" tabindex="-1"></a>TRIPSsum <span class="ot">=</span> TRIPSredux <span class="sc">|&gt;</span> </span>
+<span id="cb43-293"><a href="#cb43-293" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Concelho) <span class="sc">|&gt;</span> <span class="co"># não irá notar nenhuma alteração na tabela</span></span>
+<span id="cb43-294"><a href="#cb43-294" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Total =</span> <span class="fu">sum</span>(Total))</span>
+<span id="cb43-295"><a href="#cb43-295" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(TRIPSsum)</span>
+<span id="cb43-296"><a href="#cb43-296" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-297"><a href="#cb43-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-298"><a href="#cb43-298" aria-hidden="true" tabindex="-1"></a>Somámos o número total de viagens em cada município.</span>
+<span id="cb43-299"><a href="#cb43-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-300"><a href="#cb43-300" aria-hidden="true" tabindex="-1"></a>Se quisermos agrupar por mais do que uma variável, podemos adicionar mais variáveis ao <span class="in">`group_by()`</span>.</span>
+<span id="cb43-301"><a href="#cb43-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-304"><a href="#cb43-304" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-305"><a href="#cb43-305" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb43-306"><a href="#cb43-306" aria-hidden="true" tabindex="-1"></a>TRIPSsum2 <span class="ot">=</span> TRIPSredux <span class="sc">|&gt;</span> </span>
+<span id="cb43-307"><a href="#cb43-307" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Concelho, Interna) <span class="sc">|&gt;</span> </span>
+<span id="cb43-308"><a href="#cb43-308" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Total =</span> <span class="fu">sum</span>(Total),</span>
+<span id="cb43-309"><a href="#cb43-309" aria-hidden="true" tabindex="-1"></a>            <span class="at">Car =</span> <span class="fu">sum</span>(Car))</span>
+<span id="cb43-310"><a href="#cb43-310" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(TRIPSsum2)</span>
+<span id="cb43-311"><a href="#cb43-311" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-312"><a href="#cb43-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-313"><a href="#cb43-313" aria-hidden="true" tabindex="-1"></a>Somámos o número total de viagens e viagens em automóvel para cada município, discriminadas por deslocações internas e externas.</span>
+<span id="cb43-314"><a href="#cb43-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-315"><a href="#cb43-315" aria-hidden="true" tabindex="-1"></a>::: {.callout-caution appearance="simple"}</span>
+<span id="cb43-316"><a href="#cb43-316" aria-hidden="true" tabindex="-1"></a>É uma boa prática utilizar a função <span class="in">`ungroup()`</span> após a função <span class="in">`group_by()`</span>.</span>
+<span id="cb43-317"><a href="#cb43-317" aria-hidden="true" tabindex="-1"></a>Isso removerá o agrupamento.</span>
+<span id="cb43-318"><a href="#cb43-318" aria-hidden="true" tabindex="-1"></a>Se não o fizer, o agrupamento será mantido e poderá obter resultados inesperados na próxima vez que utilizar esse conjunto de dados.</span>
+<span id="cb43-319"><a href="#cb43-319" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb43-320"><a href="#cb43-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-321"><a href="#cb43-321" aria-hidden="true" tabindex="-1"></a><span class="fu">## Organizar os dados</span></span>
+<span id="cb43-322"><a href="#cb43-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-323"><a href="#cb43-323" aria-hidden="true" tabindex="-1"></a>Podemos **ordenar** (*sort*) um conjunto de dados por uma ou mais variáveis.</span>
+<span id="cb43-324"><a href="#cb43-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-325"><a href="#cb43-325" aria-hidden="true" tabindex="-1"></a>Por exemplo, <span class="in">`arrange()`</span> por Total de viagens, na ordem ascendente ou descendente.</span>
+<span id="cb43-326"><a href="#cb43-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-329"><a href="#cb43-329" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-330"><a href="#cb43-330" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPSsum2 <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Total)</span>
+<span id="cb43-331"><a href="#cb43-331" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPSsum2 <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="sc">-</span>Total) <span class="co"># descendente</span></span>
+<span id="cb43-332"><a href="#cb43-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-333"><a href="#cb43-333" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPSsum2 <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Concelho) <span class="co"># alfabética</span></span>
+<span id="cb43-334"><a href="#cb43-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-335"><a href="#cb43-335" aria-hidden="true" tabindex="-1"></a>TRIPS4 <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Lisboa_factor, Total) <span class="co"># mais de uma variável</span></span>
+<span id="cb43-336"><a href="#cb43-336" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb43-337"><a href="#cb43-337" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-338"><a href="#cb43-338" aria-hidden="true" tabindex="-1"></a>TRIPS2 <span class="ot">=</span> TRIPSsum2 <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Municipality) <span class="co"># alphabetic</span></span>
-<span id="cb43-339"><a href="#cb43-339" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-340"><a href="#cb43-340" aria-hidden="true" tabindex="-1"></a>TRIPS4 <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Lisbon_factor, Total) <span class="co"># more than one variable</span></span>
-<span id="cb43-341"><a href="#cb43-341" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-342"><a href="#cb43-342" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-343"><a href="#cb43-343" aria-hidden="true" tabindex="-1"></a>This is not the same as opening the view table and click on the arrows.</span>
-<span id="cb43-344"><a href="#cb43-344" aria-hidden="true" tabindex="-1"></a>When you do that, the order is not saved in the dataset.</span>
-<span id="cb43-345"><a href="#cb43-345" aria-hidden="true" tabindex="-1"></a>If you want to save the order, you need to use the <span class="in">`arrange()`</span> function.</span>
-<span id="cb43-346"><a href="#cb43-346" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-347"><a href="#cb43-347" aria-hidden="true" tabindex="-1"></a><span class="fu">## All together now!</span></span>
+<span id="cb43-338"><a href="#cb43-338" aria-hidden="true" tabindex="-1"></a>Isto não é o mesmo que abrir a tabela de visualização e clicar nas setas das variáveis.</span>
+<span id="cb43-339"><a href="#cb43-339" aria-hidden="true" tabindex="-1"></a>Quando se faz isso, a ordem não é guardada no conjunto de dados.</span>
+<span id="cb43-340"><a href="#cb43-340" aria-hidden="true" tabindex="-1"></a>Se quiser guardar a ordem, deverá usar a função <span class="in">`arrange()`</span>.</span>
+<span id="cb43-341"><a href="#cb43-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-342"><a href="#cb43-342" aria-hidden="true" tabindex="-1"></a><span class="fu">## All together now!</span></span>
+<span id="cb43-343"><a href="#cb43-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-344"><a href="#cb43-344" aria-hidden="true" tabindex="-1"></a>Esta é a magia dos *pipes*.</span>
+<span id="cb43-345"><a href="#cb43-345" aria-hidden="true" tabindex="-1"></a>O pipe pega no último resultado e aplica-lhe a função seguinte.</span>
+<span id="cb43-346"><a href="#cb43-346" aria-hidden="true" tabindex="-1"></a>“Com isto, faz isto.”.</span>
+<span id="cb43-347"><a href="#cb43-347" aria-hidden="true" tabindex="-1"></a>Podemos encadear as funções que quisermos.</span>
 <span id="cb43-348"><a href="#cb43-348" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-349"><a href="#cb43-349" aria-hidden="true" tabindex="-1"></a>This is the pipes magic.</span>
-<span id="cb43-350"><a href="#cb43-350" aria-hidden="true" tabindex="-1"></a>It takes the last result and applies the next function to it.</span>
-<span id="cb43-351"><a href="#cb43-351" aria-hidden="true" tabindex="-1"></a>"With this, do this.".</span>
-<span id="cb43-352"><a href="#cb43-352" aria-hidden="true" tabindex="-1"></a>You can chain as many functions as you want.</span>
-<span id="cb43-353"><a href="#cb43-353" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-356"><a href="#cb43-356" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-357"><a href="#cb43-357" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb43-358"><a href="#cb43-358" aria-hidden="true" tabindex="-1"></a>TRIPS_pipes <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> </span>
-<span id="cb43-359"><a href="#cb43-359" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Origin, Internal, Car, Total) <span class="sc">|&gt;</span> </span>
+<span id="cb43-351"><a href="#cb43-351" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-352"><a href="#cb43-352" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb43-353"><a href="#cb43-353" aria-hidden="true" tabindex="-1"></a>TRIPS_pipes <span class="ot">=</span> TRIPS <span class="sc">|&gt;</span> </span>
+<span id="cb43-354"><a href="#cb43-354" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Origem, Interna, Car, Total) <span class="sc">|&gt;</span> </span>
+<span id="cb43-355"><a href="#cb43-355" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb43-356"><a href="#cb43-356" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Dicofre =</span> Origem) <span class="sc">|&gt;</span> </span>
+<span id="cb43-357"><a href="#cb43-357" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Interna_factor =</span> <span class="fu">factor</span>(Interna, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Externa"</span>, <span class="st">"Interna"</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb43-358"><a href="#cb43-358" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb43-359"><a href="#cb43-359" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Interna_factor <span class="sc">==</span> <span class="st">"Interna"</span>)<span class="sc">|&gt;</span></span>
 <span id="cb43-360"><a href="#cb43-360" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb43-361"><a href="#cb43-361" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Origin_num =</span> <span class="fu">as.integer</span>(Origin)) <span class="sc">|&gt;</span> </span>
-<span id="cb43-362"><a href="#cb43-362" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Internal_factor =</span> <span class="fu">factor</span>(Internal, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Inter"</span>, <span class="st">"Intra"</span>))) <span class="sc">|&gt;</span> </span>
-<span id="cb43-363"><a href="#cb43-363" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb43-364"><a href="#cb43-364" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Internal_factor <span class="sc">==</span> <span class="st">"Inter"</span>)<span class="sc">|&gt;</span></span>
-<span id="cb43-365"><a href="#cb43-365" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb43-366"><a href="#cb43-366" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(Municipalities) <span class="sc">|&gt;</span></span>
-<span id="cb43-367"><a href="#cb43-367" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb43-368"><a href="#cb43-368" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Municipality) <span class="sc">|&gt;</span></span>
-<span id="cb43-369"><a href="#cb43-369" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Total =</span> <span class="fu">sum</span>(Total),</span>
-<span id="cb43-370"><a href="#cb43-370" aria-hidden="true" tabindex="-1"></a>            <span class="at">Car =</span> <span class="fu">sum</span>(Car),</span>
-<span id="cb43-371"><a href="#cb43-371" aria-hidden="true" tabindex="-1"></a>            <span class="at">Car_perc =</span> Car<span class="sc">/</span>Total <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb43-372"><a href="#cb43-372" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb43-373"><a href="#cb43-373" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb43-374"><a href="#cb43-374" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Car_perc))</span>
-<span id="cb43-375"><a href="#cb43-375" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-376"><a href="#cb43-376" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-377"><a href="#cb43-377" aria-hidden="true" tabindex="-1"></a>With this code we will have a table with the total number of intercity trips, by municipality, with their names instead of codes, arranged by the percentage of car trips.</span>
-<span id="cb43-378"><a href="#cb43-378" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-381"><a href="#cb43-381" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-382"><a href="#cb43-382" aria-hidden="true" tabindex="-1"></a>TRIPS_pipes</span>
-<span id="cb43-383"><a href="#cb43-383" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-384"><a href="#cb43-384" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-385"><a href="#cb43-385" aria-hidden="true" tabindex="-1"></a><span class="fu">## Other dplyr functions</span></span>
-<span id="cb43-386"><a href="#cb43-386" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-387"><a href="#cb43-387" aria-hidden="true" tabindex="-1"></a>You can explore other <span class="in">`dplyr`</span> functions and variations to manipulate data in the **dplyr cheat sheet**:</span>
-<span id="cb43-388"><a href="#cb43-388" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-389"><a href="#cb43-389" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![](images/clipboard-2101323289.png)</span><span class="co">](https://rstudio.github.io/cheatsheets/data-transformation.pdf)</span></span>
-<span id="cb43-390"><a href="#cb43-390" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-391"><a href="#cb43-391" aria-hidden="true" tabindex="-1"></a>Take a particular attention to <span class="in">`pivot_wider`</span> and <span class="in">`pivot_longer`</span> (<span class="co">[</span><span class="ot">`tidyr`</span><span class="co">](https://tidyr.tidyverse.org/articles/pivot.html)</span> package) to transform **OD matrices** in **wide** and **long** formats.</span>
-<span id="cb43-392"><a href="#cb43-392" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-395"><a href="#cb43-395" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-396"><a href="#cb43-396" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb43-397"><a href="#cb43-397" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
-<span id="cb43-398"><a href="#cb43-398" aria-hidden="true" tabindex="-1"></a>pivot <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">Origins =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"C"</span>),</span>
-<span id="cb43-399"><a href="#cb43-399" aria-hidden="true" tabindex="-1"></a>                   <span class="at">Destinations =</span> <span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"A"</span>),</span>
-<span id="cb43-400"><a href="#cb43-400" aria-hidden="true" tabindex="-1"></a>                   <span class="at">Trips =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">45</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">30</span>))</span>
-<span id="cb43-401"><a href="#cb43-401" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(pivot, <span class="at">caption =</span> <span class="st">"OD matrix in long format"</span>)</span>
-<span id="cb43-402"><a href="#cb43-402" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-403"><a href="#cb43-403" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-406"><a href="#cb43-406" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-407"><a href="#cb43-407" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb43-408"><a href="#cb43-408" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
-<span id="cb43-409"><a href="#cb43-409" aria-hidden="true" tabindex="-1"></a>matrix <span class="ot">=</span> pivot <span class="sc">|&gt;</span> </span>
-<span id="cb43-410"><a href="#cb43-410" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Destinations,</span>
-<span id="cb43-411"><a href="#cb43-411" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">values_from =</span> Trips,</span>
-<span id="cb43-412"><a href="#cb43-412" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">names_sort =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb43-413"><a href="#cb43-413" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="at">Trips =</span> <span class="st">"Origins"</span>)</span>
-<span id="cb43-414"><a href="#cb43-414" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(matrix, <span class="at">caption =</span> <span class="st">"OD matrix in wide format"</span>)</span>
-<span id="cb43-415"><a href="#cb43-415" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb43-416"><a href="#cb43-416" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-419"><a href="#cb43-419" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-420"><a href="#cb43-420" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb43-421"><a href="#cb43-421" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb43-422"><a href="#cb43-422" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb43-423"><a href="#cb43-423" aria-hidden="true" tabindex="-1"></a><span class="co"># this converts this quarto to a plain r script</span></span>
-<span id="cb43-424"><a href="#cb43-424" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">purl</span>(<span class="st">"data-manipulation.qmd"</span>, <span class="st">"code/data-manipulation.R"</span>, <span class="at">documentation =</span> <span class="dv">0</span>)</span>
-<span id="cb43-425"><a href="#cb43-425" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-</code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-361"><a href="#cb43-361" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(Municipios) <span class="sc">|&gt;</span></span>
+<span id="cb43-362"><a href="#cb43-362" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb43-363"><a href="#cb43-363" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Concelho) <span class="sc">|&gt;</span></span>
+<span id="cb43-364"><a href="#cb43-364" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Total =</span> <span class="fu">sum</span>(Total),</span>
+<span id="cb43-365"><a href="#cb43-365" aria-hidden="true" tabindex="-1"></a>            <span class="at">Car =</span> <span class="fu">sum</span>(Car),</span>
+<span id="cb43-366"><a href="#cb43-366" aria-hidden="true" tabindex="-1"></a>            <span class="at">Car_perc =</span> Car<span class="sc">/</span>Total <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb43-367"><a href="#cb43-367" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb43-368"><a href="#cb43-368" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb43-369"><a href="#cb43-369" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Car_perc))</span>
+<span id="cb43-370"><a href="#cb43-370" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-371"><a href="#cb43-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-372"><a href="#cb43-372" aria-hidden="true" tabindex="-1"></a>Com este código, teremos uma tabela com o número total de viagens intramunicipais, por município, com os seus nomes em vez de códigos, ordenados pela percentagem de viagens em automóvel.</span>
+<span id="cb43-373"><a href="#cb43-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-376"><a href="#cb43-376" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-377"><a href="#cb43-377" aria-hidden="true" tabindex="-1"></a>TRIPS_pipes</span>
+<span id="cb43-378"><a href="#cb43-378" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-379"><a href="#cb43-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-380"><a href="#cb43-380" aria-hidden="true" tabindex="-1"></a><span class="fu">## Outras funções do dplyr</span></span>
+<span id="cb43-381"><a href="#cb43-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-382"><a href="#cb43-382" aria-hidden="true" tabindex="-1"></a>Pode explorar outras funções e variações do <span class="in">`dplyr`</span> para manipulação de dados na **dplyr cheatsheet**:</span>
+<span id="cb43-383"><a href="#cb43-383" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-384"><a href="#cb43-384" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![](images/clipboard-2101323289.png)</span><span class="co">](https://rstudio.github.io/cheatsheets/data-transformation.pdf)</span></span>
+<span id="cb43-385"><a href="#cb43-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-386"><a href="#cb43-386" aria-hidden="true" tabindex="-1"></a>Take a particular attention to <span class="in">`pivot_wider`</span> and <span class="in">`pivot_longer`</span> (<span class="co">[</span><span class="ot">`tidyr`</span><span class="co">](https://tidyr.tidyverse.org/articles/pivot.html)</span> package) to transform **OD matrices** in **wide** and **long** formats.</span>
+<span id="cb43-387"><a href="#cb43-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-388"><a href="#cb43-388" aria-hidden="true" tabindex="-1"></a>Tome especial atenção a <span class="in">`pivot_wider`</span> e <span class="in">`pivot_longer`</span> (pacote <span class="co">[</span><span class="ot">`tidyr`</span><span class="co">](https://tidyr.tidyverse.org/articles/pivot.html)</span> ) para transformar **matrizes OD** em formatos largos (*wide*) ou longos (*long*).</span>
+<span id="cb43-389"><a href="#cb43-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-392"><a href="#cb43-392" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-393"><a href="#cb43-393" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb43-394"><a href="#cb43-394" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
+<span id="cb43-395"><a href="#cb43-395" aria-hidden="true" tabindex="-1"></a>pivot <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">Origens =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"C"</span>),</span>
+<span id="cb43-396"><a href="#cb43-396" aria-hidden="true" tabindex="-1"></a>                   <span class="at">Destinos =</span> <span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"A"</span>),</span>
+<span id="cb43-397"><a href="#cb43-397" aria-hidden="true" tabindex="-1"></a>                   <span class="at">Viagens =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">45</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">30</span>))</span>
+<span id="cb43-398"><a href="#cb43-398" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(pivot, <span class="at">caption =</span> <span class="st">"Matriz OD em formato longo"</span>)</span>
+<span id="cb43-399"><a href="#cb43-399" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-400"><a href="#cb43-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-403"><a href="#cb43-403" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-404"><a href="#cb43-404" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb43-405"><a href="#cb43-405" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
+<span id="cb43-406"><a href="#cb43-406" aria-hidden="true" tabindex="-1"></a>matrix <span class="ot">=</span> pivot <span class="sc">|&gt;</span> </span>
+<span id="cb43-407"><a href="#cb43-407" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Destinos,</span>
+<span id="cb43-408"><a href="#cb43-408" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">values_from =</span> Viagens,</span>
+<span id="cb43-409"><a href="#cb43-409" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">names_sort =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb43-410"><a href="#cb43-410" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="at">Viagens =</span> <span class="st">"Origens"</span>)</span>
+<span id="cb43-411"><a href="#cb43-411" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(matrix, <span class="at">caption =</span> <span class="st">"matriz OD em formato wide"</span>)</span>
+<span id="cb43-412"><a href="#cb43-412" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb43-413"><a href="#cb43-413" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-416"><a href="#cb43-416" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-417"><a href="#cb43-417" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb43-418"><a href="#cb43-418" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb43-419"><a href="#cb43-419" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb43-420"><a href="#cb43-420" aria-hidden="true" tabindex="-1"></a><span class="co"># this converts this quarto to a plain r script</span></span>
+<span id="cb43-421"><a href="#cb43-421" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">purl</span>(<span class="st">"data-manipulation.qmd"</span>, <span class="st">"code/tratamento-dados.R"</span>, <span class="at">documentation =</span> <span class="dv">0</span>)</span>
+<span id="cb43-422"><a href="#cb43-422" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copiar para a área de transferência" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">R Félix</div>   
-    <div class="nav-footer-center">PG Mobilidade 360</div>
-    <div class="nav-footer-right">Novembro 2024</div>
+    <div class="nav-footer-left">
+<p>R Félix</p>
+</div>   
+    <div class="nav-footer-center">
+<p>PG Mobilidade 360</p>
+</div>
+    <div class="nav-footer-right">
+<p>Novembro 2024</p>
+</div>
   </div>
 </footer>
+
 
 
 
