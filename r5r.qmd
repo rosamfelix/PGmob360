@@ -1,9 +1,12 @@
-# Urban Accessibility with R
+---
+code-fold: false
+format:
+  pdf:
+    prefer-html: true
+---
 
-The module “**A crash course on urban accessibility with R**”, lectured by [Rafael H. M. Pereira](about.qmd#sec-rafael-h.-m.-pereira), has it's own website with materials.
+# Acessibilidade com r5r
 
-::: {.callout-note appearance="simple"}
-Please access it here: <https://ipeagit.github.io/access_workshop_eit_2024/>
+::: callout-warning
+Página em construção
 :::
-
-[![Screenshot of the website for this learning module.](images/clipboard-4241488434.png)](https://ipeagit.github.io/access_workshop_eit_2024/)
