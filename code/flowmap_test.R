@@ -40,23 +40,38 @@ TRIPS_complete = TRIPS |>
 
 TRIPS_complete[is.na(TRIPS_complete)] = 0
 
-# plot the flow map
-flowmap <- flowmapblue(
-  locations = CENTROIDS,
-  flows = TRIPS_complete,
-  mapboxAccessToken = Sys.getenv('MAPBOX_PUBLIC_TOKEN'),
-  clustering = TRUE,
-  darkMode = TRUE,
-  animation = FALSE
-)
-flowmap
-# Oops… Sorry, but something went wrong.
+
+# PTransit
+TRIPStp = TRIPSmode |> 
+  rename(origin = Origin,
+         dest = Destination,
+         count = PTransit) |> 
+  select(origin, dest, count) |> 
+  mutate(count = as.integer(count))
+
+TRIPStp$origin[TRIPStp$origin == "Vila Franca de Xira"] = "VFX"
+TRIPStp$dest[TRIPStp$dest == "Vila Franca de Xira"] = "VFX"
+TRIPStp$origin[TRIPStp$origin == "Setúbal"] = "Setubal"
+TRIPStp$dest[TRIPStp$dest == "Setúbal"] = "Setubal"
 
 
-write.csv(TRIPS_complete, "original/flows.csv", row.names = F, quote = F)
-write.csv(CENTROIDS, "original/locations.csv", row.names = F, quote = F)
+# export csv
+write.csv(TRIPS_complete, "data/flows.csv", row.names = F, quote = F)
+write.csv(TRIPStp, "data/flows_tp.csv", row.names = F, quote = F)
+write.csv(CENTROIDS, "data/locations.csv", row.names = F, quote = F)
 
 
+# # plot the flow map
+# flowmap <- flowmapblue(
+#   locations = CENTROIDS,
+#   flows = TRIPS_complete,
+#   mapboxAccessToken = Sys.getenv('MAPBOX_PUBLIC_TOKEN'),
+#   clustering = TRUE,
+#   darkMode = TRUE,
+#   animation = FALSE
+# )
+# flowmap
+# # Oops… Sorry, but something went wrong.
 
 
 # using the package data ----------------------------------------------------------------------
