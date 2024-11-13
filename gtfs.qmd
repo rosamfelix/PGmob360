@@ -2,7 +2,11 @@
 # title: "GTFS"
 ---
 
-### GTFS
+## GTFS
+
+::: callout-warning
+Página em construção
+:::
 
 General Transit Feed Specification (GTFS) is [standard format](https://developers.google.com/transit/gtfs/reference) for documenting public transportation information, including: routes, schedules, stop locations, calendar patterns, trips, and possible transfers.
 Transit agencies are responsible for maintaining the data up-to-date.
@@ -10,11 +14,13 @@ Transit agencies are responsible for maintaining the data up-to-date.
 This information is used in several applications, such as Google Maps, to provide public transportation directions.
 It can be offered for a city, a region, or even a whole country, depending on the PT agency.
 
-The recent version 2 of the GTFS standard includes more information, such as **real-time data**.
+The recent version 2 of the GTFS (GTFS2) standard includes more information, such as **real-time data**.
 
 The data is usually in a `.zip` file that includes several `.txt` files (one for each type of information) with tabular relations.
 
 ![Source: trilliumtransit.com](images/clipboard-2676687965.png){fig-align="center" width="493"}
+
+> imagem gtfs2 google maps ou carris metropolitana
 
 ## Online sources
 
@@ -24,6 +30,7 @@ You can find most GTFS data in the following websites:
 -   [TransitFeeds](https://transitfeeds.com/)
 
 Some PT agencies also provide their open-data in their websites.
+([Ver NAP Portugal](open-data.qmd#nap))
 
 ## R packages
 
