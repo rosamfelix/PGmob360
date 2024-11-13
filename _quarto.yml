@@ -16,12 +16,13 @@ book:
   chapters:
     - index.qmd
     - summary.qmd
-    - open-data.qmd
     - software.qmd
     - data-manipulation.qmd
     - interactive-maps.qmd
+    - open-data.qmd
     - road-networks.qmd
     - gtfs.qmd
+    - r5r.qmd
     # - slides.qmd
     - about.qmd
     - references.qmd
