@@ -12,7 +12,7 @@ book:
      orcid: 0000-0002-5642-6006
      affiliation: "Instituto Superior Técnico - Universidade de Lisboa"
   # date: today
-  repo-url: https://github.com/temospena/PGmob360
+  repo-url: https://github.com/rosamfelix/PGmob360
   chapters:
     - index.qmd
     - summary.qmd
