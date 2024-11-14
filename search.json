@@ -24,7 +24,7 @@
     "href": "summary.html#literacia-sobre-dados-abertos-em-transportes",
     "title": "1  Planeamento",
     "section": "",
-    "text": "Introdução ao R\nImportação e limpeza de dados de transportes em R\nMapas interativos em R\nOs dados abertos e as operadoras de mobilidade e transportes\nExemplos internacionais de análises com dados abertos\nIntrodução ao GTFS\nFontes de dados GTFS e tratamento\nAnálise espacial em R\nBoas práticas de partilha e abertura de dados de mobilidade e transportes\nExercício prático utilizando dados abertos",
+    "text": "Introdução ao R\nImportação e limpeza de dados de transportes em R\nMapas interativos em R\nOs dados abertos em mobilidade e transportes\nExemplos nacionais e internacionais de análises com dados abertos\nIntrodução ao GTFS\nFontes de dados GTFS e tratamento\nAcessibilidade espacial em R\nBoas práticas de partilha e abertura de dados de mobilidade e transportes\nExercício prático utilizando dados de operadora de transportes",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Planeamento</span>"
     ]
