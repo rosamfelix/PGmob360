@@ -199,7 +199,7 @@ O `left_join` é uma função que junta duas tabelas através de **uma variável
 A **primeira tabela é a que será mantida**, e a **segunda será acrescentada a ela**.
 Como funciona o `left_join`:
 
-[![Uma representação visual do `left_join` em que todas as linhas de x aparecem no resultado final, com mais informação junta de y. Fonte: @intror.](images/clipboard-1594422253.png){fig-align="center" width="424"}](https://r4ds.hadley.nz/joins#fig-join-left)
+[![Uma representação visual do left_join em que todas as linhas de x aparecem no resultado final, com mais informação junta de y. Fonte: .](images/clipboard-1594422253.png){fig-align="center" width="424"}](https://r4ds.hadley.nz/joins#fig-join-left)
 
 Vamos então **juntar a lista de municípios à nossa tabela**, através de uma outra base de dados que inclui a **relação** entre o código de freguesias (dicofre), o nome das freguesias e os respetivos municípios.
 
@@ -327,6 +327,31 @@ Com este código, teremos uma tabela com o número total de viagens intramunicip
 
 ```{r}
 TRIPS_pipes
+```
+
+## Gráfico com ggplot
+
+O ggplot permite fazer vários tipos de gráfico.
+Não é fácil de entender à primeira a sua estrutura, e muitas vezes recorre-se a exemplos na internet, adaptando as variáveis em uso.
+
+Aqui fica um exemplo de gráfico com a base de dados que preparámos.
+
+```{r}
+library(ggplot2) # carregar o pacote
+
+# prepar dados
+TRIPSplot = TRIPS2 |>
+  mutate(Interna = factor(Interna, labels = c("Externa", "Interna"))) |> # numérico para fator
+  arrange(-Total) # ordem decrescente
+
+# gráfico com ggplot
+ggplot(data = TRIPSplot, aes(x = Concelho, y = Total, fill = Interna)) +
+  geom_bar(stat = "identity", position = position_stack()) + # position_dodge
+  labs(title = "Numero de viagens por municipio",
+       x = "Município",
+       y = "Numero de viagens",
+       fill = "Tipo") +
+  theme_minimal()
 ```
 
 ## Outras funções do dplyr
