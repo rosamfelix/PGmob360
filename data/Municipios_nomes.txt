@@ -1,4 +1,4 @@
-"Mun_code"	"Neighborhood_code"	"Municipality"	"Neighborhood"
+"DTCC"	"Dicofre"	"Concelho"	"Freguesia"
 "1511"	"151102"	"Sesimbra"	"Sesimbra (Santiago)"
 "1512"	"151208"	"Setúbal"	"Sado"
 "1512"	"151210"	"Setúbal"	"União das freguesias de Setúbal (São Julião, Nossa Senhora da Anunciada e Santa Maria da Graça)"
