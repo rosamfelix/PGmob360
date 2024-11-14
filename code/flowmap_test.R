@@ -54,10 +54,24 @@ TRIPStp$dest[TRIPStp$dest == "Vila Franca de Xira"] = "VFX"
 TRIPStp$origin[TRIPStp$origin == "Setúbal"] = "Setubal"
 TRIPStp$dest[TRIPStp$dest == "Setúbal"] = "Setubal"
 
+# Car
+TRIPScar = TRIPSmode |> 
+  rename(origin = Origin,
+         dest = Destination,
+         count = Car) |> 
+  select(origin, dest, count) |> 
+  mutate(count = as.integer(count))
+
+TRIPScar$origin[TRIPScar$origin == "Vila Franca de Xira"] = "VFX"
+TRIPScar$dest[TRIPScar$dest == "Vila Franca de Xira"] = "VFX"
+TRIPScar$origin[TRIPScar$origin == "Setúbal"] = "Setubal"
+TRIPScar$dest[TRIPScar$dest == "Setúbal"] = "Setubal"
+
 
 # export csv
 write.csv(TRIPS_complete, "data/flows.csv", row.names = F, quote = F)
 write.csv(TRIPStp, "data/flows_tp.csv", row.names = F, quote = F)
+write.csv(TRIPScar, "data/flows_car.csv", row.names = F, quote = F)
 write.csv(CENTROIDS, "data/locations.csv", row.names = F, quote = F)
 
 

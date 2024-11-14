@@ -96,21 +96,20 @@ Pode exportar diretamente o mapa como um ficheiro `html` ou como imagem, utiliza
 Uma forma de visualizar volumes de tráfego ou viagens entre áreas (pares OD) é através da ferramenta online [flowmap.blue](https://www.flowmap.blue/in-browser).
 
 No entanto, é necessário preparar os dados para que fiquem exatamente com o formato solicitado.
-Ver o [código usado](https://github.com/rosamfelix/PGmob360/blob/main/code/flowmap_test.R).
+(Ver o [código usado](https://github.com/rosamfelix/PGmob360/blob/main/code/flowmap_test.R)).
 
 1.  [locations](https://raw.githubusercontent.com/rosamfelix/PGmob360/refs/heads/main/data/locations.csv)
+2.  [flows](https://raw.githubusercontent.com/rosamfelix/PGmob360/refs/heads/main/data/flows_car.csv)
 
-2.  [flows](https://raw.githubusercontent.com/rosamfelix/PGmob360/refs/heads/main/data/flows.csv)
+Experimente copiar e colar, nos campos correspondentes, a informação sobre as viagens em **automóvel** na área metropolitana de lisboa segundo o @IMOB.
 
-Experimente copiar e colar, nos campos correspondentes, a informação sobre as viagens na área metropolitana de lisboa segundo o @IMOB.
-
-[![Viagens totais na AML representadas interativamente no Flowmap.blue](images/clipboard-895240007.png)](https://www.flowmap.blue/in-browser)
+![](images/clipboard-267826855.png)
 
 ::: callout-tip
 ## TPC
 
-Experimente visualizar as viagems em transporte público na AML.
-([flows_pt](https://raw.githubusercontent.com/rosamfelix/PGmob360/refs/heads/main/data/flows_tp.csv))
+Experimente visualizar as viagems em **transporte públic**o na AML.
+([flows_tp](https://raw.githubusercontent.com/rosamfelix/PGmob360/refs/heads/main/data/flows_tp.csv))
 
 -   Que diferenças identifica?
 
