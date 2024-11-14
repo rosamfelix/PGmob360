@@ -331,8 +331,8 @@ TRIPS_pipes
 
 ## Gráfico com ggplot
 
-O ggplot permite fazer vários tipos de gráfico.
-Não é fácil de entender à primeira a sua estrutura, e muitas vezes recorre-se a exemplos na internet, adaptando as variáveis em uso.
+O `ggplot` permite fazer vários tipos de gráfico.
+**Não é fácil** de entender à primeira a sua estrutura, e muitas vezes recorre-se a exemplos na internet, adaptando as variáveis em uso.
 
 Aqui fica um exemplo de gráfico com a base de dados que preparámos.
 
