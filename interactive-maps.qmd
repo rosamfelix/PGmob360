@@ -103,7 +103,7 @@ No entanto, é necessário preparar os dados para que fiquem exatamente com o fo
 
 Experimente copiar e colar, nos campos correspondentes, a informação sobre as viagens em **automóvel** na área metropolitana de lisboa segundo o @IMOB.
 
-![](images/clipboard-267826855.png)
+[![](images/clipboard-267826855.png)](https://www.flowmap.blue/in-browser)
 
 ::: callout-tip
 ## TPC
