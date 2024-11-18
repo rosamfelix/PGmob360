@@ -8,35 +8,76 @@
 Página em construção
 :::
 
-General Transit Feed Specification (GTFS) is [standard format](https://developers.google.com/transit/gtfs/reference) for documenting public transportation information, including: routes, schedules, stop locations, calendar patterns, trips, and possible transfers.
-Transit agencies are responsible for maintaining the data up-to-date.
+O General Transit Feed Specification (GTFS) é um [formato normalizado](https://gtfs.org/documentation/schedule/reference/) de dados abertos para documentar informações sobre transportes públicos, incluindo: itinerários, horários, localizações de paragens, padrões de calendário, viagens e possíveis transbordos.
+As operadoras de transporte público são responsáveis por manter os dados actualizados[^gtfs-1].
 
-This information is used in several applications, such as Google Maps, to provide public transportation directions.
-It can be offered for a city, a region, or even a whole country, depending on the PT agency.
+[^gtfs-1]: Dados de operadora de transportes que não estejam atualizados poderão levar a uma péssima experiência ao utilizador, uma vez que a realidade não corresponde às expetativas criadas pelos dados (desatualizados).
 
-The recent version 2 of the GTFS (GTFS2) standard includes more information, such as **real-time data**.
+{{< video https://youtu.be/SDz2460AjNo >}}
 
-The data is usually in a `.zip` file that includes several `.txt` files (one for each type of information) with tabular relations.
+Os dados GTFS são utilizados em várias aplicações, como o Google Maps, City Mapper, entre outros, para fornecer direcções de transportes públicos.
+Podem ser disponibilizadas para uma cidade, uma região ou mesmo um país inteiro, dependendo da operadora de TP.
 
-![Source: trilliumtransit.com](images/clipboard-2676687965.png){fig-align="center" width="493"}
+Os dados encontram-se num ficheiro `.zip` que inclui vários ficheiros `.txt` (um para cada tipo de informação) com relações tabulares (campos comuns).
+Os mesmos podem ser facilmente editados em qualquer computador.
 
-> imagem gtfs2 google maps ou carris metropolitana
+![Estrutura de um ficheiro GTFS. Fonte: trilliumtransit.com](images/clipboard-2676687965.png){fig-align="center" width="493"}
 
-## Online sources
+[![Campos e identificador comum dos ficheiros GTFS. Fonte: Trafiklab.se](images/clipboard-3620523136.png)](https://www.trafiklab.se/api/gtfs-datasets/overview/)
 
-You can find most GTFS data in the following websites:
+Os GTFS podem ser **estáticos** (ou agendados / *schedule*) - por exemplo para viagens tabeladas, ou em **tempo real** (*real time*) - inclui mais informação, tal como **posicionamento em tempo real**.
+
+### GTFS-Schedule
+
+O GTFS Schedule é uma especificação que define um formato comum para informações estáticas sobre transportes públicos (agendadas, ou que não alteram dinamicamente).
+
+Cada ficheiro descreve informação sobre transportes, como paragens, percursos, viagens, etc.
+Na sua forma mais simples, um conjunto de dados GTFS é composto por 7 ficheiros:
+
+-   `agency.txt`
+-   `routes.txt`
+-   `trips.txt`
+-   `stops.txt`
+-   `stop_times.txt`
+-   `calendar.txt`
+-   `calendar_dates.txt`
+
+### GTFS-Realtime
+
+Os GTFS Realtime é uma norma que permite às operadoras de transportes públicos fornecer informações actualizadas sobre as horas de chegada e partida, alertas de serviço e posição dos veículos, permitindo aos utilizadores planear as suas viagens com maior detalhe, incluindo por exemplo os seguintes tipos de informação:
+
+-   **Actualizações de viagens** - atrasos, cancelamentos, alteração de itinerários
+
+-   **Alertas de serviço** - paragens deslocadas, acontecimentos imprevistos que afectem uma estação, um itinerário ou toda a rede
+
+-   **Posições dos veículos** - informações sobre os veículos, incluindo a localização e o nível de ocupação do interior do veículo
+
+Um exemplo de GTFS-Realtime são os dados da [Carris Metropolitana](https://api.carrismetropolitana.pt/gtfs).
+
+![Planeador de percursos em tempo real da Carris Metropolitana.](images/clipboard-123053131.png){alt="Planeador de percursos em tempo real da Carris Metropolitana."}
+
+![Posicionamento em tempo real e informação de ocupação interior de autocarros Carris com passagem no Saldanha. Fonte: Google Maps](images/clipboard-1057604246.png){alt="Posicionamento em tempo real de autocarros Carris com passagem no Saldanha. Fonte: Google Maps" fig-align="center" width="298"}
+
+## Fontes online de dados GTFS
+
+Os seguintes websites incluem vários GTFS de operadoras, a **nível mundial**.
+Uma vantagem destes agregadores de dados é que muitas vezes também disponibilizam **versões** por data - útil para análises do ano X.
 
 -   [TransitLand](https://www.transit.land)
 -   [TransitFeeds](https://transitfeeds.com/)
 
-Some PT agencies also provide their open-data in their websites.
+Algumas operadoras de Transporte Público nacionais também disponibilizam os seus dados abertos nos websites.
 ([Ver NAP Portugal](open-data.qmd#nap))
 
-## R packages
+## Pacotes de R
 
-There are some nice R packages to read and manipulate GTFS data, such as:
+Existem alguns bons pacotes R para ler e manipular dados GTFS, tais como:
 
 -   [`tidytransit`](https://r-transit.github.io/tidytransit/)
 -   [`gtfstools`](https://ipeagit.github.io/gtfstools/)
 
-Be aware that they may share the same function names, so it is important to use of of them at the time.
+::: {.callout-caution appearance="simple"}
+Atenção que os pacotes podem partilhar os mesmos nomes de funções, pelo que é importante utilizar um delas de cada vez.
+:::
+
+### Exemplo
