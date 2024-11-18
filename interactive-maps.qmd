@@ -7,7 +7,7 @@ format:
 
 # Mapas interativos
 
-É possível criar um mapa estático utilizando `plof(sf)`, mas também é possível criar mapas interactivos.
+É possível criar um mapa estático utilizando `plof(dadosgeo)`, mas também é possível criar mapas interactivos.
 
 ```{r}
 #| eval: false

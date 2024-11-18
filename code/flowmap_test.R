@@ -35,10 +35,10 @@ TRIPS$dest[TRIPS$dest == "Vila Franca de Xira"] = "VFX"
 TRIPS$origin[TRIPS$origin == "Setúbal"] = "Setubal"
 TRIPS$dest[TRIPS$dest == "Setúbal"] = "Setubal"
 
-TRIPS_complete = TRIPS |> 
-  fastDummies::dummy_rows()
-
-TRIPS_complete[is.na(TRIPS_complete)] = 0
+# TRIPS_complete = TRIPS |> 
+#   fastDummies::dummy_rows()
+# 
+# TRIPS_complete[is.na(TRIPS_complete)] = 0
 
 
 # PTransit
