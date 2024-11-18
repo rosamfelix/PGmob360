@@ -46,7 +46,7 @@
     "href": "software.html#pacotes-de-r",
     "title": "2  Software",
     "section": "2.3 Pacotes de R",
-    "text": "2.3 Pacotes de R\nTerá de instalar alguns pacotes para trabalhar com os dados e os scripts destas aulas.\nPode instalá-los no RStudio procurando por eles no separador Packages:\n\nou executando o seguinte código (um a um) na consola:\n\ninstall.packages(\"tidyverse\")\ninstall.packages(\"readxl\")\n\ninstall.packages(\"sf\")\ninstall.packages(\"mapview\")\ninstall.packages(\"rmarkdown\")\ninstall.packages(\"centr\")\ninstall.packages(\"od\")\n\ninstall.packages(\"r5r\")\ninstall.packages(\"rJavaEnv\")\n\ninstall.packages(\"osmextract\") # opcional\ninstall.packages(\"stplanr\") # opcional"
+    "text": "2.3 Pacotes de R\nTerá de instalar alguns pacotes para trabalhar com os dados e os scripts destas aulas.\nPode instalá-los no RStudio procurando por eles no separador Packages:\n\nou executando o seguinte código (um a um) na consola:\n\ninstall.packages(\"tidyverse\")\ninstall.packages(\"readxl\")\n\ninstall.packages(\"sf\")\ninstall.packages(\"mapview\")\ninstall.packages(\"tidytransit\")\ninstall.packages(\"rmarkdown\")\n\ninstall.packages(\"r5r\")\ninstall.packages(\"rJavaEnv\")\n\ninstall.packages(\"osmextract\") # opcional\ninstall.packages(\"stplanr\") # opcional"
   },
   {
     "objectID": "software.html#java-development-kit",
@@ -196,18 +196,39 @@
     "text": "É necessário ter uma conta OSM para usar.↩︎"
   },
   {
-    "objectID": "gtfs.html#online-sources",
-    "href": "gtfs.html#online-sources",
+    "objectID": "gtfs.html#gtfs-schedule",
+    "href": "gtfs.html#gtfs-schedule",
     "title": "7  GTFS",
-    "section": "7.1 Online sources",
-    "text": "7.1 Online sources\nYou can find most GTFS data in the following websites:\n\nTransitLand\nTransitFeeds\n\nSome PT agencies also provide their open-data in their websites. (Ver NAP Portugal)"
+    "section": "7.1 GTFS-Schedule",
+    "text": "7.1 GTFS-Schedule\nO GTFS Schedule é uma especificação que define um formato comum para informações estáticas sobre transportes públicos (agendadas, ou que não alteram dinamicamente).\nCada ficheiro descreve informação sobre transportes, como paragens, percursos, viagens, etc. Na sua forma mais simples, um conjunto de dados GTFS é composto por 7 ficheiros:\n\nagency.txt\nroutes.txt\ntrips.txt\nstops.txt\nstop_times.txt\ncalendar.txt\ncalendar_dates.txt"
   },
   {
-    "objectID": "gtfs.html#r-packages",
-    "href": "gtfs.html#r-packages",
+    "objectID": "gtfs.html#gtfs-realtime",
+    "href": "gtfs.html#gtfs-realtime",
     "title": "7  GTFS",
-    "section": "7.2 R packages",
-    "text": "7.2 R packages\nThere are some nice R packages to read and manipulate GTFS data, such as:\n\ntidytransit\ngtfstools\n\nBe aware that they may share the same function names, so it is important to use of of them at the time."
+    "section": "7.2 GTFS-Realtime",
+    "text": "7.2 GTFS-Realtime\nOs GTFS Realtime é uma norma que permite às operadoras de transportes públicos fornecer informações actualizadas sobre as horas de chegada e partida, alertas de serviço e posição dos veículos, permitindo aos utilizadores planear as suas viagens com maior detalhe, incluindo por exemplo os seguintes tipos de informação:\n\nActualizações de viagens - atrasos, cancelamentos, alteração de itinerários\nAlertas de serviço - paragens deslocadas, acontecimentos imprevistos que afectem uma estação, um itinerário ou toda a rede\nPosições dos veículos - informações sobre os veículos, incluindo a localização e o nível de ocupação do interior do veículo\n\nUm exemplo de GTFS-Realtime são os dados da Carris Metropolitana.\n\n\n\nPlaneador de percursos em tempo real da Carris Metropolitana.\n\n\n\n\n\nPosicionamento em tempo real de autocarros Carris com passagem no Saldanha. Fonte: Google Maps"
+  },
+  {
+    "objectID": "gtfs.html#fontes-online-de-dados-gtfs",
+    "href": "gtfs.html#fontes-online-de-dados-gtfs",
+    "title": "7  GTFS",
+    "section": "7.3 Fontes online de dados GTFS",
+    "text": "7.3 Fontes online de dados GTFS\nOs seguintes websites incluem vários GTFS de operadoras, a nível mundial. Uma vantagem destes agregadores de dados é que muitas vezes também disponibilizam versões por data - útil para análises do ano X.\n\nTransitLand\nTransitFeeds\n\nAlgumas operadoras de Transporte Público nacionais também disponibilizam os seus dados abertos nos websites. (Ver NAP Portugal)"
+  },
+  {
+    "objectID": "gtfs.html#pacotes-de-r",
+    "href": "gtfs.html#pacotes-de-r",
+    "title": "7  GTFS",
+    "section": "7.4 Pacotes de R",
+    "text": "7.4 Pacotes de R\nExistem alguns bons pacotes R para ler e manipular dados GTFS, tais como:\n\ntidytransit\ngtfstools\n\n\n\n\n\n\n\nAtenção que os pacotes podem partilhar os mesmos nomes de funções, pelo que é importante utilizar um delas de cada vez.\n\n\n\n\n7.4.1 Exemplo"
+  },
+  {
+    "objectID": "gtfs.html#footnotes",
+    "href": "gtfs.html#footnotes",
+    "title": "7  GTFS",
+    "section": "",
+    "text": "Dados de operadora de transportes que não estejam atualizados poderão levar a uma péssima experiência ao utilizador, uma vez que a realidade não corresponde às expetativas criadas pelos dados (desatualizados).↩︎"
   },
   {
     "objectID": "r5r.html",
