@@ -71,6 +71,7 @@ install.packages("readxl")
 
 install.packages("sf")
 install.packages("mapview")
+install.packages("tidytransit")
 install.packages("rmarkdown")
 
 install.packages("r5r")
