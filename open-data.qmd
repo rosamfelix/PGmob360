@@ -63,11 +63,8 @@ O portal [**dados.gov.pt**](https://dados.gov.pt/pt/) é a plataforma oficial na
 Alguns websites de dados abertos de municípios também incluem dados de mobilidade e transportes, como é o caso de:
 
 -   [Dados Abertos da Câmara Municipal de Lisboa](https://dadosabertos.cm-lisboa.pt/)
-
 -   [Dados Abertos da Câmara Municipal de Cascais](https://data.cascais.pt/geral/data-hub/dados-abertos)
-
 -   [Dados Abertos da Câmara Municipal de Oeiras](https://oeirasinterativa.oeiras.pt/dadosabertos/dataset/)
-
 -   [Dados Abertos da Câmara Municipal do Porto](https://opendata.porto.digital/)
 
 [![Fonte: data.cascais.pt](images/clipboard-3490448273.png)](https://data.cascais.pt/geral/data-hub/dados-abertos)
