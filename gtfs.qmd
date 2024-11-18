@@ -27,7 +27,7 @@ Os mesmos podem ser facilmente editados em qualquer computador.
 
 Os GTFS podem ser **estáticos** (ou agendados / *schedule*) - por exemplo para viagens tabeladas, ou em **tempo real** (*real time*) - inclui mais informação, tal como **posicionamento em tempo real**.
 
-### GTFS-Schedule
+## GTFS-Schedule
 
 O GTFS Schedule é uma especificação que define um formato comum para informações estáticas sobre transportes públicos (agendadas, ou que não alteram dinamicamente).
 
@@ -42,7 +42,7 @@ Na sua forma mais simples, um conjunto de dados GTFS é composto por 7 ficheiros
 -   `calendar.txt`
 -   `calendar_dates.txt`
 
-### GTFS-Realtime
+## GTFS-Realtime
 
 Os GTFS Realtime é uma norma que permite às operadoras de transportes públicos fornecer informações actualizadas sobre as horas de chegada e partida, alertas de serviço e posição dos veículos, permitindo aos utilizadores planear as suas viagens com maior detalhe, incluindo por exemplo os seguintes tipos de informação:
 
