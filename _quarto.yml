@@ -24,7 +24,7 @@ book:
     - gtfs.qmd
     - r5r.qmd
     - assignment.qmd
-    - slides.qmd
+    # - slides.qmd
     - about.qmd
     - references.qmd
   page-footer:
