@@ -108,7 +108,7 @@ Experimente copiar e colar, nos campos correspondentes, a informação sobre as 
 ::: callout-tip
 ## TPC
 
-Experimente visualizar as viagems em **transporte públic**o na AML.
+Experimente visualizar as viagems em **transporte público** na AML.
 ([flows_tp](https://raw.githubusercontent.com/rosamfelix/PGmob360/refs/heads/main/data/flows_tp.csv))
 
 -   Que diferenças identifica?
