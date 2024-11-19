@@ -1,7 +1,7 @@
 # data preparation from Metro
 
 # load libraries
-library(dplyr)
+library(tidyverse)
 library(readr)
 
 
@@ -47,7 +47,7 @@ DADOSmaioX = DADOSmaioX |>
 # write.csv(DADOSmetroX, "original/DADOSmetroX.csv", row.names = FALSE)
 write.csv(DADOSabrilX, "original/DADOSabrilX.csv", row.names = FALSE)
 write.csv(DADOSmaioX, "original/DADOSmaioX.csv", row.names = FALSE)
-piggyback::pb_upload("original/DADOSabrilX.csv")
+# piggyback::pb_upload("original/DADOSabrilX.csv")
 
 
 
@@ -94,7 +94,7 @@ DADOSmaioY = DADOSmaioY |>
 # write.csv(DADOSmetroY, "original/DADOSmetroY.csv", row.names = FALSE)
 write.csv(DADOSabrilY, "original/DADOSabrilY.csv", row.names = FALSE)
 write.csv(DADOSmaioY, "original/DADOSmaioY.csv", row.names = FALSE)
-piggyback::pb_upload("original/DADOSabrilY.csv")
+# piggyback::pb_upload("original/DADOSabrilY.csv")
 
 
 
