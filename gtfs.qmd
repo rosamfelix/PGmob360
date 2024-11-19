@@ -318,6 +318,8 @@ Experimente importar, explorar e visualizar os dados GTFS da Carris Metropolitan
 Outro formato semelhande ao GTFS é o [NeTEX](https://transmodel-cen.eu/index.php/netex/) (Network Timetable EXchange).
 Este também é usado por algumas operadoras de TP em Portugal.
 
+{{< video https://youtu.be/KXSI-iRuNfc >}}
+
 O NeTEx está dividido em seis partes, cada uma abrangendo um subconjunto funcional do Transmodelo CEN para Informação sobre Transportes Públicos:
 
 1.  Parte 1: Descreve a topologia da rede de transportes públicos (CEN/TS 16614-1:2014)
