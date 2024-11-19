@@ -23,7 +23,8 @@ book:
     - road-networks.qmd
     - gtfs.qmd
     - r5r.qmd
-    # - slides.qmd
+    - assignment.qmd
+    - slides.qmd
     - about.qmd
     - references.qmd
   page-footer:

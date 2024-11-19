@@ -1,0 +1,25 @@
+---
+title: "Exercício prático"
+---
+
+A partir dos dados de entradas e saídas de duas estações de metro[^assignment-1], pretende-se:
+
+[^assignment-1]: A fornecer durante a aula.
+
+1.  Dividir em 4 grupos:
+    -   **Grupo 1**: Estação X - Entradas
+    -   **Grupo 2**: Estação X - Saídas
+    -   **Grupo 3**: Estação Y - Entradas
+    -   **Grupo 4**: Estação Y - Saídas
+2.  Identificar um padrão horário / semanal de registos
+3.  Analisar o tipo de bilhete usado e sua proporção, e eventualmente reclassificar
+4.  Analisar o número de registos realizados pelo mesma pessoa num mês
+5.  Outras análises que considere interessantes!
+6.  Relacionar estes dados com o tipo / localização da estação na cidade de Lisboa (sugestão de onde será)
+7.  Comparar os resultados entre os grupos
+
+Para tal, sugere-se usar o pacote `tidyverse` para tratamento dos dados, e o *Excel* para produzir gráficos (eventualmente o pacote `ggplot` - com recurso ao *ChatGPT* para apoiar o código).
+
+**Nota:** Este exercício prático tem o apoio do Metropolitano de Lisboa.
+
+![](images/clipboard-2850630433.png){fig-align="center" width="386"}
