@@ -142,9 +142,9 @@ Titulos = Titulos |>
              grepl("Navegante", Tipo, ignore.case = TRUE) ~ "Mensal",
              grepl("Carris", Tipo, ignore.case = TRUE) ~ "Mensal",
              grepl("Combinado", Tipo, ignore.case = TRUE) ~ "Mensal",
-             grepl("Diario", Tipo, ignore.case = TRUE) ~ "Vulso",
-             grepl("Zapping", Tipo, ignore.case = TRUE) ~ "Vulso",
-             grepl("Viagem", Tipo, ignore.case = TRUE) ~ "Vulso",
+             grepl("Diario", Tipo, ignore.case = TRUE) ~ "Ocasional",
+             grepl("Zapping", Tipo, ignore.case = TRUE) ~ "Ocasional",
+             grepl("Viagem", Tipo, ignore.case = TRUE) ~ "Ocasional",
              grepl("Trabalhador", Tipo, ignore.case = TRUE) ~ "Mensal",
              TRUE ~ "Outro"
            )
