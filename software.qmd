@@ -72,11 +72,12 @@ install.packages("readxl")
 install.packages("sf")
 install.packages("mapview")
 install.packages("tidytransit")
-install.packages("rmarkdown")
+install.packages("gtfsrouter") # opcional
 
 install.packages("r5r")
 install.packages("rJavaEnv")
 
+install.packages("rmarkdown") # opcional
 install.packages("osmextract") # opcional
 install.packages("stplanr") # opcional
 ```
