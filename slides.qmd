@@ -1,3 +1,15 @@
 ---
 title: "Slides das aulas"
 ---
+
+::: callout-warning
+Página em construção
+:::
+
+## Dia 1
+
+<p><embed src="slides/RFelix_Dia1_LiteraciaDadosAbertosTransportes_ISCTE_PGmob360_2024.pdf" style="width:100.0%;height:100vh;" /></p>
+
+## Dia 2
+
+## Dia 3
