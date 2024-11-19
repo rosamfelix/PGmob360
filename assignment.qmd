@@ -20,7 +20,7 @@ A partir dos dados de entradas e saídas de duas estações de metro[^assignment
 
 Para tal, sugere-se usar o pacote `tidyverse` para tratamento dos dados, e o *Excel* para produzir gráficos (eventualmente o pacote `ggplot` - com recurso ao *ChatGPT* para apoiar o código).
 
-![Exemplo de análise de dados](images/clipboard-3503519197.png){fig-align="center" width="600"}
+![Exemplo de análise de dados.](images/clipboard-4027713333.png){fig-align="center"}
 
 **Nota:** Este exercício prático tem o apoio do Metropolitano de Lisboa.
 
