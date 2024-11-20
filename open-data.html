@@ -83,7 +83,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./road-networks.html" rel="next">
+<link href="./gtfs.html" rel="next">
 <link href="./interactive-maps.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -210,14 +210,14 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./road-networks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Redes Viárias</span></span></a>
+  <a href="./gtfs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">GTFS</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gtfs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GTFS</span></span></a>
+  <a href="./road-networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Redes Viárias</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -405,6 +405,7 @@ Questão
 <h2 data-number="5.2" class="anchored" data-anchor-id="boas-práticas-de-dados-abertos"><span class="header-section-number">5.2</span> Boas práticas de dados abertos</h2>
 <p>O <a href="https://theodi.org/insights/guides/">Open Data Institute</a> publica vários <strong>guias de boas práticas</strong> de partilha e uso de dados abertos, tais como validação de veracidade dos dados, anonimização de dados, avaliação dos riscos de partilha de dados, ética e responsabilidade, estimativa do valor dos dados partilhados, entre outros.</p>
 <p>Os dados abertos são publicados sob <a href="https://opendatacommons.org/licenses/">licenças específicas</a>, não incluem <strong>dados pessoais</strong>, informação sensível e/ou confidencial.</p>
+<p>Por omissão, o <a href="https://dados.gov.pt/pt">dados.gov</a> usa a licença <a href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0 (Creative Commons Attribution 4.0)</a>, que pressupõe a <strong>menção da fonte original</strong> dos dados, mas <strong>possibilita qualquer tipo de uso</strong>.</p>
 <p>Algumas questões devem ser consideradas ao <strong>usar</strong> um conjunto de dados abertos <span class="citation" data-cites="checklist">(<a href="references.html#ref-checklist" role="doc-biblioref">The Open Data Institute 2013</a>)</span>:</p>
 <p><strong>Formato</strong></p>
 <ul>
@@ -533,6 +534,7 @@ Questões
 </ul>
 </div>
 </div>
+<p>No capítulo seguinte iremos explorar o que são dados GTFS e como podem ser usados.</p>
 
 
 <!-- -->
@@ -952,8 +954,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./road-networks.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Redes Viárias</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./gtfs.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">GTFS</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Código fonte</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
@@ -1061,107 +1063,111 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>Os dados abertos são publicados sob <span class="co">[</span><span class="ot">licenças específicas</span><span class="co">](https://opendatacommons.org/licenses/)</span>, não incluem **dados pessoais**, informação sensível e/ou confidencial.</span>
 <span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>Algumas questões devem ser consideradas ao **usar** um conjunto de dados abertos <span class="co">[</span><span class="ot">@checklist</span><span class="co">]</span>:</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>Por omissão, o <span class="co">[</span><span class="ot">dados.gov</span><span class="co">](https://dados.gov.pt/pt)</span> usa a licença <span class="co">[</span><span class="ot">CC BY 4.0 (Creative Commons Attribution 4.0)</span><span class="co">](https://creativecommons.org/licenses/by/4.0/legalcode)</span>, que pressupõe a **menção da fonte original** dos dados, mas **possibilita qualquer tipo de uso**.</span>
 <span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>**Formato**</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>Algumas questões devem ser consideradas ao **usar** um conjunto de dados abertos <span class="co">[</span><span class="ot">@checklist</span><span class="co">]</span>:</span>
 <span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Como foram processados os dados?</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Estão em estado bruto (*raw*) ou foram processados?</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>De que modo o seu formato (e granularidade) irá afetar a sua análise/produto/aplicação?</span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Que transformações sintáticas (linguagem) e semânticas (significado) serão necessárias?</span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Estes dados são compatíveis com outros conjuntos de dados de que dispõe?</span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>**Qualidade**</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>**Formato**</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Como foram processados os dados?</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Estão em estado bruto (*raw*) ou foram processados?</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>De que modo o seu formato (e granularidade) irá afetar a sua análise/produto/aplicação?</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Que transformações sintáticas (linguagem) e semânticas (significado) serão necessárias?</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Estes dados são compatíveis com outros conjuntos de dados de que dispõe?</span>
 <span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Até que ponto os dados são atuais?</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Com que frequência são atualizados?</span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compreende todos os campos e o seu contexto?</span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Durante quanto tempo serão publicados? Qual é o compromisso com o publicador?</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>O que sabe sobre a exatidão dos dados?</span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Como são tratados os dados omissos?</span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>Alguns dados abertos fornecem um <span class="co">[</span><span class="ot">**API**</span><span class="co">](https://dados.gov.pt/pt/docapi/)</span> (Application Programming Interface) para que se possa automativamente chamar os dados mais autualizados disponíveis.</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>**Qualidade**</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Até que ponto os dados são atuais?</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Com que frequência são atualizados?</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compreende todos os campos e o seu contexto?</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Durante quanto tempo serão publicados? Qual é o compromisso com o publicador?</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>O que sabe sobre a exatidão dos dados?</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Como são tratados os dados omissos?</span>
 <span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tutoriais</span></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>Alguns dados abertos fornecem um <span class="co">[</span><span class="ot">**API**</span><span class="co">](https://dados.gov.pt/pt/docapi/)</span> (Application Programming Interface) para que se possa automativamente chamar os dados mais autualizados disponíveis.</span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>O ISCTE, no âmbito do <span class="co">[</span><span class="ot">Plano Nacional de Administração Aberta</span><span class="co">](https://ogp.eportugal.gov.pt/)</span>, criou um <span class="co">[</span><span class="ot">conjunto de vídeos tutoriais</span><span class="co">](https://online-learning.iscte-iul.pt/bo/courses/plano-nacional-de-acao-de-administracao-aberta-pt)</span> sobre algumas possibilidades da reutilização de dados, utilizando o R.</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tutoriais</span></span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Curso gratuito sobre a utilização de plataformas de dados abertos (Português), do ISCTE](images/clipboard-935508586.png)</span><span class="co">](https://online-learning.iscte-iul.pt/bo/courses/plano-nacional-de-acao-de-administracao-aberta-pt)</span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>O ISCTE, no âmbito do <span class="co">[</span><span class="ot">Plano Nacional de Administração Aberta</span><span class="co">](https://ogp.eportugal.gov.pt/)</span>, criou um <span class="co">[</span><span class="ot">conjunto de vídeos tutoriais</span><span class="co">](https://online-learning.iscte-iul.pt/bo/courses/plano-nacional-de-acao-de-administracao-aberta-pt)</span> sobre algumas possibilidades da reutilização de dados, utilizando o R.</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>A AMA - Agência para a Modernização Administrativa disponibiliza também alguns vídeos sobre como usar o portal de dados abertos.</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>Chamo a atenção para o "**Como publicar dados abertos**", acessível a qualquer entidade.</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>{{&lt; video https://youtu.be/G7-qftX_org &gt;}}</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Curso gratuito sobre a utilização de plataformas de dados abertos (Português), do ISCTE](images/clipboard-935508586.png)</span><span class="co">](https://online-learning.iscte-iul.pt/bo/courses/plano-nacional-de-acao-de-administracao-aberta-pt)</span></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>A AMA - Agência para a Modernização Administrativa disponibiliza também alguns vídeos sobre como usar o portal de dados abertos.</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>Chamo a atenção para o "**Como publicar dados abertos**", acessível a qualquer entidade.</span>
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reutilização de dados abertos</span></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>{{&lt; video https://youtu.be/G7-qftX_org &gt;}}</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>Qualquer pessoa ou entidade pode aceder a dados abertos (por definição).</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>É recomendado, como boa prática, a **partilha dos resultados** que se obtiveram com a utilização de um conjunto de dados abertos.</span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>Tal permite inspirar outros utilizadores dos dados, bem como dar conhecimento à entidade que os partilhou trabalhos que podem ser realizados com esses dados - levando muitas vezes à descoberta de novas prespetivas sobre os dados.</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>As reutilizações documentadas muitas vezes também partilham o **código utilizado** para tratamento e análise do conjunto de dados, permitindo a sua **replicabilidade** e adaptação / aplicação a **outros contextos**.</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reutilização de dados abertos</span></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>Qualquer pessoa ou entidade pode aceder a dados abertos (por definição).</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>É recomendado, como boa prática, a **partilha dos resultados** que se obtiveram com a utilização de um conjunto de dados abertos.</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>Tal permite inspirar outros utilizadores dos dados, bem como dar conhecimento à entidade que os partilhou trabalhos que podem ser realizados com esses dados - levando muitas vezes à descoberta de novas prespetivas sobre os dados.</span>
 <span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>Exemplos de trabalhos realizados por reutilização de dados abertos:</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>As reutilizações documentadas muitas vezes também partilham o **código utilizado** para tratamento e análise do conjunto de dados, permitindo a sua **replicabilidade** e adaptação / aplicação a **outros contextos**.</span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [Dados.gov.pt](https://dados.gov.pt/pt/reuses/)</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>Exemplos de trabalhos realizados por reutilização de dados abertos:</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![](images/clipboard-295963906.png)</span><span class="co">](https://dados.gov.pt/pt/reuses/)</span></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [Dados.gov.pt](https://dados.gov.pt/pt/reuses/)</span></span>
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [LxDataLab](https://lisboaaberta.cm-lisboa.pt/index.php/pt/lx-data-lab/resultados)</span></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![](images/clipboard-295963906.png)</span><span class="co">](https://dados.gov.pt/pt/reuses/)</span></span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Resultados de um desafio LxDataLab](images/clipboard-4030091193.png)</span><span class="co">](https://lisboaaberta.cm-lisboa.pt/index.php/pt/lx-data-lab/resultados)</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [LxDataLab](https://lisboaaberta.cm-lisboa.pt/index.php/pt/lx-data-lab/resultados)</span></span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exemplos internacionais</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Resultados de um desafio LxDataLab](images/clipboard-4030091193.png)</span><span class="co">](https://lisboaaberta.cm-lisboa.pt/index.php/pt/lx-data-lab/resultados)</span></span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="fu">### STATS19</span></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exemplos internacionais</span></span>
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>O Departamento de Transportes do Reino Unido (DfT) mantém uma importante base de dados com acidentes e colisões rodoviárias para todo o território - o <span class="co">[</span><span class="ot">STATS19</span><span class="co">](https://www.data.gov.uk/dataset/25170a92-0736-4090-baea-bf6add82d118/gm-road-casualty-accidents-full-stats19-data)</span>, contendo dados uniformizados desde 1926 (centenas de milhares), que têm vindo a ser registados pela Polícia.</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="fu">### STATS19</span></span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>Esta base de dados abertos é amplamente usada para definição de políticas públicas de segurança rodviária, e na academia, com a elaboração de vários dashbors e estudos que utilizam os dados.</span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>Exemplo:</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Interactive dashboard</span><span class="co">](https://maps.dft.gov.uk/road-casualties/index.html)</span></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>O Departamento de Transportes do Reino Unido (DfT) mantém uma importante base de dados com acidentes e colisões rodoviárias para todo o território - o <span class="co">[</span><span class="ot">STATS19</span><span class="co">](https://www.data.gov.uk/dataset/25170a92-0736-4090-baea-bf6add82d118/gm-road-casualty-accidents-full-stats19-data)</span>, contendo dados uniformizados desde 1926 (centenas de milhares), que têm vindo a ser registados pela Polícia.</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>Esta base de dados abertos é amplamente usada para definição de políticas públicas de segurança rodviária, e na academia, com a elaboração de vários dashbors e estudos que utilizam os dados.</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>Exemplo:</span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Collision map</span><span class="co">](https://www.collisionmap.uk/)</span></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Interactive dashboard</span><span class="co">](https://maps.dft.gov.uk/road-casualties/index.html)</span></span>
 <span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Vision Zero public map</span><span class="co">](https://vzsw.traffweb.app/traffweb/1/PublicMap)</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Collision map</span><span class="co">](https://www.collisionmap.uk/)</span></span>
 <span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Bikedata</span><span class="co">](https://bikedata.cyclestreets.net/)</span> - Compilação de vários dados de mobilidade urbana, incluindo colisões por tipo, contagens de tráfego.</span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>    Os dados podem ser filtrados e exportados.</span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">stats19</span><span class="co">](https://itsleeds.github.io/stats19/)</span> - Pacote R com todos os dados pré-tratados.</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Vision Zero public map</span><span class="co">](https://vzsw.traffweb.app/traffweb/1/PublicMap)</span></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Bikedata</span><span class="co">](https://bikedata.cyclestreets.net/)</span> - Compilação de vários dados de mobilidade urbana, incluindo colisões por tipo, contagens de tráfego.</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>    Os dados podem ser filtrados e exportados.</span>
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Collision Map em Leeds (UK)](images/clipboard-2645254310.png)</span><span class="co">](https://www.collisionmap.uk/gb_las/E08000035/Leeds)</span></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">stats19</span><span class="co">](https://itsleeds.github.io/stats19/)</span> - Pacote R com todos os dados pré-tratados.</span>
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Bikedata: compilação de vários dados relativos à circulação em bicicicleta](images/clipboard-2443435340.png)</span><span class="co">](https://bikedata.cyclestreets.net/)</span></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Collision Map em Leeds (UK)](images/clipboard-2645254310.png)</span><span class="co">](https://www.collisionmap.uk/gb_las/E08000035/Leeds)</span></span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Painel interativo do DfT para os dados de acidentes rodoviários](images/clipboard-3456343079.png)</span><span class="co">](https://maps.dft.gov.uk/road-casualties/index.html)</span></span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Bikedata: compilação de vários dados relativos à circulação em bicicicleta](images/clipboard-2443435340.png)</span><span class="co">](https://bikedata.cyclestreets.net/)</span></span>
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a><span class="fu">### Táxis em Nova Iorque</span></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Painel interativo do DfT para os dados de acidentes rodoviários](images/clipboard-3456343079.png)</span><span class="co">](https://maps.dft.gov.uk/road-casualties/index.html)</span></span>
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>A comissão de Táxis de Nova York (Taxi &amp; Limousine Commission) partilha todos os <span class="co">[</span><span class="ot">dados de viagens</span><span class="co">](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)</span> realizadas desde 2009.</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a><span class="fu">### Táxis em Nova Iorque</span></span>
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>Os dados incluem localização de origem e destino, data e hora, distância de viagem, tarifa, tipo de pagamento, e número de passegeiros transportados.</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>A comissão de Táxis de Nova York (Taxi &amp; Limousine Commission) partilha todos os <span class="co">[</span><span class="ot">dados de viagens</span><span class="co">](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)</span> realizadas desde 2009.</span>
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>Todos os anos, são realizadas várias análises a este conjunto de dados por alunos, investigadores, programadores, etc, que permitem uma análise detalhada e visualização espacial de padrões de mobilidade de táxis.</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>Os dados incluem localização de origem e destino, data e hora, distância de viagem, tarifa, tipo de pagamento, e número de passegeiros transportados.</span>
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Exemplo 1</span><span class="co">](https://www.stat.cmu.edu/capstoneresearch/spring2022/315files_s22/team23.html)</span> \| <span class="co">[</span><span class="ot">Exemplo 2</span><span class="co">](https://github.com/richhuwtaylor/ny-taxi-analytics-pipeline/tree/main)</span> \| <span class="co">[</span><span class="ot">Exemplo 3</span><span class="co">](https://kepler.gl/demo/nyctrips)</span> \| <span class="co">[</span><span class="ot">Examplo 4</span><span class="co">](https://public.tableau.com/app/profile/sekyung.na6348/viz/NYCTaxi20183/Summary)</span> \| <span class="co">[</span><span class="ot">Exemplo 5</span><span class="co">](https://toddwschneider.com/dashboards/nyc-taxi-ridehailing-uber-lyft-data/)</span></span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>Todos os anos, são realizadas várias análises a este conjunto de dados por alunos, investigadores, programadores, etc, que permitem uma análise detalhada e visualização espacial de padrões de mobilidade de táxis.</span>
 <span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Dashboard interativo de análise de dados de táxis em NY. Fonte: Github.](images/clipboard-1334823515.png)</span><span class="co">](https://github.com/richhuwtaylor/ny-taxi-analytics-pipeline)</span></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Exemplo 1</span><span class="co">](https://www.stat.cmu.edu/capstoneresearch/spring2022/315files_s22/team23.html)</span> \| <span class="co">[</span><span class="ot">Exemplo 2</span><span class="co">](https://github.com/richhuwtaylor/ny-taxi-analytics-pipeline/tree/main)</span> \| <span class="co">[</span><span class="ot">Exemplo 3</span><span class="co">](https://kepler.gl/demo/nyctrips)</span> \| <span class="co">[</span><span class="ot">Examplo 4</span><span class="co">](https://public.tableau.com/app/profile/sekyung.na6348/viz/NYCTaxi20183/Summary)</span> \| <span class="co">[</span><span class="ot">Exemplo 5</span><span class="co">](https://toddwschneider.com/dashboards/nyc-taxi-ridehailing-uber-lyft-data/)</span></span>
 <span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Dashboard interativo com viagens de táxi em 2018](images/clipboard-3077193967.png)</span><span class="co">](https://github.com/sekyungna/NYC_Taxi/)</span></span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Dashboard interativo de análise de dados de táxis em NY. Fonte: Github.](images/clipboard-1334823515.png)</span><span class="co">](https://github.com/richhuwtaylor/ny-taxi-analytics-pipeline)</span></span>
 <span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Mapa interativo de localização de origens e destinos de viagens](images/clipboard-3532115784.png)</span><span class="co">](https://kepler.gl/demo/nyctrips)</span></span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Dashboard interativo com viagens de táxi em 2018](images/clipboard-3077193967.png)</span><span class="co">](https://github.com/sekyungna/NYC_Taxi/)</span></span>
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a><span class="fu">## Questões</span></span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Que vantagens vê na utilização de dados abertos?</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Mapa interativo de localização de origens e destinos de viagens](images/clipboard-3532115784.png)</span><span class="co">](https://kepler.gl/demo/nyctrips)</span></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="fu">## Questões</span></span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Que dados a sua instituição poderia partilhar em acesso aberto?</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Que vantagens vê na utilização de dados abertos?</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Que vantagens vê na abertura de dados para a sua instituição?</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Que dados a sua instituição poderia partilhar em acesso aberto?</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Que vantagens vê na abertura de dados para a sua instituição?</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>No capítulo seguinte iremos explorar o que são dados GTFS e como podem ser usados.</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

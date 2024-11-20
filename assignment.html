@@ -191,14 +191,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./road-networks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Redes Viárias</span></span></a>
+  <a href="./gtfs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">GTFS</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gtfs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GTFS</span></span></a>
+  <a href="./road-networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Redes Viárias</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -253,27 +253,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>A partir dos dados de entradas e saídas de duas estações de metro<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, pretende-se:</p>
-<ol type="1">
-<li>Dividir em 4 grupos:
+<p>Vamos dividir a turma em 4 grupos:</p>
 <ul>
 <li><strong>Grupo 1</strong>: Estação X - Entradas</li>
 <li><strong>Grupo 2</strong>: Estação X - Saídas</li>
 <li><strong>Grupo 3</strong>: Estação Y - Entradas</li>
 <li><strong>Grupo 4</strong>: Estação Y - Saídas</li>
-</ul></li>
+</ul>
+<p>A partir dos dados de entradas e saídas de duas estações de metro<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, pretende-se:</p>
+<ol type="1">
 <li>Identificar um padrão horário / semanal de registos</li>
 <li>Analisar o tipo de bilhete usado e sua proporção, e eventualmente reclassificar</li>
 <li>Analisar o número de registos realizados pelo mesma pessoa num mês</li>
-<li>Outras análises que considere interessantes!</li>
+<li><strong>Outras análises</strong> que considere interessantes!</li>
 <li>Relacionar estes dados com o tipo / localização da estação na cidade de Lisboa (sugestão de onde será)</li>
 <li>Comparar os resultados entre os grupos</li>
 </ol>
 <p>Para tal, sugere-se usar o pacote <code>tidyverse</code> para tratamento dos dados, e o <em>Excel</em> para produzir gráficos (eventualmente o pacote <code>ggplot</code> - com recurso ao <em>ChatGPT</em> para apoiar o código).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/clipboard-3503519197.png" class="img-fluid figure-img" width="600"></p>
-<p></p><figcaption class="figure-caption">Exemplo de análise de dados</figcaption><p></p>
+<p><img src="images/clipboard-4027713333.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Exemplo de análise de dados.</figcaption><p></p>
 </figure>
 </div>
 <p><strong>Nota:</strong> Este exercício prático tem o apoio do Metropolitano de Lisboa.</p>
@@ -709,29 +709,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Exercício prático"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>A partir dos dados de entradas e saídas de duas estações de metro<span class="ot">[^assignment-1]</span>, pretende-se:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Vamos dividir a turma em 4 grupos:</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ot">[^assignment-1]: </span>A fornecer durante a aula.</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Dividir em 4 grupos:</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Grupo 1**: Estação X - Entradas</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Grupo 2**: Estação X - Saídas</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Grupo 3**: Estação Y - Entradas</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Grupo 4**: Estação Y - Saídas</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Identificar um padrão horário / semanal de registos</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Analisar o tipo de bilhete usado e sua proporção, e eventualmente reclassificar</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Analisar o número de registos realizados pelo mesma pessoa num mês</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>Outras análises que considere interessantes!</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>Relacionar estes dados com o tipo / localização da estação na cidade de Lisboa (sugestão de onde será)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">7.  </span>Comparar os resultados entre os grupos</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Para tal, sugere-se usar o pacote <span class="in">`tidyverse`</span> para tratamento dos dados, e o *Excel* para produzir gráficos (eventualmente o pacote `ggplot` - com recurso ao *ChatGPT* para apoiar o código).</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Grupo 1**: Estação X - Entradas</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Grupo 2**: Estação X - Saídas</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Grupo 3**: Estação Y - Entradas</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Grupo 4**: Estação Y - Saídas</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>A partir dos dados de entradas e saídas de duas estações de metro<span class="ot">[^assignment-1]</span>, pretende-se:</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ot">[^assignment-1]: </span>A fornecer durante a aula.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Identificar um padrão horário / semanal de registos</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Analisar o tipo de bilhete usado e sua proporção, e eventualmente reclassificar</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Analisar o número de registos realizados pelo mesma pessoa num mês</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Outras análises** que considere interessantes!</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>Relacionar estes dados com o tipo / localização da estação na cidade de Lisboa (sugestão de onde será)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>Comparar os resultados entre os grupos</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="al">![Exemplo de análise de dados](images/clipboard-3503519197.png)</span>{fig-align="center" width="600"}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Para tal, sugere-se usar o pacote <span class="in">`tidyverse`</span> para tratamento dos dados, e o *Excel* para produzir gráficos (eventualmente o pacote `ggplot` - com recurso ao *ChatGPT* para apoiar o código).</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>**Nota:** Este exercício prático tem o apoio do Metropolitano de Lisboa.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="al">![Exemplo de análise de dados.](images/clipboard-4027713333.png)</span>{fig-align="center"}</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-2850630433.png)</span>{fig-align="center" width="386"}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>**Nota:** Este exercício prático tem o apoio do Metropolitano de Lisboa.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-2850630433.png)</span>{fig-align="center" width="386"}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
