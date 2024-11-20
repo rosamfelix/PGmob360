@@ -10,3 +10,7 @@ format:
 ::: callout-warning
 Página em construção
 :::
+
+Com base nos dados **GTFS** do Metro e Carris, vamos estimar isócronas e acessibilidade à população residente em Lisboa, a partir da Baixa.
+
+Para tal, iremos usar o pacote [`r5r`](https://ipeagit.github.io/r5r/index.html) [@Pereira2021r5r].
