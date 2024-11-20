@@ -60,7 +60,7 @@ Os seguintes websites incluem vários GTFS de operadoras, a **nível mundial**.
 Uma vantagem destes agregadores de dados é que muitas vezes também disponibilizam **versões** por data - útil para análises do ano X.
 
 -   [TransitLand](https://www.transit.land)
--   [TransitFeeds](https://transitfeeds.com/)
+-   [Mobility Database](https://mobilitydatabase.org/)
 
 Algumas operadoras de Transporte Público nacionais também disponibilizam os seus dados abertos nos websites.
 ([Ver NAP Portugal](open-data.qmd#nap))
@@ -329,4 +329,24 @@ O NeTEx está dividido em seis partes, cada uma abrangendo um subconjunto funcio
 5.  Parte 5: Formato de intercâmbio de modos alternativos (CEN/TS 16614-5:2021)
 6.  Parte 6: Perfil Europeu de Acessibilidade às Informações de Passageiros - EPIAP (CEN/TS 16614-6:2024)
 
-Os dados NeTEX usam o fomato `.xml`, o que pode tornar a informação mais difícil de ler ou editar.
+Os dados NeTEX usam o formato `.xml`, o que pode tornar a informação mais difícil de ler ou editar.
+
+## GBFS
+
+Para dados de sistemas de mobilidade partilhada e micromobilidade, há ainda o [General Bicycle Feed Specification](https://gbfs.org/) (GBFS).
+
+Tal como os GTFS, os GBFS são dados normalizados com toda a informação sobre os sistemas partilhados, e incluem informações sobre os veículos (bicicletas, trotinetas, motociclos e automóveis), docas, preços, entre outros:
+
+-   Localização e disponibilidade de veículos, estações e docas
+
+-   Caraterísticas do veículo - tipo de energia, distância que ainda pode ser percorrida
+
+-   Preços do serviço e condições de aluguer
+
+-   Áreas delimitadas geograficamente para regras relacionadas com velocidade permitida, estacionamento e zonas proibidas
+
+Os dados GBFS são utilizados por aplicações de planeamento de viagens e de Mobilidade como Serviço (MaaS), para fornecer as informações de que os utilizadores necessitam para utilizar a mobilidade partilhada.
+
+As APIs públicas do GBFS facilitam a integração de serviços de mobilidade partilhada com os transportes públicos, permitindo que os utilizadores façam intermodalidade - ligações entre a primeira e a última *milha*.
+
+Além disso, o GBFS fornece aos municípios e operadoras uma forma padronizada de recolher, analisar e comparar dados gerados pelos sistemas de mobilidade partilhada.
