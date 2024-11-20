@@ -73,18 +73,6 @@ Cada vez mais, os dados de transporte disponibilizados estão **georreferenciado
 
 Algumas instituições permitem o **download** dos dados, e outros apenas a **visualização** dos mesmos em mapas ou dashboards **interativas**.
 
-**Dados de operação** (passageiros, bilhética, volumes de tráfego, entre outros) normalmente **não são disponibilizados** ao público.
-
-Por vezes, alguma dessa informação é incluída, de forma agregada, nos relatórios anuais de sustentabilidade das operadoras.
-
-::: {.callout-caution appearance="simple"}
-#### Questão
-
-Enumere motivos para este tipo de dados não ser, normalmente, de acesso aberto.
-:::
-
-## Boas práticas de dados abertos
-
 As boas práticas recomendam que os dados venham acompanhados de metadados, que incluem toda a informação relevante sobre os dados (ex: explicação dos acrónimos de variáveis usadas).
 
 Outras informações que acompanham os dados abertos são:
@@ -96,11 +84,25 @@ Outras informações que acompanham os dados abertos são:
 -   Data da última atualização
 -   Responsável pela manutenção dos dados e contacto
 
-![Exemplo de informação complementar de dados de Praças de Táxis (Cascais)](images/clipboard-279399363.png){alt="Exemplo de informação complementar de dados de Praças de Táxis (Cascais)" width="470"}
+![Exemplo de informação complementar de dados de Praças de Táxis (Cascais)](images/clipboard-279399363.png){width="470"}
+
+**Dados de operação** (passageiros, bilhética, volumes de tráfego, entre outros) normalmente não são disponibilizados ao público.
+
+Por vezes, alguma dessa informação é incluída, de forma agregada, nos relatórios anuais de sustentabilidade das operadoras.
+
+::: {.callout-caution appearance="simple"}
+#### Questão
+
+Enumere motivos para este tipo de dados não ser, normalmente, de acesso aberto.
+:::
+
+## Boas práticas de dados abertos
 
 O [Open Data Institute](https://theodi.org/insights/guides/) publica vários **guias de boas práticas** de partilha e uso de dados abertos, tais como validação de veracidade dos dados, anonimização de dados, avaliação dos riscos de partilha de dados, ética e responsabilidade, estimativa do valor dos dados partilhados, entre outros.
 
 Os dados abertos são publicados sob [licenças específicas](https://opendatacommons.org/licenses/), não incluem **dados pessoais**, informação sensível e/ou confidencial.
+
+Por omissão, o [dados.gov](https://dados.gov.pt/pt) usa a licença [CC BY 4.0 (Creative Commons Attribution 4.0)](https://creativecommons.org/licenses/by/4.0/legalcode), que pressupõe a **menção da fonte original** dos dados, mas **possibilita qualquer tipo de uso**.
 
 Algumas questões devem ser consideradas ao **usar** um conjunto de dados abertos [@checklist]:
 
@@ -117,12 +119,11 @@ Algumas questões devem ser consideradas ao **usar** um conjunto de dados aberto
 -   Até que ponto os dados são atuais?
 -   Com que frequência são atualizados?
 -   Compreende todos os campos e o seu contexto?
--   Durante quanto tempo serão publicados?
--   Qual é o compromisso com o publicador?
+-   Durante quanto tempo serão publicados? Qual é o compromisso com o publicador?
 -   O que sabe sobre a exatidão dos dados?
 -   Como são tratados os dados omissos?
 
-Alguns dados abertos fornecem um [**API**](https://dados.gov.pt/pt/docapi/) (Application Programming Interface) para que se possa automaticamente chamar os dados mais atualizados disponíveis.
+Alguns dados abertos fornecem um [**API**](https://dados.gov.pt/pt/docapi/) (Application Programming Interface) para que se possa automativamente chamar os dados mais autualizados disponíveis.
 
 ### Tutoriais
 
@@ -139,7 +140,7 @@ Chamo a atenção para o "**Como publicar dados abertos**", acessível a qualque
 
 Qualquer pessoa ou entidade pode aceder a dados abertos (por definição).
 É recomendado, como boa prática, a **partilha dos resultados** que se obtiveram com a utilização de um conjunto de dados abertos.
-Tal permite inspirar outros utilizadores dos dados, bem como dar conhecimento à entidade que os partilhou trabalhos que podem ser realizados com esses dados - levando muitas vezes à descoberta de novas perspetivas sobre os dados.
+Tal permite inspirar outros utilizadores dos dados, bem como dar conhecimento à entidade que os partilhou trabalhos que podem ser realizados com esses dados - levando muitas vezes à descoberta de novas prespetivas sobre os dados.
 
 As reutilizações documentadas muitas vezes também partilham o **código utilizado** para tratamento e análise do conjunto de dados, permitindo a sua **replicabilidade** e adaptação / aplicação a **outros contextos**.
 
@@ -159,7 +160,7 @@ Exemplos de trabalhos realizados por reutilização de dados abertos:
 
 O Departamento de Transportes do Reino Unido (DfT) mantém uma importante base de dados com acidentes e colisões rodoviárias para todo o território - o [STATS19](https://www.data.gov.uk/dataset/25170a92-0736-4090-baea-bf6add82d118/gm-road-casualty-accidents-full-stats19-data), contendo dados uniformizados desde 1926 (centenas de milhares), que têm vindo a ser registados pela Polícia.
 
-Esta base de dados abertos é amplamente usada para definição de políticas públicas de segurança rodoviária, e na academia, com a elaboração de vários dashboards e estudos que utilizam os dados.
+Esta base de dados abertos é amplamente usada para definição de políticas públicas de segurança rodviária, e na academia, com a elaboração de vários dashbors e estudos que utilizam os dados.
 Exemplo:
 
 -   [Interactive dashboard](https://maps.dft.gov.uk/road-casualties/index.html)
@@ -181,9 +182,9 @@ Exemplo:
 
 ### Táxis em Nova Iorque
 
-A comissão de Táxis de Nova York (*Taxi & Limousine Commission*) partilha todos os [dados de viagens](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) realizadas desde 2009.
+A comissão de Táxis de Nova York (Taxi & Limousine Commission) partilha todos os [dados de viagens](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) realizadas desde 2009.
 
-Os dados incluem localização de origem e destino, data e hora, distância de viagem, tarifa, tipo de pagamento, e número de passageiros transportados.
+Os dados incluem localização de origem e destino, data e hora, distância de viagem, tarifa, tipo de pagamento, e número de passegeiros transportados.
 
 Todos os anos, são realizadas várias análises a este conjunto de dados por alunos, investigadores, programadores, etc, que permitem uma análise detalhada e visualização espacial de padrões de mobilidade de táxis.
 
