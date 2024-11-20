@@ -205,3 +205,5 @@ Todos os anos, são realizadas várias análises a este conjunto de dados por al
 
 -   Que vantagens vê na abertura de dados para a sua instituição?
 :::
+
+No capítulo seguinte iremos explorar o que são dados GTFS e como podem ser usados.

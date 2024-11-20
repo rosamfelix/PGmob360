@@ -20,8 +20,8 @@ book:
     - data-manipulation.qmd
     - interactive-maps.qmd
     - open-data.qmd
-    - road-networks.qmd
     - gtfs.qmd
+    - road-networks.qmd
     - r5r.qmd
     - assignment.qmd
     # - slides.qmd
