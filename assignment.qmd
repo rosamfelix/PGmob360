@@ -20,7 +20,7 @@ A partir dos dados de entradas e saídas de duas estações de metro[^assignment
 5.  Relacionar estes dados com o tipo / localização da estação na cidade de Lisboa (sugestão de onde será)
 6.  Comparar os resultados entre os grupos
 
-Para tal, sugere-se usar o pacote `tidyverse` para tratamento dos dados, e o *Excel* para produzir gráficos (eventualmente o pacote `ggplot` - com recurso ao *ChatGPT* para apoiar o código).
+Para tal, sugere-se usar o pacote `tidyverse` para tratamento dos dados em R, e o *Excel* para produzir gráficos (eventualmente o pacote `ggplot` - com recurso ao *ChatGPT* para apoiar o código).
 
 ![Exemplo de análise de dados.](images/clipboard-4027713333.png){fig-align="center"}
 
