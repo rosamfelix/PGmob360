@@ -46,7 +46,7 @@
     "href": "software.html#pacotes-de-r",
     "title": "2  Software",
     "section": "2.3 Pacotes de R",
-    "text": "2.3 Pacotes de R\nTerá de instalar alguns pacotes para trabalhar com os dados e os scripts destas aulas.\nPode instalá-los no RStudio procurando por eles no separador Packages:\n\nou executando o seguinte código (um a um) na consola:\n\ninstall.packages(\"tidyverse\")\ninstall.packages(\"readxl\")\n\ninstall.packages(\"sf\")\ninstall.packages(\"mapview\")\ninstall.packages(\"tidytransit\")\ninstall.packages(\"gtfsrouter\") # opcional\n\ninstall.packages(\"r5r\")\ninstall.packages(\"rJavaEnv\")\n\ninstall.packages(\"rmarkdown\") # opcional\ninstall.packages(\"osmextract\") # opcional\ninstall.packages(\"stplanr\") # opcional"
+    "text": "2.3 Pacotes de R\nTerá de instalar alguns pacotes para trabalhar com os dados e os scripts destas aulas.\nPode instalá-los no RStudio procurando por eles no separador Packages:\n\nou executando o seguinte código (um a um) na consola:\n\ninstall.packages(\"tidyverse\")\ninstall.packages(\"readxl\")\n\ninstall.packages(\"sf\")\ninstall.packages(\"mapview\")\ninstall.packages(\"tidytransit\")\ninstall.packages(\"gtfsrouter\") # opcional\n\ninstall.packages(\"r5r\")\ninstall.packages(\"interp\")\ninstall.packages(\"rJavaEnv\")\n\ninstall.packages(\"rmarkdown\") # opcional\ninstall.packages(\"osmextract\") # opcional\ninstall.packages(\"stplanr\") # opcional"
   },
   {
     "objectID": "software.html#java-development-kit",
@@ -252,11 +252,18 @@
     "text": "É necessário ter uma conta OSM para usar.↩︎"
   },
   {
-    "objectID": "r5r.html",
-    "href": "r5r.html",
+    "objectID": "r5r.html#isócronas",
+    "href": "r5r.html#isócronas",
     "title": "8  Acessibilidade com r5r",
-    "section": "",
-    "text": "Aviso\n\n\n\nPágina em construção"
+    "section": "8.1 Isócronas",
+    "text": "8.1 Isócronas\n\n8.1.1 Em Hora de Ponta\nNuma quarta-feira às 7h30, quanto tempo demoro a chegar ao território de Lisboa, usando Metro, Autocarro, e ligações a pé?\n\nCom 1 transferência\n\n\n\n\n\nSem transferências\n\n\n\n\n8.1.2 Em Hora de Ponta\nE num Domingo às 22h00, quanto tempo demoro a chegar ao território de Lisboa, usando Metro, Autocarro, e ligações a pé?\n\nCom 1 transferência\n\n\n\nSem transferências"
+  },
+  {
+    "objectID": "r5r.html#acessibilidade-à-população",
+    "href": "r5r.html#acessibilidade-à-população",
+    "title": "8  Acessibilidade com r5r",
+    "section": "8.2 Acessibilidade à população",
+    "text": "8.2 Acessibilidade à população\nCom base nos dados dos Censos 2021 (INE 2022), podemos também “contar” quantas pessoas são alcancávis no território.\n\nCom 1 transferência\n\n\n\nHora de Ponta\nDomingo à noite\n\n\n\n\n35.9% em 30 min\n20.9% em 30 min\n\n\n83.6% em 45 min\n43.7% em 45 min\n\n\n97.4% em 60 min\n61.6% em 60 min\n\n\n\n\n\nSem transferências\n\nComo seria de esperar, em hora de ponta é possível alcançar mais residentes.\n\nPodemos também visualizar que população é acedida:\n\n\nHora de Ponta\nDomingo à noite\n\n\n\n\n22.8% em 30 min\n17.6% em 30 min\n\n\n68.2% em 45 min\n38.2% em 45 min\n\n\n89.7% em 60 min\n51.7% em 60 min\n\n\n\n\n\n\n\n\n\n\nINE. 2022. «Censos 2021- XVI Recenseamento Geral da População. VI Recenseamento Geral da Habitação». Lisboa: Instituto National de Estatística. https://censos.ine.pt/xurl/pub/65586079.\n\n\nPereira, Rafael H. M., Marcus Saraiva, Daniel Herszenhut, Carlos Kaue Vieira Braga, e Matthew Wigginton Conway. 2021. «r5r: Rapid Realistic Routing on Multimodal Transport Networks with R5 in R». Findings, março. https://doi.org/10.32866/001c.21262."
   },
   {
     "objectID": "assignment.html#footnotes",
@@ -277,6 +284,6 @@
     "href": "references.html",
     "title": "Referências",
     "section": "",
-    "text": "INE. 2018. “Mobilidade e Funcionalidade Do Território Nas Áreas Metropolitanas do Porto e de Lisboa:\n2017.” Lisboa: Instituto National de Estatística. https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_publicacoes&PUBLICACOESpub_boui=349495406&PUBLICACOESmodo=2&xlang=pt.\n\n\nThe Open Data Institute. 2013. Guide: The Open Data Consumer\nChecklist. https://theodi.org/insights/guides/the-open-data-consumer-checklist/."
+    "text": "INE. 2018. “Mobilidade e Funcionalidade Do Território Nas Áreas Metropolitanas do Porto e de Lisboa:\n2017.” Lisboa: Instituto National de Estatística. https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_publicacoes&PUBLICACOESpub_boui=349495406&PUBLICACOESmodo=2&xlang=pt.\n\n\n———. 2022. “Censos 2021- XVI Recenseamento\nGeral da População. VI Recenseamento Geral da Habitação.”\nLisboa: Instituto National de Estatística. https://censos.ine.pt/xurl/pub/65586079.\n\n\nPereira, Rafael H. M., Marcus Saraiva, Daniel Herszenhut, Carlos Kaue\nVieira Braga, and Matthew Wigginton Conway. 2021. “R5r: Rapid\nRealistic Routing on Multimodal Transport Networks with r5 in\nr.” Findings, March. https://doi.org/10.32866/001c.21262.\n\n\nThe Open Data Institute. 2013. Guide: The Open Data Consumer\nChecklist. https://theodi.org/insights/guides/the-open-data-consumer-checklist/."
   }
 ]
