@@ -14,3 +14,59 @@ Página em construção
 Com base nos dados **GTFS** do Metro e Carris, vamos estimar isócronas e acessibilidade à população residente em Lisboa, a partir da Baixa.
 
 Para tal, iremos usar o pacote [`r5r`](https://ipeagit.github.io/r5r/index.html) [@Pereira2021r5r].
+
+::: callout-note
+Ver o código [`code/r5r.R`](https://github.com/rosamfelix/PGmob360/blob/main/code/r5r.R)
+:::
+
+## Isócronas
+
+### Em Hora de Ponta
+
+Numa **quarta-feira às 7h30**, quanto tempo demoro a chegar ao território de Lisboa, usando Metro, Autocarro, e ligações a pé?
+
+#### Com 1 transferência
+
+#### ![](images/clipboard-3296605188.png)
+
+#### Sem transferências
+
+![](images/clipboard-3414209318.png)
+
+### Em Hora de Ponta
+
+E num **Domingo às 22h00**, quanto tempo demoro a chegar ao território de Lisboa, usando Metro, Autocarro, e ligações a pé?
+
+#### Com 1 transferência
+
+![](images/clipboard-2684296525.png)
+
+#### Sem transferências
+
+![](images/clipboard-647321861.png)
+
+## Acessibilidade à população
+
+Com base nos dados dos Censos 2021 [@INEcensus], podemos também "contar" quantas pessoas são alcancávis no território.
+
+#### Com 1 transferência
+
+| Hora de Ponta       | Domingo à noite     |
+|---------------------|---------------------|
+| **35.9%** em 30 min | **20.9%** em 30 min |
+| **83.6%** em 45 min | **43.7%** em 45 min |
+| **97.4%** em 60 min | **61.6%** em 60 min |
+
+#### Sem transferências
+
+| Hora de Ponta       | Domingo à noite     |
+|---------------------|---------------------|
+| **22.8%** em 30 min | **17.6%** em 30 min |
+| **68.2%** em 45 min | **38.2%** em 45 min |
+| **89.7%** em 60 min | **51.7%** em 60 min |
+
+: Como seria de esperar, em hora de ponta é possível alcançar mais residentes.\
+\
+Podemos também visualizar que população é acedida:
+
+![](images/clipboard-157979682.png)
