@@ -9,8 +9,8 @@
 5.  Exemplos nacionais e internacionais de análises com dados abertos
 6.  Introdução ao GTFS
 7.  Fontes de dados GTFS e tratamento
-8.  Acessibilidade espacial em R
-9.  Boas práticas de partilha e abertura de dados de mobilidade e transportes
+8.  Redes Viárias com OpenStreetMap
+9.  Acessibilidade espacial em R
 10. Exercício prático utilizando dados de operadora de transportes
 
 ## Horário
