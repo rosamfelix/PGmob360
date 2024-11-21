@@ -1,5 +1,8 @@
 ---
 # title: "GTFS"
+format:
+  pdf:
+    prefer-html: true
 ---
 
 ## GTFS
@@ -90,6 +93,7 @@ Vamos importar os dados de GTFS [diretamente](https://www.metrolisboa.pt/google_
 
 ```{r}
 #| message: false 
+#| fig-format: png
 ## Pacotes
 library(tidyverse)
 library(tidytransit)
@@ -107,6 +111,7 @@ Podemos ver a localização das 50 estações do Metro:
 
 ```{r}
 #| code-fold: true
+#| fig-format: png
 ESTACOES_metro = stops_as_sf(METRO$stops) # converter texto para geometria
 mapview(ESTACOES_metro)
 ```
@@ -196,6 +201,7 @@ Podemos ver a localização das 2313 estações da Carris:
 
 ```{r}
 #| code-fold: true
+#| fig-format: png
 ESTACOES_carris = stops_as_sf(CARRIS$stops) # converter texto para geometria
 mapview(ESTACOES_carris)
 ```
@@ -204,6 +210,7 @@ E as 1739 rotas (inclui variantes, idas e voltas):
 
 ```{r}
 #| code-fold: true
+#| fig-format: png
 ROTAS_carris = shapes_as_sf(CARRIS$shapes) # converter texto para geometria
 mapview(ROTAS_carris, zcol = "shape_id") # visualizar
 ```
