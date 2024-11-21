@@ -297,8 +297,8 @@ poplisboa = sum(PONTOS$N_INDIVIDUOS) #
 100*sum(ttm_zer_DOM_0$N_INDIVIDUOS[ttm_zer_DOM_0$travel_time <= 60]) / poplisboa # 51.70%
 
 # calculate population accessible
-access = ttm_zer_HP_0[travel_time_p50 <= 60, .(acc = sum(N_INDIVIDUOS)), by=to_id] # 60 minutos
-access = left_join(access, ttm_zer_HP_0)
+access = ttm_zer_HP_1[travel_time_p50 <= 60, .(acc = sum(N_INDIVIDUOS)), by=to_id] # 60 minutos
+access = left_join(access, ttm_zer_HP_1)
 
 # interpolate estimates to get spatially smooth result
 access.interp = access |>
@@ -318,7 +318,10 @@ ggplot(na.omit(access.interp)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
   coord_sf(xlim = bb_x, ylim = bb_y) + 
-  labs(fill = "População em\n60 minutos") +
+  labs(
+    title = "População com acesso à Baixa (Carris + Metro)",
+    subtitle = "às 7h30 de Quarta, 20 Nov 2024 - máx 1 transf",
+    fill = "População em\n60 minutos") +
   theme_minimal() +
   theme(axis.title = element_blank())
 

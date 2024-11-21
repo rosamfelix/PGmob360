@@ -33,7 +33,7 @@ Numa **quarta-feira às 7h30**, quanto tempo demoro a chegar ao território de L
 
 ![](images/clipboard-3414209318.png)
 
-### Em Hora de Ponta
+### Num Domingo à noite
 
 E num **Domingo às 22h00**, quanto tempo demoro a chegar ao território de Lisboa, usando Metro, Autocarro, e ligações a pé?
 
@@ -47,7 +47,7 @@ E num **Domingo às 22h00**, quanto tempo demoro a chegar ao território de Lisb
 
 ## Acessibilidade à população
 
-Com base nos dados dos Censos 2021 [@INEcensus], podemos também "contar" quantas pessoas são alcancávis no território.
+Com base nos dados dos Censos 2021 [@INEcensus], podemos também "contar" quantas pessoas são alcançáveis no território.
 
 #### Com 1 transferência
 
@@ -69,4 +69,8 @@ Com base nos dados dos Censos 2021 [@INEcensus], podemos também "contar" quanta
 \
 Podemos também visualizar que população é acedida:
 
-![](images/clipboard-157979682.png)
+![](images/clipboard-3814220531.png)
+
+::: callout-tip
+Podemos também avaliar o acesso a [escolas](https://github.com/U-Shift/MQAT/blob/main/geo/SCHOOLS_basicsec.gpkg), e outros POIs (pontos de interesse).
+:::
