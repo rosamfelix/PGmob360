@@ -15,6 +15,18 @@ Com base nos dados **GTFS** do Metro e Carris, vamos estimar isócronas e acessi
 
 Para tal, iremos usar o pacote [`r5r`](https://ipeagit.github.io/r5r/index.html) [@Pereira2021r5r].
 
+O `r5r` cria um modelo através da combinação dos seguintes ficheiros na mesma pasta:
+
+-   Rede viária (*OpenStreetMap*[^r5r-1] em formato `.osm.pbf`)
+-   GTFS[^r5r-2] dos vários operadores (1 único `.zip` ou vários)
+-   Modelo digital do terreno[^r5r-3] (`.tiff`), para impedâncias nos modos a pé e bicicleta
+
+[^r5r-1]: Ver como exportar no [capítulo anterior](road-networks.qmd#hot-export-tool).
+
+[^r5r-2]: Opcional.
+
+[^r5r-3]: Opcional.
+
 ::: callout-note
 Ver o código [`code/r5r.R`](https://github.com/rosamfelix/PGmob360/blob/main/code/r5r.R)
 :::
@@ -27,7 +39,7 @@ Numa **quarta-feira às 7h30**, quanto tempo demoro a chegar ao território de L
 
 #### Com 1 transferência
 
-#### ![](images/clipboard-3296605188.png)
+![](images/clipboard-3296605188.png)
 
 #### Sem transferências
 
@@ -65,12 +77,12 @@ Com base nos dados dos Censos 2021 [@INEcensus], podemos também "contar" quanta
 | **68.2%** em 45 min | **38.2%** em 45 min |
 | **89.7%** em 60 min | **51.7%** em 60 min |
 
-: Como seria de esperar, em hora de ponta é possível alcançar mais residentes.\
-\
+Como seria de esperar, em hora de ponta é possível alcançar mais residentes.
+
 Podemos também visualizar que população é acedida:
 
 ![](images/clipboard-3814220531.png)
 
 ::: callout-tip
-Podemos também avaliar o acesso a [escolas](https://github.com/U-Shift/MQAT/blob/main/geo/SCHOOLS_basicsec.gpkg), e outros POIs (pontos de interesse).
+Podemos também avaliar o acesso a [escolas](https://github.com/U-Shift/MQAT/blob/main/geo/SCHOOLS_basicsec.gpkg), ou outros POIs (pontos de interesse).
 :::
