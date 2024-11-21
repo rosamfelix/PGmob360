@@ -66,7 +66,7 @@ ggplot(duracao_viagem_BC_HP) +
 # Carris Lisboa -----------------------------------------------------------
 
 CARRIS = read_gtfs("https://github.com/rosamfelix/PGmob360/releases/download/2024.11/carris_gtfs.zip")
-validate_gtfs(CARRIScomtransfers) # validar
+validate_gtfs(CARRIS) # validar
 # foi criado um ficheiro transfers.txt que não existia no original, com o gtfsrouter
 
 # Paragens
