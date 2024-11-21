@@ -8,8 +8,37 @@ Página em construção
 
 ## Dia 1
 
-<p><embed src="slides/RFelix_Dia1_LiteraciaDadosAbertosTransportes_ISCTE_PGmob360_2024.pdf" style="width:100.0%;height:100vh;" /></p>
+<p>
+
+<embed src="slides/RFelix_Dia1_LiteraciaDadosAbertosTransportes_ISCTE_PGmob360_2024.pdf" style="width:100.0%;height:100vh;" />
+
+</p>
 
 ## Dia 2
 
+<p>
+
+<embed src="slides/RFelix_Dia2_LiteraciaDadosAbertosTransportes_ISCTE_PGmob360_2024.pdf" style="width:100.0%;height:100vh;" />
+
+</p>
+
 ## Dia 3
+
+<p>
+
+<embed src="slides/RFelix_Dia3_LiteraciaDadosAbertosTransportes_ISCTE_PGmob360_2024.pdf" style="width:100.0%;height:100vh;" />
+
+</p>
+
+```{r}
+#| eval: FALSE
+#| include: FALSE
+# com shell
+cd slides/
+# dia 1
+qpdf RFelix_LiteraciaDadosAbertosTransportes_ISCTE_PGmob360_2024.pdf --pages . 1-14 -- RFelix_Dia1_LiteraciaDadosAbertosTransportes_ISCTE_PGmob360_2024.pdf
+# dia 2
+qpdf RFelix_LiteraciaDadosAbertosTransportes_ISCTE_PGmob360_2024.pdf --pages . 15-40 -- RFelix_Dia2_LiteraciaDadosAbertosTransportes_ISCTE_PGmob360_2024.pdf
+# dia 3
+qpdf RFelix_LiteraciaDadosAbertosTransportes_ISCTE_PGmob360_2024.pdf --pages . 41-63 -- RFelix_Dia3_LiteraciaDadosAbertosTransportes_ISCTE_PGmob360_2024.pdf
+```
