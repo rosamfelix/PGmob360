@@ -65,6 +65,10 @@ Uma vantagem destes agregadores de dados é que muitas vezes também disponibili
 Algumas operadoras de Transporte Público nacionais também disponibilizam os seus dados abertos nos websites.
 ([Ver NAP Portugal](open-data.qmd#nap))
 
+::: {.callout-note appearance="simple"}
+Podemos juntar vários GTFS`.zip` num único MegaGTFS`.zip`
+:::
+
 ## Pacotes de R
 
 Existem alguns bons pacotes R para ler e manipular dados GTFS, tais como:
