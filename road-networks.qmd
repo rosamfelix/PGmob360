@@ -11,7 +11,7 @@ format:
 
 O OpenStreetMap é um projeto colaborativo de cartografia online com um mapa do mundo editável e gratuito.
 
-Esta é a fonte de dados da rede rodoviária mais utilizada para a análise dos transportes, no mundo académico, uma vez que a informação está disponível em quase **todo o mundo**, é aberta e de utilização gratuita.
+Esta é a fonte de dados da rede rodoviária mais utilizada para a análise de transportes, no mundo académico, uma vez que a informação está disponível em quase **todo o mundo**, é aberta e de utilização gratuita.
 
 ::: {.callout-caution appearance="simple"}
 Embora possa não ser 100% correrto, o OSM é uma boa fonte de dados para a maioria dos casos.
