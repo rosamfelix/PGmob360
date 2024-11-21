@@ -228,7 +228,7 @@
     "href": "road-networks.html#openstreetmap",
     "title": "7  Redes Viárias",
     "section": "7.1 OpenStreetMap",
-    "text": "7.1 OpenStreetMap\nO OpenStreetMap é um projeto colaborativo de cartografia online com um mapa do mundo editável e gratuito.\nEsta é a fonte de dados da rede rodoviária mais utilizada para a análise dos transportes, no mundo académico, uma vez que a informação está disponível em quase todo o mundo, é aberta e de utilização gratuita.\n\n\n\n\n\n\nEmbora possa não ser 100% correrto, o OSM é uma boa fonte de dados para a maioria dos casos.\n\n\n\nPode aceder à sua visualização em www.openstreetmap.org. Para editar o mapa, pode utilizar o Editor, depois de se registar (gratuitamente).\n\nA introdução ou alteração de informações e elementos cartográficos tem sido feita colaborativamente por pessoas voluntárias, normalmente conhecedoras daqueles espaços. No entanto, uma entidade oficial (ex. Câmara Municipal) pode solicitar apoio da comunidade OSM local para introdução ou atualização de informação, como já tem sido feito. Estas comunidades normalmente estão também disponíveis para realizar formações de edição em OpenStreetMap, de modo a conferir autonomia às organizações.\nO OpenStreetMap oferece um tutorial (sandbox) para adicionar pontos, editar polígonos e linhas, e alterar atributos dos elementos do mapa.\n\n\n\nFonte: https://wiki.openstreetmap.org/wiki/ID_editor_walkthrough\n\n\n\n\n\n\n\n\nTPC\n\n\n\n\nRegistar uma conta no OpenStreetMap\nFazer o Walkthrough (guia inicial) para edição de:\n\nPontos\nLinhas\nEdifícios\n\n\n\n\nSe pretender fazer download dos dados, pode utilizar as seguintes ferramentas:\n\nOverpass API\nGeofabrik\n\nEstes websites incluem todos os dados do OSM, mas com muito mais informações do que as necessárias."
+    "text": "7.1 OpenStreetMap\nO OpenStreetMap é um projeto colaborativo de cartografia online com um mapa do mundo editável e gratuito.\nEsta é a fonte de dados da rede rodoviária mais utilizada para a análise de transportes, no mundo académico, uma vez que a informação está disponível em quase todo o mundo, é aberta e de utilização gratuita.\n\n\n\n\n\n\nEmbora possa não ser 100% correrto, o OSM é uma boa fonte de dados para a maioria dos casos.\n\n\n\nPode aceder à sua visualização em www.openstreetmap.org. Para editar o mapa, pode utilizar o Editor, depois de se registar (gratuitamente).\n\nA introdução ou alteração de informações e elementos cartográficos tem sido feita colaborativamente por pessoas voluntárias, normalmente conhecedoras daqueles espaços. No entanto, uma entidade oficial (ex. Câmara Municipal) pode solicitar apoio da comunidade OSM local para introdução ou atualização de informação, como já tem sido feito. Estas comunidades normalmente estão também disponíveis para realizar formações de edição em OpenStreetMap, de modo a conferir autonomia às organizações.\nO OpenStreetMap oferece um tutorial (sandbox) para adicionar pontos, editar polígonos e linhas, e alterar atributos dos elementos do mapa.\n\n\n\nFonte: https://wiki.openstreetmap.org/wiki/ID_editor_walkthrough\n\n\n\n\n\n\n\n\nTPC\n\n\n\n\nRegistar uma conta no OpenStreetMap\nFazer o Walkthrough (guia inicial) para edição de:\n\nPontos\nLinhas\nEdifícios\n\n\n\n\nSe pretender fazer download dos dados, pode utilizar as seguintes ferramentas:\n\nOverpass API\nGeofabrik\n\nEstes websites incluem todos os dados do OSM, mas com muito mais informações do que as necessárias."
   },
   {
     "objectID": "road-networks.html#hot-export-tool",
@@ -278,6 +278,27 @@
     "title": "9  Exercício prático",
     "section": "",
     "text": "A fornecer durante a aula.↩︎"
+  },
+  {
+    "objectID": "slides.html#dia-1",
+    "href": "slides.html#dia-1",
+    "title": "10  Slides das aulas",
+    "section": "10.1 Dia 1",
+    "text": "10.1 Dia 1"
+  },
+  {
+    "objectID": "slides.html#dia-2",
+    "href": "slides.html#dia-2",
+    "title": "10  Slides das aulas",
+    "section": "10.2 Dia 2",
+    "text": "10.2 Dia 2"
+  },
+  {
+    "objectID": "slides.html#dia-3",
+    "href": "slides.html#dia-3",
+    "title": "10  Slides das aulas",
+    "section": "10.3 Dia 3",
+    "text": "10.3 Dia 3"
   },
   {
     "objectID": "about.html#rosa-félix",
