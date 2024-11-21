@@ -7,9 +7,11 @@ format:
 
 # Acessibilidade com r5r
 
-::: callout-warning
-Página em construção
-:::
+<!-- ::: callout-warning -->
+
+<!-- Página em construção -->
+
+<!-- ::: -->
 
 Com base nos dados **GTFS** do Metro e Carris, vamos estimar isócronas e acessibilidade à população residente em Lisboa, a partir da Baixa.
 
