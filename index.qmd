@@ -2,10 +2,14 @@
 
 Materiais e dados para as aulas de **Literacia sobre dados abertos em transportes**, módulo da [Pós-Graduação Mobilidade 360º Gestão de Transportes](https://execed.iscte-iul.pt/applied-online-pos-graduacao-em-mobilidade-360-gestao-de-transportes) do Iscte Executive Education.
 
+<p> </p>
+
 ![](images/clipboard-209231891.png){fig-align="center" width="360"}
+
+<p> </p>
 
 ::: {.callout-note appearance="simple" icon="false"}
 ## Nota
 
-Este website foi totalmente desenvolvido em R.
+Este website foi totalmente desenvolvido em R com [Quarto](https://quarto.org/docs/books/).
 :::
