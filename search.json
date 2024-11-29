@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "PG Mobilidade 360",
     "section": "",
-    "text": "Início\nMateriais e dados para as aulas de Literacia sobre dados abertos em transportes, módulo da Pós-Graduação Mobilidade 360º Gestão de Transportes do Iscte Executive Education.\n\n\n\n\n\n\n\n\n\n\n\nNota\n\n\n\nEste website foi totalmente desenvolvido em R."
+    "text": "Início\nMateriais e dados para as aulas de Literacia sobre dados abertos em transportes, módulo da Pós-Graduação Mobilidade 360º Gestão de Transportes do Iscte Executive Education.\n\n \n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\nNota\n\n\n\nEste website foi totalmente desenvolvido em R com Quarto."
   },
   {
     "objectID": "summary.html#literacia-sobre-dados-abertos-em-transportes",
     "href": "summary.html#literacia-sobre-dados-abertos-em-transportes",
     "title": "1  Planeamento",
     "section": "1.1 Literacia sobre dados abertos em transportes",
-    "text": "1.1 Literacia sobre dados abertos em transportes\n\nIntrodução ao R\nImportação e limpeza de dados de transportes em R\nMapas interativos em R\nOs dados abertos em mobilidade e transportes\nExemplos nacionais e internacionais de análises com dados abertos\nIntrodução ao GTFS\nFontes de dados GTFS e tratamento\nAcessibilidade espacial em R\nBoas práticas de partilha e abertura de dados de mobilidade e transportes\nExercício prático utilizando dados de operadora de transportes"
+    "text": "1.1 Literacia sobre dados abertos em transportes\n\nIntrodução ao R\nImportação e limpeza de dados de transportes em R\nMapas interativos em R\nOs dados abertos em mobilidade e transportes\nExemplos nacionais e internacionais de análises com dados abertos\nIntrodução ao GTFS\nFontes de dados GTFS e tratamento\nRedes Viárias com OpenStreetMap\nAcessibilidade espacial em R\nExercício prático utilizando dados de operadora de transportes"
   },
   {
     "objectID": "summary.html#horário",
