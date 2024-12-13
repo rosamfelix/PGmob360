@@ -80,6 +80,8 @@ Existem alguns bons pacotes R para ler e manipular dados GTFS, tais como:
 -   [`gtfstools`](https://ipeagit.github.io/gtfstools/)
 -   [`gtfsio`](https://r-transit.github.io/gtfsio/index.html)
 -   [`gtfsrouter`](https://urbananalyst.github.io/gtfsrouter/) - útil para criar tabela `transfers.txt` quando não existe.
+-   [`geotransit`](https://github.com/tripwright/geotransit) - para descarregar todos os GTFS presentes numa determinada área
+-   [`GTFSwizard`](https://opatp.github.io/GTFSwizard/) - análises rápidas e interativas
 
 ::: {.callout-caution appearance="simple"}
 Atenção que os pacotes podem partilhar os mesmos nomes de funções, pelo que é importante utilizar um delas de cada vez.
