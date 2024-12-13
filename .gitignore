@@ -57,3 +57,4 @@ original/
 _book/
 
 analiseML/
+!analiseML/analiseML.Rmd
