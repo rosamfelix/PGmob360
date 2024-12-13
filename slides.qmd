@@ -30,7 +30,7 @@ Página em construção
 
 </p>
 
-```{r}
+```{bash}
 #| eval: FALSE
 #| include: FALSE
 # com shell
