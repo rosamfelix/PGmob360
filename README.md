@@ -1,6 +1,8 @@
 # PGmob360
 
-Dados para as aulas da PG Mobilidade 360 no ISCTE.
+Materiais e dados para as aulas de **Literacia sobre dados abertos em transportes**, módulo da [Pós-Graduação Mobilidade 360º Gestão de Transportes](https://execed.iscte-iul.pt/applied-online-pos-graduacao-em-mobilidade-360-gestao-de-transportes) do Iscte Executive Education.
+
+![](images/clipboard-209231891.png){fig-align="center" width="360"}
 
 ## Literacia sobre dados abertos em transportes
 
@@ -14,3 +16,11 @@ Dados para as aulas da PG Mobilidade 360 no ISCTE.
 8.  Acessibilidade espacial em R
 9.  Boas práticas de partilha e abertura de dados de mobilidade e transportes
 10. Exercício prático utilizando dados de operadora de transportes
+
+Ver **website** em [rosamfelix.github.io/PGmob360](https://rosamfelix.github.io/PGmob360/)
+
+### Citar como
+
+```         
+Félix, R. (2024). Literacia sobre dados abertos em transportes - módulo da Pós-Graduação Mobilidade 360º Gestão de Transportes do ISCTE Executive Education. https://rosamfelix.github.io/PGmob360/
+```
